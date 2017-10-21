@@ -14,14 +14,5 @@ class MyTestClass(unittest.TestCase):
         result = self.app.get('/')
         self.assertEqual(result.status_code, 200)
 
-    # def test_home_data(self):
-    #     # sends HTTP GET request to the application
-    #     # on the specified path
-    #     result = self.app.get('/')
-    #
-    #     # assert the response data
-    #     self.assertEqual(result.data, render_template('home.html'))
-
-
 if __name__ == '__main__':
   unittest.main()
