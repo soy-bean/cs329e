@@ -1,7 +1,7 @@
 FILES :=                     \
     .gitignore               \
     makefile                 \
-    tests.py                 \
+    test.py                 \
 
 check:
 	@not_found=0;                                 \
