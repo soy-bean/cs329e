@@ -20,6 +20,3 @@ script:
     - ls -al
     - make check
     - make test
-
-notifications:
-    slack: cs329e-imdb:hyGNP2bTglrXDdxzLpr5M1fG
