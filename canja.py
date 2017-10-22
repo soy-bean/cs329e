@@ -1,68 +1,65 @@
 import logging
 
-from flask import Flask,render_template
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 @app.route('/')
-def spalsh():
-    return render_template('home.html')
+@app.route('/home/')
+def home():
+    return render_template('Home.html')
 
-@app.route('/stats.html/')
+@app.route('/stats/')
 def stats():
-    return render_template('stats.html')
+    return render_template('Stats.html')
 
-@app.route('/view.html/')
-def views():
-    return render_template('view.html')
-
-@app.route('/view.html/authorlist.html')
+@app.route('/authorlist/')
 def authorlist():
-    return render_template('authorlist.html')
+    return render_template('Authorlist.html')
 
-@app.route('/view.html/booklist.html/')
+@app.route('/booklist/')
 def booklist():
-    return render_template('booklist.html')
+    return render_template('Booklist.html')
 
-@app.route('/view.html/publisherlist.html/')
+@app.route('/publisherlist')
 def publisherlist():
-    return render_template('publisherlist.html')
+    return render_template('Publisherlist.html')
 
-@app.route('/view.html/author1.html')
+@app.route('/author1')
 def author1():
-    return render_template('author1.html')
+    return render_template('Author1.html')
 
-@app.route('/view.html/author2.html')
+@app.route('/author2')
 def author2():
-    return render_template('author2.html')
+    return render_template('Author2.html')
 
-@app.route('/view.html/author3.html')
+@app.route('/author3')
 def author3():
-    return render_template('author3.html')
+    return render_template('Author3.html')
 
-@app.route('/view.html/booklist.html/book1.html')
+@app.route('/book1')
 def book1():
-    return render_template('book1.html')
+    return render_template('Book1.html')
 
-@app.route('/view.html/booklist.html/book2.html')
+@app.route('/book2')
 def book2():
-    return render_template('book2.html')
+    return render_template('Book2.html')
 
-@app.route('/view.html/booklist.html/book3.html')
+@app.route('/book3')
 def book3():
-    return render_template('book3.html')
+    return render_template('Book3.html')
 
-@app.route('/view.html/publisherlist.html/publisher1.html')
+@app.route('/publisher1')
 def publisher1():
-    return render_template('publisher1.html')
+    return render_template('Publisher1.html')
 
-@app.route('/view.html/publisherlist.html/publisher2.html')
+@app.route('/publisher2')
 def publisher2():
-    return render_template('publisher2.html')
+    return render_template('Publisher2.html')
 
-@app.route('/view.html/publisherlist.html/publisher3.html')
+@app.route('/publisher3')
 def publisher3():
-    return render_template('publisher3.html')
+    return render_template('Publisher3.html')
 
 @app.errorhandler(500)
 def server_error(e):
