@@ -6,7 +6,7 @@ Canvas Group Number: 2
 
 
 ## Installation
-These instructions are for bash shells on macOS or any Unix-like operating system.
+These instructions are for bash shells on macOS or most Unix-like operating systems.
 To install this make a directory for the project and clone the git repo.
 
     mkdir canja
