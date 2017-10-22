@@ -21,43 +21,43 @@ def authorlist():
 def booklist():
     return render_template('Booklist.html')
 
-@app.route('/publisherlist')
+@app.route('/publisherlist/')
 def publisherlist():
     return render_template('Publisherlist.html')
 
-@app.route('/author1')
+@app.route('/author1/')
 def author1():
     return render_template('Author1.html')
 
-@app.route('/author2')
+@app.route('/author2/')
 def author2():
     return render_template('Author2.html')
 
-@app.route('/author3')
+@app.route('/author3/')
 def author3():
     return render_template('Author3.html')
 
-@app.route('/book1')
+@app.route('/book1/')
 def book1():
     return render_template('Book1.html')
 
-@app.route('/book2')
+@app.route('/book2/')
 def book2():
     return render_template('Book2.html')
 
-@app.route('/book3')
+@app.route('/book3/')
 def book3():
     return render_template('Book3.html')
 
-@app.route('/publisher1')
+@app.route('/publisher1/')
 def publisher1():
     return render_template('Publisher1.html')
 
-@app.route('/publisher2')
+@app.route('/publisher2/')
 def publisher2():
     return render_template('Publisher2.html')
 
-@app.route('/publisher3')
+@app.route('/publisher3/')
 def publisher3():
     return render_template('Publisher3.html')
 
