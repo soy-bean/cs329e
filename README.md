@@ -1,8 +1,13 @@
 # cs329e-idb
 
 #### Group Information
-Github Repository: [GitHub](https://github.com/arr3385/cs329e-idb/)
+[Github Repository](https://github.com/arr3385/cs329e-idb/)
 Canvas Group Number: 2
+
+
+
+
+[![Build Status](https://travis-ci.org/arr3385/cs329e-idb.svg?branch=master)](https://travis-ci.org/arr3385/cs329e-idb)
 
 
 ## Installation
@@ -26,3 +31,13 @@ Change to the dev branch to make any changes.
 To test the application run the make file.
 
     make test
+
+## Coverage
+Checking for code coverage is important to know what part of the app
+has not been tested yet.
+
+    coverage run ./test.py
+    coverage report -m ./*.py > coverage.txt
+
+The -m flag is going to show us the lines that have not been tested in the canja.py.
+So you can open the coverage.txt to see what lines need unit tests.
