@@ -27,10 +27,30 @@
         .home-card-wide.mdl-card {
             width: 512px;
         }
-        .home-card-wide > .mdl-card__title {
+        .home-card-wide > .mdl-card__title_Jatin {
             color: #fff;
-            height: 176px;
-            background: url('https://static.boredpanda.com/blog/wp-content/uuuploads/creative-bookshelves/creative-bookshelves-11-2.jpg') center / cover;
+            height: 400px;
+            background: url("{{url_for('static', filename='Jkon.jpg')}}") center / cover;
+        }
+		.home-card-wide > .mdl-card__title_AndrewC {
+            color: #fff;
+            height: 400px;
+            background: url("{{url_for('static', filename='AndrewC.jpg')}}") center / cover;
+        }
+		.home-card-wide > .mdl-card__title_AndrewR {
+            color: #fff;
+            height: 400px;
+            background: url("{{url_for('static', filename='AndrewR.jpg')}}") center / cover;
+        }
+		.home-card-wide > .mdl-card__title_Nancy {
+            color: #fff;
+            height: 400px;
+            background: url("{{url_for('static', filename='nancy.jpg')}}") center / cover;
+        }
+		.home-card-wide > .mdl-card__title_Carlos {
+            color: #fff;
+            height: 400px;
+            background: url("{{url_for('static', filename='Jkon.jpg')}}") center / cover;
         }
         .home-card-wide > .mdl-card__menu {
             color: #fff;
@@ -131,8 +151,8 @@
 		<div class="mdl-cell mdl-cell--4-col mdl-col--stretch">
 			<center>
 				<div class="home-card-wide mdl-card mdl-shadow--8dp">
-					<div class="mdl-author-card__title">
-						Title
+					<div class="mdl-card__title_Carlos">
+						<h2 class="mdl-card__title-text"></h2>							
 					</div>
 					<div class="mdl-card__supporting-text">
 						Carlos Loya
@@ -140,9 +160,6 @@
 						(C)
 					</div>
 					<div class="mdl-card__actions mdl-card--border">
-						<a href="/authorlist" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-						Detailed Author View
-						</a>
 					</div>
 				</div>
 			</center>
@@ -150,8 +167,8 @@
 		<div class="mdl-cell mdl-cell--4-col mdl-col--stretch">
 			<center>
 				<div class="home-card-wide mdl-card mdl-shadow--8dp">
-					<div class="mdl-author-card__title">
-						<h2 class="mdl-author-card__title-text"></h2>
+					<div class="mdl-card__title_AndrewC">
+						<h2 class="mdl-card__title-text"></h2>
 					</div>
 					<div class="mdl-card__supporting-text">
 						Andrew Chen
@@ -166,8 +183,8 @@
 		<div class="mdl-cell mdl-cell--4-col mdl-col--stretch">
 			<center>
 				<div class="home-card-wide mdl-card mdl-shadow--8dp">
-					<div class="mdl-author-card__title">
-						<h2 class="mdl-author-card__title-text"></h2>
+					<div class="mdl-card__title_Nancy">
+						<h2 class="mdl-card__title-text"></h2>
 					</div>
 					<div class="mdl-card__supporting-text">
 						Nancy Tran
@@ -185,8 +202,8 @@
 		<div class="mdl-cell mdl-cell--6-col mdl-col--stretch">
 			<center>
 				<div class="home-card-wide mdl-card mdl-shadow--8dp">
-					<div class="mdl-author-card__title">
-						<h2 class="mdl-author-card__title-text"></h2>
+					<div class="mdl-card__title_Jatin">
+						<h2 class="mdl-card__title-text"></h2>
 					</div>
 					<div class="mdl-card__supporting-text">
 						Jatin Konchady
@@ -201,8 +218,8 @@
 		<div class="mdl-cell mdl-cell--6-col mdl-col--stretch">
 			<center>
 				<div class="home-card-wide mdl-card mdl-shadow--8dp">
-					<div class="mdl-author-card__title">
-						<h2 class="mdl-author-card__title-text"></h2>
+					<div class="mdl-card__title_AndrewR">
+						<h2 class="mdl-card__title-text"></h2>
 					</div>
 					<div class="mdl-card__supporting-text">
 						Andrew Rogalla
