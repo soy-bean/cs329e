@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .home-card-wide.mdl-card {
+            width: 512px;
+        }
+        .home-card-wide > .mdl-card__title {
+            color: #fff;
+            height: 176px;
+            background: url('https://static.boredpanda.com/blog/wp-content/uuuploads/creative-bookshelves/creative-bookshelves-11-2.jpg') center / cover;
+        }
+        .home-card-wide > .mdl-card__menu {
+            color: #fff;
+        }
+    </style>
+{% endblock %}

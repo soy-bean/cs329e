@@ -1,0 +1,31 @@
+{% extends "list.html" %}
+{% block title %}Authors{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+    <h1 align="center">Author List</h1>
+    <br/>
+    <br/>
+    <br/>
+    <center>
+        <table class="mdl-data-table mdl-js-data-table mdl-shadow--8dp">
+            <thead>
+                <tr>
+                <th class="mdl-data-table__cell--non-numeric">Author</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td class="mdl-data-table__cell--non-numeric"><a href={{ url_for('author',id_a=1) }} class="mdl-button">J.K. Rowling</a></td>
+                </tr>
+                <tr>
+                <td class="mdl-data-table__cell--non-numeric"><a href={{ url_for('author',id_a=2) }} class="mdl-button">Palgrave Macmillan</a></td>
+                </tr>
+                <tr>
+                <td class="mdl-data-table__cell--non-numeric"><a href={{ url_for('author',id_a=3) }} class="mdl-button">Patrick Rothfuss</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </center>
+{% endblock %}

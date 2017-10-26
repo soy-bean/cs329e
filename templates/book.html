@@ -1,0 +1,55 @@
+{% extends "item.html" %}
+{% block title %}{{title}}{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .home-card-wide > .mdl-card__title {
+            color: #fff;
+            height: 750px;
+            background: url({{cover}}) no-repeat center / cover;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <center>
+    <div align="center" class="mdl-grid">
+        <div class="mdl-cell mdl-cell--2-col"></div>
+        <div align="center" class="mdl-cell mdl-cell--4-col">
+            <div class="home-card-wide mdl-card mdl-shadow--8dp">
+                <div class="mdl-card__title"></div>
+            </div>
+        </div>
+		<div align="center" class="mdl-cell mdl-cell--4-col">
+            <div class="home-card-wide mdl-card mdl-shadow--8dp">
+                <div class="mdl-card__supporting-text">
+                <h3><b>{{title}}</b></h3>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <div class="mdl-card__supporting-text">
+                        <p><b>Description:</b>{{description}}</p>
+                    </div>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <div class="mdl-card__supporting-text">
+                        <p><b>Google ID:</b>{{googleid}}</p>
+                    </div>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <div class="mdl-card__supporting-text">
+                        <p><b>ISBN:</b>{{isbn}}</p>
+                    </div>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <div class="mdl-card__supporting-text">
+                        <p><b>Publication Date:</b>{{pubdate}}</p>
+                    </div>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <a href={{ url_for('author',id_a=id_b) }} class="mdl-button mdl-js-rimdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Author</a><a href={{ url_for('publisher',id_p=id_b) }} class="mdl-button mdl-js-rimdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Publisher</a>
+                </div>
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--2-col"></div>
+    </div>
+    </center>
+{% endblock %}

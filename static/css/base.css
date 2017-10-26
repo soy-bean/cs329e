@@ -1,0 +1,20 @@
+.myButton {
+    color: white;
+    text-align:center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+h1 {
+    margin: 1em 0 0.5em 0;
+    color: #c2682c;
+    font-weight: normal;
+    font-family: "Bookman Old Style";
+    font-size: 36px;
+    line-height: 42px;
+    text-transform: uppercase;
+    text-shadow: 0 2px rgb(0, 0, 0), 0 3px #777;
+}
+body {
+    background-color: rgb(136, 136, 136);
+}
