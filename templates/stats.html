@@ -14,14 +14,43 @@
             top: 10px;
             right: 10px;
         }
-        h1 { font-size: 48px; font-family: 'Signika', sans-serif; padding-bottom: 10px; }
+        h1 {
+            margin: 1em 0 0.5em 0;
+            color: #c2682c;
+            font-weight: normal;
+            font-family: "Bookman Old Style";
+            font-size: 36px;
+            line-height: 42px;
+            text-transform: uppercase;
+            text-shadow: 0 2px rgb(0, 0, 0), 0 3px #777;
+        }             
         .home-card-wide.mdl-card {
-            width: 512px;
+            width: 300px;
         }
-        .home-card-wide > .mdl-card__title {
+        .home-card-wide > .mdl-card__title_Jatin {
             color: #fff;
-            height: 176px;
-            background: url('https://static.boredpanda.com/blog/wp-content/uuuploads/creative-bookshelves/creative-bookshelves-11-2.jpg') center / cover;
+            height: 400px;
+            background: url("{{url_for('static', filename='Jkon.jpg')}}") center / cover;
+        }
+		.home-card-wide > .mdl-card__title_AndrewC {
+            color: #fff;
+            height: 400px;
+            background: url("{{url_for('static', filename='AndrewC.jpg')}}") center / cover;
+        }
+		.home-card-wide > .mdl-card__title_AndrewR {
+            color: #fff;
+            height: 400px;
+            background: url("{{url_for('static', filename='AndrewR.jpg')}}") center / cover;
+        }
+		.home-card-wide > .mdl-card__title_Nancy {
+            color: #fff;
+            height: 400px;
+            background: url("{{url_for('static', filename='nancy.jpg')}}") center / cover;
+        }
+		.home-card-wide > .mdl-card__title_Carlos {
+            color: #fff;
+            height: 400px;
+            background: url("{{url_for('static', filename='carlos.JPG')}}") center / cover;
         }
         .home-card-wide > .mdl-card__menu {
             color: #fff;
@@ -29,7 +58,9 @@
         body {
             background-color: rgb(136, 136, 136);
         }
-
+		.bgimg {
+			background-image: url('./pics/AndrewChen.jpg');
+		}
     </style>
 </head>
 
@@ -42,7 +73,7 @@
     <br/>
     <br/>
     <br/>
-    <h1 align="center">About Us</h1>
+    <!-- <h1 align="center">About Us</h1>
     <br>
     <h2 align="center"> Group Members</h2>
 
@@ -52,16 +83,20 @@
 
 	<h3>Carlos Loya</h3>
 	<img src="./pics/" width="150px" height="150px" style="padding: 0.5%">
-	<p></p>
+	<p>I'm a Human Development Major wanting to use technology to better understand the world and our place within it. I also work on web development at a cloud consulting firm, Intelligo.</p>
 	<li>Number of commits: 0</li>
 	<li>Number of issues: 0</li>
-	<li>Number of unit tests: 0</li>
+	<li>Number of unit tests: 9001</li>
 	
 	<br>
 
 	<h3>Andrew Rogalla</h3>
 	<img src="./pics/AndrewR.jpg" width="150px" height="150px" style="padding: 0.5%">
-	<p></p>
+	<p>I'm a graduating senior in Management Information Systems at UT. I will be starting full-time in February with Bank of America in their Chicago corporate office. </p>
+	<p>You probably aren't reading this.</p>
+	<p>Stop reading. You are just wasting your time.</p>
+	<p>I'm suprised you wasted your team reading this.</p>
+	<p>I told you to stop.</p>
 	<li>Number of commits: 0</li>
 	<li>Number of issues: 0</li>
 	<li>Number of unit tests: 0</li>
@@ -69,10 +104,10 @@
 	<br>
 
 	<h3>Nancy Tran</h3>
-	<img src="./pics/" width="150px" height="150px" style="padding: 0.5%">
-	<p></p>
+	<img src="./pics/nancy.jpg" width="150px" height="150px" style="padding: 0.5%">
+	<p>I'm a third year Arts and Entertainment Technologies major trying to get big in concert productions.</p>
 	<li>Number of commits: 0</li>
-	<li>Number of issues: 0</li>
+	<li>Number of issues: so many</li>
 	<li>Number of unit tests: 0</li>
 	
 	<br>
@@ -87,7 +122,7 @@
 	<br>
 
 	<h3>Andrew Chen</h3>
-	<img src="./pics/" width="150px" height="150px" style="padding: 0.5%">
+	<img src="./pics/AndrewChen.jpg" width="150px" height="150px" style="padding: 0.5%">
 	<p></p>
 	<li>Number of commits: 0</li>
 	<li>Number of issues: 0</li>
@@ -107,10 +142,95 @@
 	<h2 align="center">Resources Used</h2>
 
 	<li><a href="http://www.cs.utexas.edu/~fares/cs329ef17/CS%20373_files/tutorials/books.json">Data source for list of books</a></li>
-
+	-->
 	<br>
 	<br>
 	<br>
+	<center>
+	<div class="mdl-grid">
+		<div class="mdl-cell mdl-cell--1-col mdl-col--stretch"></div>			
+		<div class="mdl-cell mdl-cell--2-col mdl-col--stretch">
+			<center>
+				<div class="home-card-wide mdl-card mdl-shadow--8dp">
+					<div class="mdl-card__title_Carlos">
+						<h2 class="mdl-card__title-text"></h2>							
+					</div>
+					<div class="mdl-card__supporting-text">
+						Carlos Loya
+						<br/>
+						(C)
+					</div>
+					<div class="mdl-card__actions mdl-card--border">
+					</div>
+				</div>
+			</center>
+		</div>
+		<div class="mdl-cell mdl-cell--2-col mdl-col--stretch">
+			<center>
+				<div class="home-card-wide mdl-card mdl-shadow--8dp">
+					<div class="mdl-card__title_AndrewC">
+						<h2 class="mdl-card__title-text"></h2>
+					</div>
+					<div class="mdl-card__supporting-text">
+						Andrew Chen
+						<br/>
+						(A)
+					</div>
+					<div class="mdl-card__actions mdl-card--border">
+					</div>
+				</div>
+			</center>
+		</div>
+		<div class="mdl-cell mdl-cell--2-col mdl-col--stretch">
+			<center>
+				<div class="home-card-wide mdl-card mdl-shadow--8dp">
+					<div class="mdl-card__title_Nancy">
+						<h2 class="mdl-card__title-text"></h2>
+					</div>
+					<div class="mdl-card__supporting-text">
+						Nancy Tran
+						<br/>
+						(N)
+					</div>
+					<div class="mdl-card__actions mdl-card--border">
+					</div>
+				</div>
+			</center>
+		</div>
+	<div class="mdl-cell mdl-cell--2-col mdl-col--stretch">
+		<center>
+			<div class="home-card-wide mdl-card mdl-shadow--8dp">
+				<div class="mdl-card__title_Jatin">
+					<h2 class="mdl-card__title-text"></h2>
+				</div>
+				<div class="mdl-card__supporting-text">
+					Jatin Konchady
+					<br/>
+					(J)
+				</div>
+				<div class="mdl-card__actions mdl-card--border">
+				</div>
+			</div>
+		</center>
+	</div>
+	<div class="mdl-cell mdl-cell--2-col mdl-col--stretch">
+		<center>
+			<div class="home-card-wide mdl-card mdl-shadow--8dp">
+				<div class="mdl-card__title_AndrewR">
+					<h2 class="mdl-card__title-text"></h2>
+				</div>
+				<div class="mdl-card__supporting-text">
+					Andrew Rogalla
+					<br/>
+					(A)
+				</div>
+				<div class="mdl-card__actions mdl-card--border">
+				</div>
+			</div>
+		</center>
+	<div class="mdl-cell mdl-cell--1-col mdl-col--stretch"></div>					
+	</div>
+	</center>
 
 
 </body>
