@@ -1,11 +1,11 @@
 FILES :=                      \
     .gitignore                \
     .travis.yml               \
-    canja.yaml                \
+    app.yaml                \
     requirements.txt          \
     makefile                  \
     test.py                   \
-    canja.py                  \
+    app.py                  \
 
 check:
 	@not_found=0;                                 \
