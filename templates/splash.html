@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .home-card-wide.mdl-card {
+            width: 512px;
+        }
+        .home-card-wide > .mdl-book-card__title {
+            color: #fff;
+            height: 270px;
+            background: url('https://i.pinimg.com/736x/7f/d3/55/7fd355dbd4e6a975d92491f161df2da7--pictogram-icon-design.jpg') center / cover;
+        }
+        .home-card-wide > .mdl-author-card__title {
+            color: #fff;
+            height: 270px;
+            background: url('https://writersedit.com/wp-content/uploads/2016/11/killer-author-bio-2.jpeg') center / cover;
+        }
+        .home-card-wide > .mdl-publisher-card__title {
+            color: #fff;
+            height: 270px;
+            background: url('https://i.pinimg.com/236x/11/aa/80/11aa80ea7a507b8674832303e15e93ab--science-web-logo-inspiration.jpg') center / cover;
+        }
+        .home-card-wide > .mdl-card__menu {
+            color: #fff;
+        }
+        .home-card-square.mdl-card {
+            width: 320px;
+            height: 270px;
+        }
+        .home-card-square > .mdl-card__title {
+            color: #fff;
+            background: url('http://www.dailytexanonline.com/sites/default/files/styles/article_main_image/public/images/2015/02/UTLogo_CourtesyofUTAustin.png?itok=FnhM7PYh') center / cover;
+        }
+        body {
+            background-color: rgb(136, 136, 136);
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <h1 align="center">Home</h1>
+    <br/>
+    <br/>
+    <br/>
+    <div class="content-grid mdl-grid">
+        <div class="mdl-cell">
+            <center>
+                <div class="home-card-wide mdl-card mdl-shadow--8dp">
+                    <div class="mdl-author-card__title">
+                        <h2 class="mdl-author-card__title-text"></h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        Authors
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a href="/author_list" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        Detailed Author View
+                        </a>
+                    </div>
+                </div>
+            </center>
+        </div>
+        <div class="mdl-cell">
+            <center>
+                <div class="home-card-wide mdl-card mdl-shadow--8dp">
+                    <div class="mdl-book-card__title">
+                        <h2 class="mdl-book-card__title-text"></h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        Books
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a href="/book_list" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        Detailed Book View
+                        </a>
+                    </div>
+                </div>
+            </center>
+        </div>
+        <div class="mdl-cell">
+            <center>
+                <div class="home-card-wide mdl-card mdl-shadow--8dp">
+                    <div class="mdl-publisher-card__title">
+                        <h2 class="mdl-publisher-card__title-text"></h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        Publisher
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a href="/publisher_list" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        Detailed Publisher View
+                        </a>
+                    </div>
+                </div>
+            </center>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <center>
+        <div class="home-card-square mdl-card mdl-shadow--8dp">
+            <div class="mdl-card__title mdl-card--expand">
+                <h2 class="mdl-card__title-text"></h2>
+            </div>
+            <div class="mdl-card__supporting-text">
+                About Us
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+                <a href="/about" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                View Stats
+                </a>
+            </div>
+        </div>
+    </center>
+{% endblock %}
