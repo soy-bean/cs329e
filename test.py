@@ -1,7 +1,7 @@
 import unittest
 from flask import Flask,render_template
 
-from canja import app
+from app import app
 
 
 class MyTestClass(unittest.TestCase):
