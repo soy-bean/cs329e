@@ -1,7 +1,7 @@
 FILES :=                      \
     .gitignore                \
     .travis.yml               \
-    canja.yaml                \
+    app.yaml                \
     requirements.txt          \
     makefile                  \
     test.py                   \
