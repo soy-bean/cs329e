@@ -16,7 +16,12 @@
   </head>
 
   <body>
-    <a href="/" class="myButton mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary">Home</a>
+  <div align="right">
+    <a href="/" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary">Home</a>
+    <a href="/about" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+      About Us
+    </a>
+  </div>
     <div id="content">{% block content %}{% endblock %}</div>
   </body>
 </html>
