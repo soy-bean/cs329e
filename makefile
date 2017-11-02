@@ -1,11 +1,14 @@
 FILES :=                      \
     .gitignore                \
     .travis.yml               \
-    app.yaml                \
+    app.py                    \
+    app.yaml                  \
+    books.json                \
+    create_db.py              \
+    models.py                 \
     requirements.txt          \
     makefile                  \
     test.py                   \
-    app.py                  \
 
 check:
 	@not_found=0;                                 \

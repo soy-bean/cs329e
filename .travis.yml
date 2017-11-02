@@ -3,7 +3,11 @@ language: python
 python:
     - "3.5"
 
-sudo: false
+addons:
+  postgresql: "9.5"
+
+services:
+  - postgresql
 
 install:
     - pip install --upgrade pip
@@ -14,6 +18,8 @@ before_script:
     - uname -a
     - printenv
     - pip list
+    - psql -c 'create database bookdb;' -U postgres
+
 
 script:
     - date
