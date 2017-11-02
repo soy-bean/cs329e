@@ -26,3 +26,6 @@ script:
     - ls -al
     - make check
     - make test
+
+notifications:
+    slack: cs329e-imdb:zvmrI15PtkbYfF6Lc599CQvG
