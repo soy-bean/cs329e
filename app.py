@@ -35,6 +35,7 @@ def book(id_b):
                 "isbn":"1429961813",
                 "pubdate":"2010-04-01"
         }
+        
         return render_template('book.html',**content)
     else:
         content = {
