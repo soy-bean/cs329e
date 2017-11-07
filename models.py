@@ -7,7 +7,6 @@ from sqlalchemy import create_engine
 
 Base = declarative_base()
 
-
 Book_Author_Junction = Table('book_author', Base.metadata,
     Column('author_id', Integer, ForeignKey('authors.id')),
     Column('book_id', Integer, ForeignKey('book.id'))
@@ -17,6 +16,7 @@ Author_Publisher_Junction = Table('author_publisher', Base.metadata,
     Column('author_id', Integer, ForeignKey('authors.id')),
     Column('publisher_id', Integer, ForeignKey('publisher.id'))
 )
+
 
 class Author(Base):
     __tablename__ = 'authors'
@@ -28,6 +28,7 @@ class Author(Base):
     alma_mater = Column(String(80))
     wiki_link = Column(String(80))
     image_url = Column(String(80))
+    publishers = relationship("Publisher", secondary=Author_Publisher_Junction, back_populates="authors")
 
 class Publisher(Base):
     __tablename__ = 'publishers'
@@ -38,6 +39,7 @@ class Publisher(Base):
     owner = Column(String(80))
     image_url = Column(String(80))
     website = Column(String(80))
+    authors = relationship("Author", secondary=Author_Publisher_Junction, back_populates="publishers")
 
 class Book(Base):
     __tablename__ = 'book'
@@ -48,9 +50,10 @@ class Book(Base):
     pub_date = Column(String(80))
     image_url = Column(String(80))
     description = Column(String('max'))
-    publisher_id = Column(Integer, ForeignKey('publishers.id'))
+    author = relationship("Author", secondary=Book_Author_Junction)
+    publisher_id = Column(Integer, ForeignKey('publisher.id'))
     publisher = relationship("Publisher")
-
+    
 
 
 # Change postgresql://postgres:asd123@localhost/---->postgres<---- to the name of the database you give to your local system
