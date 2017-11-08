@@ -2,44 +2,57 @@
 {% block title %}About{% endblock %}
 {% block head %}
     {{ super() }}
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.min.css">
+        <link rel="stylesheet" href="/static/css/styles.css">
+    </head>
     <style type="text/css">
         .home-card-wide.mdl-card {
             width: 300px;
         }
         .home-card-wide > .mdl-card__title_Jatin {
             color: #fff;
-            height: 400px;
+            height: 350px;
             background: url("{{url_for('static', filename='images/Jkon.jpg')}}") center / cover;
         }
 		.home-card-wide > .mdl-card__title_AndrewC {
             color: #fff;
-            height: 400px;
+            height: 350px;
             background: url("{{url_for('static', filename='images/AndrewC.jpg')}}") center / cover;
         }
 		.home-card-wide > .mdl-card__title_AndrewR {
             color: #fff;
-            height: 400px;
+            height: 350px;
             background: url("{{url_for('static', filename='images/AndrewR.jpg')}}") center / cover;
         }
 		.home-card-wide > .mdl-card__title_Nancy {
             color: #fff;
-            height: 400px;
+            height: 350px;
             background: url("{{url_for('static', filename='images/nancy.jpg')}}") center / cover;
         }
 		.home-card-wide > .mdl-card__title_Carlos {
             color: #fff;
-            height: 400px;
+            height: 350px;
             background: url("{{url_for('static', filename='images/carlos.JPG')}}") center / cover;
         }
         .home-card-wide > .mdl-card__menu {
             color: #fff;
         }
-		.bgimg {
+        /*html {
+            background-color: rgb(249, 249, 249);
+        }*/
+        p {
+          font-family: "Lato", sans-serif;
+        }
+		/*.bgimg {
 			background-color: rgb(224, 145, 42);
-		}
+		}*/
     </style>
 {% endblock %}
 {% block content %}
+
     <h1 align="center">Team CANJA</h1>
     <br/>
     <br/>

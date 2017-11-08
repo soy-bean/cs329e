@@ -1,24 +1,25 @@
 {% extends "base.html" %}
-{% block title %}Home{% endblock %}
+{% block title %}CANJA{% endblock %}
 {% block head %}
     {{ super() }}
+
     <style type="text/css">
         .home-card-wide.mdl-card {
-            width: 512px;
+            width: 412px;
         }
         .home-card-wide > .mdl-book-card__title {
             color: #fff;
-            height: 270px;
+            height: 220px;
             background: url('https://i.pinimg.com/736x/7f/d3/55/7fd355dbd4e6a975d92491f161df2da7--pictogram-icon-design.jpg') center / cover;
         }
         .home-card-wide > .mdl-author-card__title {
             color: #fff;
-            height: 270px;
+            height: 220px;
             background: url('https://writersedit.com/wp-content/uploads/2016/11/killer-author-bio-2.jpeg') center / cover;
         }
         .home-card-wide > .mdl-publisher-card__title {
             color: #fff;
-            height: 270px;
+            height: 220px;
             background: url('https://i.pinimg.com/236x/11/aa/80/11aa80ea7a507b8674832303e15e93ab--science-web-logo-inspiration.jpg') center / cover;
         }
         .home-card-wide > .mdl-card__menu {
@@ -32,16 +33,24 @@
             color: #fff;
             background: url('http://www.dailytexanonline.com/sites/default/files/styles/article_main_image/public/images/2015/02/UTLogo_CourtesyofUTAustin.png?itok=FnhM7PYh') center / cover;
         }
-        body {
-            background-color: rgb(136, 136, 136);
-        }
+
     </style>
 {% endblock %}
 {% block content %}
-    <h1 align="center">Home</h1>
+
+    <body>
+    <!-- <h1 align="center">Home</h1> -->
+    <div class="logo-font android-slogan">HOME</div>
     <br/>
     <br/>
     <br/>
+    <div class="android-content mdl-layout__content">
+      <a name="top"></a>
+      <div class="android-be-together-section mdl-typography--text-center">
+        <div class="logo-font android-slogan">look at all these books!</div>
+        <div class="logo-font android-sub-slogan">made by canja.fun</div>
+        <br/>
+
     <div class="content-grid mdl-grid">
         <div class="mdl-cell">
             <center>
@@ -49,12 +58,12 @@
                     <div class="mdl-author-card__title">
                         <h2 class="mdl-author-card__title-text"></h2>
                     </div>
-                    <div class="mdl-card__supporting-text">
+                    <!-- <div class="mdl-card__supporting-text">
                         Authors
-                    </div>
+                    </div> -->
                     <div class="mdl-card__actions mdl-card--border">
                         <a href="/author_list" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                        Detailed Author View
+                        Authors
                         </a>
                     </div>
                 </div>
@@ -66,12 +75,12 @@
                     <div class="mdl-book-card__title">
                         <h2 class="mdl-book-card__title-text"></h2>
                     </div>
-                    <div class="mdl-card__supporting-text">
+                    <!-- <div class="mdl-card__supporting-text">
                         Books
-                    </div>
+                    </div> -->
                     <div class="mdl-card__actions mdl-card--border">
                         <a href="/book_list" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                        Detailed Book View
+                        Books
                         </a>
                     </div>
                 </div>
@@ -83,12 +92,12 @@
                     <div class="mdl-publisher-card__title">
                         <h2 class="mdl-publisher-card__title-text"></h2>
                     </div>
-                    <div class="mdl-card__supporting-text">
+                    <!-- <div class="mdl-card__supporting-text">
                         Publisher
-                    </div>
+                    </div> -->
                     <div class="mdl-card__actions mdl-card--border">
                         <a href="/publisher_list" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                        Detailed Publisher View
+                        Publishers
                         </a>
                     </div>
                 </div>
@@ -98,4 +107,5 @@
     <br/>
     <br/>
     <br/>
+  </body>
 {% endblock %}
