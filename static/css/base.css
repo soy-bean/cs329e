@@ -11,17 +11,14 @@
 
 h1 {
     margin: 1em 0 0.5em 0;
-    color: #070707;
+    color: #757575;
     /*font-weight: semibold;*/
     font-family: "Lato", sans-serif;
-    font-size: 36px;
+    font-size: 40px;
     line-height: 42px;
     /*text-transform: uppercase;*/
     /*text-shadow: 0 2px rgb(0, 0, 0), 0 3px #777;*/
 }
-/*body {
-    background-color: rgb(249, 249, 249);
-}*/
 
 .demo-layout-transparent {
     background: url('../assets/demos/transparent.jpg') center / cover;
@@ -33,6 +30,30 @@ h1 {
   color: #070707;
 }
 
+::selection {
+  background-color: #6ab344;
+  color: #fff;
+}
+
+.logo-font {
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+  line-height: 1;
+  color: #767777;
+  font-weight: 500;
+}
+.android-slogan {
+  font-size: 60px;
+  padding-top: 160px;
+}
+
+.android-sub-slogan {
+  font-size: 21px;
+  padding-top: 24px;
+}
+
+ .th{
+   color: #767777
+ }
 .android-header .mdl-layout__drawer-button {
   background: transparent;
   color: #767777;
@@ -69,8 +90,8 @@ h1 {
   width: 100px;
 }
 
-
 .android-navigation .mdl-navigation__link {
+  font-family: "Lato", sans-serif;
   display: inline-block;
   height: 60px;
   line-height: 68px;
@@ -82,12 +103,7 @@ h1 {
     border-bottom: 4px solid #8bc34a;
   }
 
-  .android-slogan {
-    font-size: 60px;
-    padding-top: 160px;
-  }
 
-  .android-sub-slogan {
-    font-size: 21px;
-    padding-top: 24px;
-  }
+.mdl-layout-title{
+  font-size: 60px;
+}
