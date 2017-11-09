@@ -51,7 +51,8 @@ class Book_Authors_Association(Base):
     publisher = relationship(Publisher, backref=backref("publisher_assoc"))
 
 # Change postgresql://postgres:asd123@localhost/---->postgres<---- to the name of the database you give to your local system
-SQLALCHEMY_DATABASE_URI = os.getenv('SQLALCHEMY_DATABASE_URI', 'postgresql://postgres:12345@localhost/postgres')
+# postgresql://DB_USER:PASSWORD@HOST/DATABASE
+SQLALCHEMY_DATABASE_URI = os.getenv('SQLALCHEMY_DATABASE_URI', 'postgresql://postgres:password@/idbcs329e?host=/cloudsql/cs329-184115:us-central1:idbcs329e')
 engine = create_engine(SQLALCHEMY_DATABASE_URI)
 
 Base.metadata.drop_all(engine)
