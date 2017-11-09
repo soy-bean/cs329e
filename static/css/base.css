@@ -19,7 +19,9 @@ h1 {
     /*text-transform: uppercase;*/
     /*text-shadow: 0 2px rgb(0, 0, 0), 0 3px #777;*/
 }
-
+a{
+  color: #767777;
+}
 .demo-layout-transparent {
     background: url('../assets/demos/transparent.jpg') center / cover;
 }

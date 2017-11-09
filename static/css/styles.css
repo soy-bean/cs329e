@@ -172,7 +172,7 @@ a img{
 
 .android-be-together-section {
   position: relative;
-  height: 800px;
+  height: 1000px;
   width: auto;
   background-color: #f3f3f3;
   background: url('images/slide01.jpg') center 30% no-repeat;
@@ -201,7 +201,7 @@ a img{
   padding-top: 400px;
 }
 
-  .android-create-character a {
+  .android-create-character {
     text-decoration: none;
     color: #767777;
     font-weight: 300;
