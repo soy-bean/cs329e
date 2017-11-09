@@ -1,6 +1,11 @@
 import logging
 import subprocess
 import json
+from flask import Flask, render_template, request, url_for
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from models import *
+from create_db import create_books, session
 
 from flask import Flask, render_template
 
@@ -10,9 +15,15 @@ app = Flask(__name__)
 def home():
     return render_template('splash.html')
 
-@app.route('/<page>/')
-def anypage(page):
-    return render_template(page+'.html')
+# @app.route('/<page>/')
+# def anypage(page):
+#     return render_template(page+'.html')
+
+@app.route('/booklist')
+def bookList():
+    books = session.query(Book).all()
+    return render_template('book_list.html', books = books)
+
 
 @app.route('/unit_tests')
 def unit_tests():
