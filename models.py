@@ -2,59 +2,53 @@ import sys
 import os
 from sqlalchemy import Column, ForeignKey, Integer, String, Table
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import relationship, backref
 from sqlalchemy import create_engine
 
 Base = declarative_base()
 
-Book_Author_Junction = Table('book_author', Base.metadata,
-    Column('author_id', Integer, ForeignKey('authors.id')),
-    Column('book_id', Integer, ForeignKey('book.id'))
-)
-
-Author_Publisher_Junction = Table('author_publisher', Base.metadata,
-    Column('author_id', Integer, ForeignKey('authors.id')),
-    Column('publisher_id', Integer, ForeignKey('publisher.id'))
-)
-
-
 class Author(Base):
     __tablename__ = 'authors'
     id = Column(Integer, primary_key=True)
-    name = Column(String(80), nullable=False)
-    birth = Column(String(80))
-    education = Column(String(80))
-    nationality = Column(String(80))
-    alma_mater = Column(String(80))
-    wiki_link = Column(String(80))
-    image_url = Column(String(80))
-    publishers = relationship("Publisher", secondary=Author_Publisher_Junction, back_populates="authors")
+    name = Column(String(), nullable=False)
+    birth = Column(String())
+    education = Column(String())
+    nationality = Column(String())
+    alma_mater = Column(String())
+    wiki_link = Column(String())
+    image_url = Column(String())
+    books = relationship('Book', secondary='book_author_association')
 
 class Publisher(Base):
     __tablename__ = 'publishers'
     id = Column(Integer, primary_key=True)
-    name = Column(String(80), nullable=False)
-    wiki_link = Column(String(80))
-    description = Column(String('max'))
-    owner = Column(String(80))
-    image_url = Column(String(80))
-    website = Column(String(80))
-    authors = relationship("Author", secondary=Author_Publisher_Junction, back_populates="publishers")
+    name = Column(String(), nullable=False)
+    wiki_link = Column(String())
+    description = Column(String())
+    owner = Column(String())
+    image_url = Column(String())
+    website = Column(String())
 
 class Book(Base):
     __tablename__ = 'book'
     id = Column(Integer, primary_key=True)
-    title = Column(String(80), nullable=False)
-    google_id = Column(String(80), nullable=False)
-    isbn = Column(String(80), nullable=False)
-    pub_date = Column(String(80))
-    image_url = Column(String(80))
-    description = Column(String('max'))
-    author = relationship("Author", secondary=Book_Author_Junction)
-    publisher_id = Column(Integer, ForeignKey('publisher.id'))
-    publisher = relationship("Publisher")
-    
+    title = Column(String(), nullable=False)
+    google_id = Column(String())
+    isbn = Column(String())
+    pub_date = Column(String())
+    image_url = Column(String())
+    description = Column(String())
+    authors = relationship('Author', secondary='book_author_association')
+    publisher = relationship('Publisher', secondary='book_author_association')
 
+class Book_Authors_Association(Base):
+    __tablename__ = 'book_author_association'
+    id_book = Column(Integer, ForeignKey('book.id'), primary_key=True)
+    id_author = Column(Integer, ForeignKey('authors.id'), primary_key=True)
+    id_publisher = Column(Integer, ForeignKey('publishers.id'), primary_key=True)
+    book = relationship(Book, backref=backref("author_assoc"))
+    author = relationship(Author, backref=backref("book_assoc"))
+    publisher = relationship(Publisher, backref=backref("publisher_assoc"))
 
 # Change postgresql://postgres:asd123@localhost/---->postgres<---- to the name of the database you give to your local system
 SQLALCHEMY_DATABASE_URI = os.getenv('SQLALCHEMY_DATABASE_URI', 'postgresql://postgres:asd123@localhost/postgres')

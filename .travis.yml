@@ -18,7 +18,7 @@ before_script:
     - uname -a
     - printenv
     - pip list
-    - psql -c 'create database bookdb;' -U postgres
+    - psql -c 'create database postgres;' -U postgres
 
 
 script:
