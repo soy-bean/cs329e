@@ -185,11 +185,32 @@
     <br/>
     <br/>
     <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="http://flask.pocoo.org/">Flask</a>
+    <br>
+    <br>
     <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="https://getmdl.io/">Material Design</a>
+	<br>
+	<br>
+	<a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="https://www.sqlalchemy.org/">SQLAlchemy</a>
+	<br>
+	<br>
+	<a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="https://www.postgresql.org/">PostgresSQL</a>
     <br/>
     <br/>
     <br/>
     <br/>
+	<h2 align="center">Tests</h2>
+	<a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="Unit_Test" href="/unit_tests">Click here to run our unit tests!</a>
+	<div id="result">
+		
+	</div>
+	<script type="text/javascript">
+		output = '';
+		$('Unit_Test').click()({
+
+		})
+		var div = document.getElementById('result');
+		div.innerHTML += output;
+	</script>
     </div>
     </center>
     <br/>
