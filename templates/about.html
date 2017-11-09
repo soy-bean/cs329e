@@ -199,7 +199,18 @@
     <br/>
     <br/>
 	<h2 align="center">Tests</h2>
-	<a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="">Click here to run our unit tests!</a>
+	<a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="Unit_Test" href="/unit_tests">Click here to run our unit tests!</a>
+	<div id="result">
+		
+	</div>
+	<script type="text/javascript">
+		output = '';
+		$('Unit_Test').click()({
+
+		})
+		var div = document.getElementById('result');
+		div.innerHTML += output;
+	</script>
     </div>
     </center>
     <br/>

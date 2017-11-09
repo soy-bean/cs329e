@@ -1,4 +1,6 @@
 import logging
+import subprocess
+import json
 
 from flask import Flask, render_template
 
@@ -11,6 +13,11 @@ def home():
 @app.route('/<page>/')
 def anypage(page):
     return render_template(page+'.html')
+
+@app.route('/unit_tests')
+def unit_tests():
+  output = subprocess.getoutput("python test.py")
+  return json.dumps({'output': str(output)})
 
 @app.route('/book/<int:id_b>')
 def book(id_b):
