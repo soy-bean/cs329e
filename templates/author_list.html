@@ -23,11 +23,11 @@
             {% else %}
                 {% for i in authors %}
                     <tr>
-                        <td class="mdl-data-table__cell--non-numeric"><a href={{ url_for('author',id_a=1) }} class="mdl-button">{{i.name}}</a></td>
+                        <td class="mdl-data-table__cell--non-numeric"><a href={{ url_for('author',id_a=i.id) }} class="mdl-button">{{i.name}}</a></td>
                     {% if i.image_url != None %}
-                        <td class="mdl-data-table__cell--non-numeric"><a href={{ url_for('author',id_a=1) }} class="mdl-button">{{i.image_url}}</a></td>
+                        <td class="mdl-data-table__cell--non-numeric"><a href={{ url_for('author',id_a=i.id) }} class="mdl-button">{{i.image_url}}</a></td>
                     {% else %}
-                        <td class="mdl-data-table__cell--non-numeric"><a href={{ url_for('author',id_a=1) }} class="mdl-button">None</a></td>
+                        <td class="mdl-data-table__cell--non-numeric"><a href={{ url_for('author',id_a=i.id) }} class="mdl-button">None</a></td>
                     </tr>
                     {% endif %}
                 {% endfor %}

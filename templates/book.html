@@ -24,42 +24,42 @@
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
           <link rel="stylesheet" href="/static/css/styles.css">
       </head>
-    <div align="center" class="mdl-grid">
-        <div align="center" class="mdl-cell mdl-cell--6-col">
-            <div class="home-card-wide mdl-card mdl-shadow--8dp">
-                <div class="mdl-card__title"></div>
+    {% for i in book %}
+        <center>
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--6-col">
+                    <div class="home-card-wide mdl-card mdl-shadow--8dp">
+                        <div class="mdl-card__title"></div>
+                    </div>
+                </div>
+                <div class="mdl-cell mdl-cell--6-col">
+                    <div class="home-card-wide mdl-card mdl-shadow--8dp">
+                        <div class="mdl-card__supporting-text">
+                            <h3><b>{{i.title}}</b></h3>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            <h4>{{i.google_id}}</h4>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            <h4>{{i.description}}</h4>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            <h4>{{i.isbn}}</h4>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            <h4>{{i.pub_date}}</h4>
+                        </div>
+                        <div class="mdl-card__actions mdl-card--border">
+                            <a href={{i.wiki_link}} class="mdl-button mdl-js-rimdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary">Click here to learn more!</a>
+                        </div>
+                        <div class="mdl-card__menu">
+                            <button href={{i.image_url}} class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-		<div align="center" class="mdl-cell mdl-cell--6-col">
-            <div class="home-card-wide mdl-card mdl-shadow--8dp">
-                <div class="mdl-card__supporting-text">
-                <h3><b>{{title}}</b></h3>
-                </div>
-                <div class="mdl-card__actions mdl-card--border">
-                    <div class="mdl-card__supporting-text">
-                        <p><b>Description:</b>{{description}}</p>
-                    </div>
-                </div>
-                <div class="mdl-card__actions mdl-card--border">
-                    <div class="mdl-card__supporting-text">
-                        <p><b>Google ID:</b>{{googleid}}</p>
-                    </div>
-                </div>
-                <div class="mdl-card__actions mdl-card--border">
-                    <div class="mdl-card__supporting-text">
-                        <p><b>ISBN:</b>{{isbn}}</p>
-                    </div>
-                </div>
-                <div class="mdl-card__actions mdl-card--border">
-                    <div class="mdl-card__supporting-text">
-                        <p><b>Publication Date:</b>{{pubdate}}</p>
-                    </div>
-                </div>
-                <div class="mdl-card__actions mdl-card--border">
-                    <a href={{ url_for('author',id_a=id_b) }} class="mdl-button mdl-js-rimdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Author</a><a href={{ url_for('publisher',id_p=id_b) }} class="mdl-button mdl-js-rimdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Publisher</a>
-                </div>
-            </div>
-        </div>
-    </div>
+        </center>
+    {% endfor %}
     </center>
 {% endblock %}

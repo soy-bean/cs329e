@@ -22,7 +22,7 @@
             {% else %}
                 {% for i in publishers %}
                     <tr>
-                        <td class="mdl-data-table__cell--non-numeric"><a href={{ url_for('publisher',id_p=1) }} class="mdl-button">{{i.name}}</a></td>
+                        <td class="mdl-data-table__cell--non-numeric"><a href={{ url_for('publisher',id_p=i.id) }} class="mdl-button">{{i.name}}</a></td>
                     </tr>
                 {% endfor %}
             {% endif %}

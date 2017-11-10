@@ -26,7 +26,7 @@
                 {% else %}
                     {% for i in books %}
                             <tr>
-                            <td class="mdl-data-table__cell--non-numeric"><a href={{ url_for('book',id_b=1) }} class="mdl-button">{{i.title}}</a></td>
+                            <td class="mdl-data-table__cell--non-numeric"><a href={{ url_for('book',id_b=i.id) }} class="mdl-button">{{i.title}}</a></td>
                             <td><a href={{ url_for('author',id_a=1) }}>{{i.authors.name}}</a></td>
                             <td><a href={{ url_for('publisher',id_p=1) }}>{{i.publisher.name}}</a></td>
                             <td><a href={{ url_for('author',id_a=1) }}>{{i.google_id}}</a></td>
