@@ -67,15 +67,15 @@ class MyTestClass(unittest.TestCase):
         self.assertEqual(result.status_code, 404)
 
     def test_source_insert_1(self):
-        s = Book(id='20', title = 'C++')
+        s = Book(id='20000', title = 'C++')
         session.add(s)
         session.commit()
 
 
-        r = session.query(Book).filter_by(id = '20').one()
-        self.assertEqual(str(r.id), '20')
+        r = session.query(Book).filter_by(id = '20000').one()
+        self.assertEqual(str(r.id), '20000')
 
-        session.query(Book).filter_by(id = '20').delete()
+        session.query(Book).filter_by(id = '20000').delete()
         session.commit()
 
 
