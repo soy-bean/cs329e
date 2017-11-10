@@ -52,7 +52,7 @@ class Book_Authors_Association(Base):
 
 # Change postgresql://postgres:asd123@localhost/---->postgres<---- to the name of the database you give to your local system
 # postgresql://DB_USER:PASSWORD@HOST/DATABASE
-SQLALCHEMY_DATABASE_URI = os.getenv('SQLALCHEMY_DATABASE_URI', 'postgresql://postgres:password@localhost/postgres')
+SQLALCHEMY_DATABASE_URI = os.getenv('SQLALCHEMY_DATABASE_URI', 'postgresql://postgres:12345@localhost/postgres')
 engine = create_engine(SQLALCHEMY_DATABASE_URI)
 
 Base.metadata.drop_all(engine)
