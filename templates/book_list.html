@@ -27,10 +27,14 @@
                     {% for i in books %}
                             <tr>
                             <td class="mdl-data-table__cell--non-numeric"><a href={{ url_for('book',id_b=1) }} class="mdl-button">{{i.title}}</a></td>
-                            <td><a href={{ url_for('author',id_a=1) }}>{{i.authors}}</a></td>
-                            <td><a href={{ url_for('publisher',id_p=1) }}>{{i.publisher}}</a></td>
+                            <td><a href={{ url_for('author',id_a=1) }}>{{i.authors.name}}</a></td>
+                            <td><a href={{ url_for('publisher',id_p=1) }}>{{i.publisher.name}}</a></td>
                             <td><a href={{ url_for('author',id_a=1) }}>{{i.google_id}}</a></td>
-                            <td><a href={{ url_for('publisher',id_p=1) }}>{{i.image_url}}</a></td>
+                            {% if i.image_url == None %}
+                                <td><a>Nothing</a></td>
+                            {% else %}
+                                <td><a href="google.com">Image Link</a></td>
+                            {% endif %}
                             </tr>
                     {% endfor %}
                 {% endif %}

@@ -17,15 +17,15 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                <td class="mdl-data-table__cell--non-numeric"><a href={{ url_for('publisher',id_p=1) }} class="mdl-button">Pottermore</a></td>
-                </tr>
-                <tr>
-                <td class="mdl-data-table__cell--non-numeric"><a href={{ url_for('publisher',id_p=2) }} class="mdl-button">Palgrave Macmillan</a></td>
-                </tr>
-                <tr>
-                <td class="mdl-data-table__cell--non-numeric"><a href={{ url_for('publisher',id_p=3) }} class="mdl-button">Penguin Group</a></td>
-                </tr>
+            {% if publishers == [] %}
+                <p>No publishers exist</p>         
+            {% else %}
+                {% for i in publishers %}
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric"><a href={{ url_for('publisher',id_p=1) }} class="mdl-button">{{i.name}}</a></td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
             </tbody>
         </table>
     </center>

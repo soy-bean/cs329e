@@ -17,16 +17,18 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                <td class="mdl-data-table__cell--non-numeric"><a href={{ url_for('author',id_a=1) }} class="mdl-button">J.K. Rowling</a></td>
-                </tr>
-                <tr>
-                <td class="mdl-data-table__cell--non-numeric"><a href={{ url_for('author',id_a=2) }} class="mdl-button">Palgrave Macmillan</a></td>
-                </tr>
-                <tr>
-                <td class="mdl-data-table__cell--non-numeric"><a href={{ url_for('author',id_a=3) }} class="mdl-button">Patrick Rothfuss</a></td>
-                </tr>
+            {% if authors == [] %}
+                <p>No authors exist</p>         
+            {% else %}
+                {% for i in authors %}
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric"><a href={{ url_for('author',id_a=1) }} class="mdl-button">{{i.name}}</a></td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
             </tbody>
         </table>
     </center>
+    <br/>
+    <br/>
 {% endblock %}

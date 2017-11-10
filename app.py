@@ -15,9 +15,23 @@ app = Flask(__name__)
 def home():
     return render_template('splash.html')
 
-# @app.route('/<page>/')
-# def anypage(page):
-#     return render_template(page+'.html')
+@app.route('/<page>/')
+def anypage(page):
+    if page == 'booklist':
+        books = session.query(Book).all()
+        return render_template('book_list.html', books = books)
+    elif page == 'publisherlist':
+        publishers = session.query(Publisher).distinct(Publisher.name).all()
+        return render_template('publisher_list.html', publishers = publishers)
+    elif page == 'authorlist':
+        authors = session.query(Author).distinct(Author.name).all()
+        return render_template('author_list.html', authors = authors)
+    return render_template(page+'.html')
+
+# @app.route('/authors/<name>/')
+# def authorpage(name):
+#     author = session.query(Authors).filter(Authors.name = name)
+#     return render_template('author.html', author = author)
 
 @app.route('/booklist')
 def bookList():
