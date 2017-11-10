@@ -78,6 +78,30 @@ class MyTestClass(unittest.TestCase):
         session.query(Book).filter_by(id = '20000').delete()
         session.commit()
 
+    def test_source_insert_2(self):
+        s = Book(id='20001', title = 'Ruby on Rails')
+        session.add(s)
+        session.commit()
+
+
+        r = session.query(Book).filter_by(id = '20001').one()
+        self.assertEqual(str(r.id), '20001')
+
+        session.query(Book).filter_by(id = '20001').delete()
+        session.commit()
+
+    def test_source_insert_3(self):
+        s = Book(id='20002', title = 'Erlang')
+        session.add(s)
+        session.commit()
+
+
+        r = session.query(Book).filter_by(id = '20002').one()
+        self.assertEqual(str(r.id), '20002')
+
+        session.query(Book).filter_by(id = '20002').delete()
+        session.commit()
+
 
 if __name__ == '__main__':
   unittest.main()

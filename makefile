@@ -29,6 +29,12 @@ check:
     fi;                                           \
     echo "success";
 
+models.html:
+	$(PYDOC) -w models
+
+IDB2.log:
+	git log > IDB2.log
+
 clean:
 	rm -f  .coverage
 	rm -f  *.pyc
