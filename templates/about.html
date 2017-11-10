@@ -36,7 +36,7 @@
             color: #fff;
         }
         li, h2, p {
-          color: #757575;
+          color: #263238;
         }
 		/*.bgimg {
 			background-color: rgb(224, 145, 42);
@@ -162,39 +162,56 @@
     <center>
     <div class="bgimg" style="color:rgb(255, 255, 255)">
     <br/>
-	<h2 align="center">Group Stats</h2>
-	<p><strong>Total Number of commits:</strong> 66</p>
-	<p><strong>Total Number of issues:</strong> 16</p>
-	<p><strong>Total Number of unit tests:</strong> 1</p>
-    <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" href="https://github.com/arr3385/cs329e-idb/issues">GitHub Issue Tracker</a>
-    <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" href="https://github.com/arr3385/cs329e-idb">GitHub Repo</a>
-    <br/>
-    <br/>
-    <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="https://github.com/arr3385/cs329e-idb/wiki/Technical-Report">GitHub Wiki</a>
 
-	<h2 align="center">Data &amp; Tools</h2>
-    <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" href="http://www.cs.utexas.edu/~fares/cs329ef17/CS%20373_files/tutorials/books.json">Data source</a>
-    <br/>
-    <br/>
-    <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="http://flask.pocoo.org/">Flask</a>
-    <br>
-    <br>
-    <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="https://getmdl.io/">Material Design</a>
-	<br>
-	<br>
-	<a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="https://www.sqlalchemy.org/">SQLAlchemy</a>
-	<br>
-	<br>
-	<a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="https://www.postgresql.org/">PostgresSQL</a>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-	<h2 align="center">Tests</h2>
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--4-col">
+        <h2 align="center">Group Stats</h2>
+      	<p><strong>Total Number of commits:</strong> 66</p>
+      	<p><strong>Total Number of issues:</strong> 16</p>
+      	<p><strong>Total Number of unit tests:</strong> 1</p>
+          <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" href="https://github.com/arr3385/cs329e-idb/issues">GitHub Issue Tracker</a>
+          <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" href="https://github.com/arr3385/cs329e-idb">GitHub Repo</a>
+          <br/>
+          <br/>
+          <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="https://github.com/arr3385/cs329e-idb/wiki/Technical-Report">GitHub Wiki</a>
+          <br/>
+          <br/>
+          <br/>
+      </div>
+      <div class="mdl-cell mdl-cell--4-col">
+        <h2 align="center">Data &amp; Tools</h2>
+          <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" href="http://www.cs.utexas.edu/~fares/cs329ef17/CS%20373_files/tutorials/books.json">Data source</a>
+          <br/>
+          <br/>
+          <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="http://flask.pocoo.org/">Flask</a>
+          <br>
+          <br>
+          <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="https://getmdl.io/">Material Design</a>
+      	<br>
+      	<br>
+      	<a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="https://www.sqlalchemy.org/">SQLAlchemy</a>
+      	<br>
+      	<br>
+      	<a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="https://www.postgresql.org/">PostgresSQL</a>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+    </div>
+      <div class="mdl-cell mdl-cell--4-col">
+
+      	<h2 align="center">Tests</h2>
+      	<a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="Unit_Test" href="/unit_tests">Click here to run our unit tests!</a>
+      	<div id="result">
+      </div>
+    </div>
+
+
+	<!-- <h2 align="center">Tests</h2>
 	<a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="Unit_Test" href="/unit_tests">Click here to run our unit tests!</a>
 	<div id="result">
 
-	</div>
+	</div> -->
 	<script type="text/javascript">
 		output = '';
 		$('Unit_Test').click()({
