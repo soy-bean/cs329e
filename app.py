@@ -17,13 +17,13 @@ def home():
 
 @app.route('/<page>/')
 def anypage(page):
-    if page == 'booklist':
+    if page == 'books':
         books = session.query(Book).all()
         return render_template('book_list.html', books = books)
-    elif page == 'publisherlist':
+    elif page == 'publishers':
         publishers = session.query(Publisher).distinct(Publisher.name).all()
         return render_template('publisher_list.html', publishers = publishers)
-    elif page == 'authorlist':
+    elif page == 'authors':
         authors = session.query(Author).distinct(Author.name).all()
         return render_template('author_list.html', authors = authors)
     return render_template(page+'.html')
