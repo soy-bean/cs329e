@@ -5,9 +5,6 @@
     top: 10px;
     right: 10px;
 }
-html {
-  background-color: rgb(112, 112, 112);
-}
 
 h1 {
     margin: 1em 0 0.5em 0;
@@ -19,17 +16,30 @@ h1 {
     /*text-transform: uppercase;*/
     /*text-shadow: 0 2px rgb(0, 0, 0), 0 3px #777;*/
 }
-a{
-  color: #767777;
+
+a:hover {
+  color: #bbb9ea;
 }
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.mdl-navigation__link--{font}{
+  font-family: "Lato", sans-serif;
+  color: #6ab344;
+}
+
 .demo-layout-transparent {
     background: url('../assets/demos/transparent.jpg') center / cover;
 }
+
 .demo-layout-transparent .mdl-layout__header,
 .demo-layout-transparent .mdl-layout__drawer-button {
   /* This background is dark, so we set text to white. Use 87% black instead if
      your background is light. */
-  color: #070707;
+  color: #767777;
 }
 
 ::selection {
@@ -53,31 +63,6 @@ a{
   padding-top: 24px;
 }
 
- .th{
-   color: #767777
- }
-.android-header .mdl-layout__drawer-button {
-  background: transparent;
-  color: #767777;
-}
-
-.android-header .mdl-navigation__link {
-  color: #757575;
-  font-weight: 700;
-  font-size: 14px;
-}
-
-.android-navigation-container {
-  /* Simple hack to make the overflow happen to the left instead... */
-  direction: rtl;
-  -webkit-order: 1;
-      -ms-flex-order: 1;
-          order: 1;
-  width: 500px;
-  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
-      width 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 .android-navigation {
   /* ... and now make sure the content is actually LTR */
   direction: ltr;
@@ -85,11 +70,6 @@ a{
       -ms-flex-pack: end;
           justify-content: flex-end;
   width: 800px;
-}
-
-.android-search-box.is-focused + .android-navigation-container {
-  opacity: 0;
-  width: 100px;
 }
 
 .android-navigation .mdl-navigation__link {
@@ -101,11 +81,19 @@ a{
   border-bottom: 4px solid transparent;
 }
 
-  .android-navigation .mdl-navigation__link:hover {
-    border-bottom: 4px solid #8bc34a;
+
+/*Title*/
+  .ml16 {
+    color: #402d2d;
+    padding: 40px 0;
+    font-weight: 800;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+    overflow: hidden;
   }
 
-
-.mdl-layout-title{
-  font-size: 60px;
-}
+  .ml16 .letter {
+    display: inline-block;
+    line-height: 1em;
+  }
