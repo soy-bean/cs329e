@@ -1,6 +1,11 @@
 import logging
-
-from flask import Flask, render_template
+import subprocess
+import json
+from flask import Flask, render_template, request, url_for
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from models import *
+from create_db import create_books, session
 
 app = Flask(__name__)
 
@@ -10,10 +15,36 @@ def home():
 
 @app.route('/<page>/')
 def anypage(page):
+    if page == 'books':
+        books = session.query(Book).all()
+        return render_template('book_list.html', books = books)
+    elif page == 'publishers':
+        publishers = session.query(Publisher).distinct(Publisher.name).all()
+        return render_template('publisher_list.html', publishers = publishers)
+    elif page == 'authors':
+        authors = session.query(Author).distinct(Author.name).all()
+        return render_template('author_list.html', authors = authors)
     return render_template(page+'.html')
+
+# @app.route('/authors/<name>/')
+# def authorpage(name):
+#     author = session.query(Authors).filter(Authors.name = name)
+#     return render_template('author.html', author = author)
+
+@app.route('/booklist')
+def bookList():
+    books = session.query(Book).all()
+    return render_template('book_list.html', books = books)
+
+
+@app.route('/unit_tests')
+def unit_tests():
+  output = subprocess.getoutput("python test.py")
+  return json.dumps({'output': str(output)})
 
 @app.route('/book/<int:id_b>')
 def book(id_b):
+<<<<<<< HEAD
     if id_b == 1:
         content = {
                 "id_b":"1",
@@ -48,81 +79,20 @@ def book(id_b):
                 "pubdate":"2011-03-01"
         }
         return render_template('book.html',**content)
+=======
+    book = session.query(Book).filter(Book.id == id_b).all()
+    return render_template('book.html',book=book)
+>>>>>>> f3d8a9f96c5631abf4f268533a2f742a17ab13a6
 
 @app.route('/author/<int:id_a>')
 def author(id_a):
-    if id_a == 1:
-        content = {
-                "id_a":"1",
-                "cover":"http://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/J._K._Rowling_2010.jpg/220px-J._K._Rowling_2010.jpg",
-                "name":"J.K. Rowling",
-                "description":"Joanne 'Jo' Rowling, OBE, FRSL, pen names J. K. Rowling and Robert Galbraith, is a British novelist, screenwriter and film producer best known as the author of the Harry Potter fantasy series.",
-                "dob":"1956-07-31",
-                "nationality":"British",
-                "alma_mater":"University of Exeter",
-                "wiki":"https://en.wikipedia.org/wiki/J._K._Rowling"
-        }
-        return render_template('author.html',**content)
-    elif id_a == 2:
-        content = {
-                "id_a":"2",
-                "cover":"http://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Brandon_Sanderson_sign.jpg/250px-Brandon_Sanderson_sign.jpg",
-                "name":"Brandon Sanderson",
-                "description":"Brandon Sanderson is an American fantasy and science fiction writer. He is best known for his Mistborn series and his work in finishing Robert Jordan's epic fantasy series The Wheel of Time.",
-                "dob":"1975-12-19",
-                "nationality":"American",
-                "alma_mater":"Brigham Young University",
-                "wiki":"https://en.wikipedia.org/wiki/Brandon_Sanderson"
-        }
-        return render_template('author.html',**content)
-    else:
-        content = {
-                "id_a":"3",
-                "cover":"http://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Patrick-rothfuss-2014-kyle-cassidy.jpg/250px-Patrick-rothfuss-2014-kyle-cassidy.jpg",
-                "name":"Patrick Rothfuss",
-                "description":"Patrick James Rothfuss is an American writer of epic fantasy. He is best known for his projected three-volume series The Kingkiller Chronicle.",
-                "dob":"1973-06-06",
-                "nationality":"American",
-                "alma_mater":"Washington State University",
-                "wiki":"https://en.wikipedia.org/wiki/Patrick_Rothfuss"
-        }
-        return render_template('author.html',**content)
+    author = session.query(Author).filter(Author.id == id_a).all()
+    return render_template('author.html',author=author)
 
 @app.route('/publisher/<int:id_p>')
 def publisher(id_p):
-    if id_p == 1:
-        content = {
-                "id_p":"1",
-                "logo":"http://upload.wikimedia.org/wikipedia/en/thumb/6/6f/Pottermore.png/225px-Pottermore.png",
-                "name":"Pottermore",
-                "description":"Pottermore is the digital publishing, e-commerce, entertainment, and news company from J.K. Rowling and is the global digital publisher of Harry Potter and J.K. Rowling's Wizarding World.",
-                "owner":"J.K. Rowling",
-                "website":"http://www.pottermore.com",
-                "wiki":"https://en.wikipedia.org/wiki/Pottermore"
-        }
-        return render_template('publisher.html',**content)
-    elif id_p == 2:
-        content = {
-                "id_p":"2",
-                "logo":"https://www.nature.com/openresearch/wp-content/blogs.dir/31/files/2015/05/PalMac_logo_CoolGrey11.jpg",
-                "name":"Palgrave Macmillian",
-                "description":"Palgrave Macmillan is an international academic and trade publishing company. Its programme includes textbooks, journals, monographs, professional and reference works in print and online. Palgrave Macmillan was created in 2000 when St.",
-                "owner":"Springer Nature",
-                "website":"http://www.palgrave.com",
-                "wiki":"https://en.wikipedia.org/wiki/Palgrave_Macmillan"
-        }
-        return render_template('publisher.html',**content)
-    else:
-        content = {
-                "id_p":"3",
-                "logo":"http://upload.wikimedia.org/wikipedia/en/thumb/1/1c/Penguin_logo.svg/150px-Penguin_logo.svg.png",
-                "name":"Penguin Group",
-                "description":"The Penguin Group is a trade book publisher, part of Penguin Random House. It is owned by Pearson PLC, the global education and publishing company, and Bertelsmann, the German media conglomerate.",
-                "owner":"Penguin Random House",
-                "website":"http://Penguin.com",
-                "wiki":"https://en.wikipedia.org/wiki/Penguin_Group"
-        }
-        return render_template('publisher.html',**content)
+    publisher = session.query(Publisher).filter(Publisher.id == id_p).all()
+    return render_template('publisher.html',publisher=publisher)
 
 @app.errorhandler(500)
 def server_error(e):

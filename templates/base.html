@@ -1,27 +1,165 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-      {% block head %}
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="description" content="">
-      <meta name="Canja.fun Team" content="">
+<html lang="en" class="full-height">
+    <head>
+        {% block head %}
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+        <title>{% block title %}{% endblock %} Canja</title>
+    
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+        <!-- Bootstrap core CSS -->
+        <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    
+        <!-- Material Design Bootstrap -->
+        <link href="../static/css/mdb.min.css" rel="stylesheet">
+    
+        <!-- Template styles -->
+        <style rel="stylesheet">
+            /* TEMPLATE STYLES */
+            /* Necessary for full page carousel*/
+    
+            .full-height,
+            .full-height body,
+            .full-height header,
+            .full-height header .view, 
+            .full-height body .view {
+                height: 100%; 
+            } 
+    
+            @media (max-width: 740px) {
+                .full-height,
+                .full-height body,
+                .full-height header,
+                .full-height header .view,
+                .full-height body .view {
+                    height: 700px; 
+                } 
+            }
+            
+            @media (min-width: 1000px) and (max-width: 1025px) {
+                .full-height,
+                .full-height body,
+                .full-height header,
+                .full-height header .view,
+                .full-height body .view {
+                    height: 770px; 
+                } 
+            }
+            
+            .navbar {
+                background-color: rgb(80, 80, 80);
+            }
+            
+            .scrolling-navbar {
+                -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
+                -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
+                transition: background .5s ease-in-out, padding .5s ease-in-out;
+            }
+            
+            .top-nav-collapse {
+                background-color: #1C2331;
+            }
+            
+            footer.page-footer {
+                background-color: #1C2331;
+                margin-top: 0;
+            }
+            
+            @media only screen and (max-width: 768px) {
+                .navbar {
+                    background-color: #1C2331;
+                }
+            }
+            /* Carousel*/
+            
+            .flex-center {
+                color: #fff;
+            }
+            
+            .carousel-caption {
+                height: 100%;
+                padding-top: 7rem;
+            }
+            .navbar .btn-group .dropdown-menu a:hover {
+                color: #000 !important;
+            }
+            .navbar .btn-group .dropdown-menu a:active {
+                color: #fff !important;
+            }
+        </style>
+        {% endblock %}
+    </head>
 
-      <title>{% block title %}{% endblock %} - Canja</title>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-      <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-      <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-      <link rel="stylesheet" href="../static/css/base.css" />
-      {% endblock %}
-  </head>
+    <body>
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+                <div class="container">
+                    <a class="navbar-brand" href="#">Canja</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/about">About</a>
+                            </li>
+                            <li class="nav-item btn-group">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Models 
+                                </a>
+                                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="/books">Books</a>
+                                    <a class="dropdown-item" href="/authors">Authors</a>
+                                    <a class="dropdown-item" href="/publishers">Publishers</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <form class="form-inline">
+                            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        <!--/.Navbar-->
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
 
-  <body>
-  <div align="right">
-    <a href="/" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary">Home</a>
-    <a href="/about" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-      About Us
-    </a>
-  </div>
-    <div id="content">{% block content %}{% endblock %}</div>
-  </body>
+    </body>
+
+    <footer class="page-footer center-on-small-only mt-0">
+        {% block footer %}
+
+        <div id="footerContent">
+            {% block footerContent %}{% endblock %}
+        </div>
+            <!--Copyright-->
+            <div class="footer-copyright">
+                <div class="container-fluid">
+                    © 2017 Copyright <a> Canja.fun </a>
+                </div>
+            </div>
+            <!--/.Copyright-->
+        {% endblock %}
+    </footer>
+
+    
+    <!-- JQuery -->
+    <script type="text/javascript" src="../static/js/jquery-3.2.1.min.js"></script>
+
+    <!-- Bootstrap dropdown -->
+    <script type="text/javascript" src="../static/js/popper.min.js"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
+
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="../static/js/mdb.min.js"></script>
+    
 </html>

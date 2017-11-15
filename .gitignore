@@ -3,3 +3,8 @@
 .DS_Store
 venv/
 .coverage
+Project3.json
+Project3.schema.json
+Project4.json
+Project4.schema.json
+cloud_sql_proxy

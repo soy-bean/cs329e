@@ -3,7 +3,11 @@ language: python
 python:
     - "3.5"
 
-sudo: false
+addons:
+  postgresql: "9.5"
+
+services:
+  - postgresql
 
 install:
     - pip install --upgrade pip
@@ -15,8 +19,12 @@ before_script:
     - printenv
     - pip list
 
+
 script:
     - date
     - ls -al
     - make check
     - make test
+
+notifications:
+    slack: cs329e-imdb:zvmrI15PtkbYfF6Lc599CQvG

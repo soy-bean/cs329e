@@ -4,6 +4,7 @@
     {{ super() }}
 {% endblock %}
 {% block content %}
+
     <h1 align="center">Author List</h1>
     <br/>
     <br/>
@@ -12,20 +13,28 @@
         <table class="mdl-data-table mdl-js-data-table mdl-shadow--8dp">
             <thead>
                 <tr>
-                <th class="mdl-data-table__cell--non-numeric">Author</th>
+                    <th class="mdl-data-table__cell--non-numeric"><b>Author</b></th>
+                    <th><a><b>Google IDr</b></a></th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                <td class="mdl-data-table__cell--non-numeric"><a href={{ url_for('author',id_a=1) }} class="mdl-button">J.K. Rowling</a></td>
-                </tr>
-                <tr>
-                <td class="mdl-data-table__cell--non-numeric"><a href={{ url_for('author',id_a=2) }} class="mdl-button">Palgrave Macmillan</a></td>
-                </tr>
-                <tr>
-                <td class="mdl-data-table__cell--non-numeric"><a href={{ url_for('author',id_a=3) }} class="mdl-button">Patrick Rothfuss</a></td>
-                </tr>
+            {% if authors == [] %}
+                <p>No authors exist</p>         
+            {% else %}
+                {% for i in authors %}
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric"><a href={{ url_for('author',id_a=i.id) }} class="mdl-button">{{i.name}}</a></td>
+                    {% if i.image_url != None %}
+                        <td class="mdl-data-table__cell--non-numeric"><a href={{ url_for('author',id_a=i.id) }} class="mdl-button">{{i.image_url}}</a></td>
+                    {% else %}
+                        <td class="mdl-data-table__cell--non-numeric"><a href={{ url_for('author',id_a=i.id) }} class="mdl-button">None</a></td>
+                    </tr>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
             </tbody>
         </table>
     </center>
+    <br/>
+    <br/>
 {% endblock %}

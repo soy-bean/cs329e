@@ -1,13 +1,7 @@
-{% extends "list.html" %}
+{% extends "base.html" %}
 {% block title %}Books{% endblock %}
-{% block head %}
-    {{ super() }}
-{% endblock %}
 {% block content %}
-    <h1 align="center">Book List</h1>
-    <br/>
-    <br/>
-    <br/>
+
     <center>
         <table class="mdl-data-table mdl-js-data-table mdl-shadow--8dp">
             <thead>
@@ -15,24 +9,28 @@
                 <th class="mdl-data-table__cell--non-numeric"><b>Book</b></th>
                 <th><a href="/authorlist"><b>Author</b></a></th>
                 <th><a href="/publisherlist"><b>Publisher</b></a></th>
+                <th><a><b>Google IDr</b></a></th>
+                <th><a><b>Image</b></a></th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                <td class="mdl-data-table__cell--non-numeric"><a href={{ url_for('book',id_b=1) }} class="mdl-button">Harry Potter and the Sorcerer's Stone</a></td>
-                <td><a href={{ url_for('author',id_a=1) }}>J.K. Rowling</a></td>
-                <td><a href={{ url_for('publisher',id_p=1) }}>Pottermore</a></td>
-                </tr>
-                <tr>
-                <td class="mdl-data-table__cell--non-numeric"><a href={{ url_for('book',id_b=2) }} class="mdl-button">The Well of Ascension</a></td>
-                <td><a href={{ url_for('author',id_a=2) }}>Brandon Sanderson</a></td>
-                <td><a href={{ url_for('publisher',id_p=2) }}>Palgrave Macmillan</a></td>
-                </tr>
-                <tr>
-                <td class="mdl-data-table__cell--non-numeric"><a href={{ url_for('book',id_b=3) }} class="mdl-button">The Wise Man's Fear</a></td>
-                <td><a href={{ url_for('author',id_a=3) }}>Patrick Rothfuss</a></td>
-                <td><a href={{ url_for('publisher',id_p=3) }}>Penguin Group</a></td>
-                </tr>
+                {% if books == [] %}
+                    <p>No books exist</p>         
+                {% else %}
+                    {% for i in books %}
+                            <tr>
+                            <td class="mdl-data-table__cell--non-numeric"><a href={{ url_for('book',id_b=i.id) }} class="mdl-button">{{i.title}}</a></td>
+                            <td><a href={{ url_for('author',id_a=1) }}>{{i.authors.name}}</a></td>
+                            <td><a href={{ url_for('publisher',id_p=1) }}>{{i.publisher.name}}</a></td>
+                            <td><a href={{ url_for('author',id_a=1) }}>{{i.google_id}}</a></td>
+                            {% if i.image_url == None %}
+                                <td><a>Nothing</a></td>
+                            {% else %}
+                                <td><a href="google.com">Image Link</a></td>
+                            {% endif %}
+                            </tr>
+                    {% endfor %}
+                {% endif %}
             </tbody>
         </table>
     </center>

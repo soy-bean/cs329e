@@ -1,49 +1,51 @@
 {% extends "base.html" %}
 {% block title %}About{% endblock %}
-{% block head %}
+<!-- {% block head %}
     {{ super() }}
+
     <style type="text/css">
         .home-card-wide.mdl-card {
             width: 300px;
         }
         .home-card-wide > .mdl-card__title_Jatin {
             color: #fff;
-            height: 400px;
+            height: 350px;
             background: url("{{url_for('static', filename='images/Jkon.jpg')}}") center / cover;
         }
 		.home-card-wide > .mdl-card__title_AndrewC {
             color: #fff;
-            height: 400px;
+            height: 350px;
             background: url("{{url_for('static', filename='images/AndrewC.jpg')}}") center / cover;
         }
 		.home-card-wide > .mdl-card__title_AndrewR {
             color: #fff;
-            height: 400px;
+            height: 350px;
             background: url("{{url_for('static', filename='images/AndrewR.jpg')}}") center / cover;
         }
 		.home-card-wide > .mdl-card__title_Nancy {
             color: #fff;
-            height: 400px;
+            height: 350px;
             background: url("{{url_for('static', filename='images/nancy.jpg')}}") center / cover;
         }
 		.home-card-wide > .mdl-card__title_Carlos {
             color: #fff;
-            height: 400px;
+            height: 350px;
             background: url("{{url_for('static', filename='images/carlos.JPG')}}") center / cover;
         }
         .home-card-wide > .mdl-card__menu {
             color: #fff;
         }
-		.bgimg {
+        li, h2, p {
+          color: #263238;
+        }
+		/*.bgimg {
 			background-color: rgb(224, 145, 42);
-		}
+		}*/
     </style>
-{% endblock %}
+{% endblock %} -->
 {% block content %}
+
     <h1 align="center">Team CANJA</h1>
-    <br/>
-    <br/>
-    <br/>
 	<center>
         <div class="mdl-grid">
             <div class="mdl-cell mdl-cell--1-col"></div>
@@ -60,9 +62,9 @@
                         </div>
                         <div class="mdl-card__actions mdl-card--border">
                             <p>I'm a Human Development Major wanting to use technology to better understand the world and our place within it. I also work on web development at a cloud consulting firm, Intelligo.</p>
-                            <li>Number of commits: 9</li>
-                            <li>Number of issues: 3</li>
-                            <li>Number of unit tests: 1</li>
+                            <li>Number of commits: 19</li>
+                            <li>Number of issues: 4</li>
+                            <li>Number of unit tests: 10</li>
                         </div>
                     </div>
                 </center>
@@ -80,8 +82,8 @@
                         </div>
                         <div class="mdl-card__actions mdl-card--border">
                             <p>I'm a chemistry major aspiring to be a professional keyboard tapper. I have experience designing and implementing a web-based identity management solution for Edinburg Consolidated Independent School District. My objective is to become a better engineer and break into the industry.
-                            <li>Number of commits: 17</li>
-                            <li>Number of issues: 3</li>
+                            <li>Number of commits: 31</li>
+                            <li>Number of issues: 4</li>
                             <li>Number of unit tests: 1</li>
                         </div>
                     </div>
@@ -100,7 +102,7 @@
                         </div>
                         <div class="mdl-card__actions mdl-card--border">
                             <p>I'm a third year Arts and Entertainment Technologies major trying to get big in concert productions.</p>
-                            <li>Number of commits: 4</li>
+                            <li>Number of commits: 12</li>
                             <li>Number of issues: 3</li>
                             <li>Number of unit tests: 1</li>
                         </div>
@@ -120,8 +122,8 @@
                     </div>
                     <div class="mdl-card__actions mdl-card--border">
                         <p>I'm a phyiscs major beginning my third year here at UT. I'm also working towards completing the Elements of Computing program at UT. My main interest is riding my bike!</p>
-                        <li>Number of commits: 6</li>
-                        <li>Number of issues: 3</li>
+                        <li>Number of commits: 11</li>
+                        <li>Number of issues: 4</li>
                         <li>Number of unit tests: 1</li>
                     </div>
                 </div>
@@ -144,8 +146,8 @@
                         <p>Stop reading. You are just wasting your time.</p>
                         <p>I'm suprised you wasted your team reading this.</p>
                         <p>I told you to stop.</p>
-                        <li>Number of commits: 24</li>
-                        <li>Number of issues: 3</li>
+                        <li>Number of commits: 42</li>
+                        <li>Number of issues: 17</li>
                         <li>Number of unit tests: 1</li>
                     </div>
                 </div>
@@ -157,28 +159,50 @@
     <center>
     <div class="bgimg" style="color:rgb(255, 255, 255)">
     <br/>
-	<h2 align="center">Group Stats</h2>
-	<p><strong>Total Number of commits:</strong> 66</p>
-	<p><strong>Total Number of issues:</strong> 16</p>
-	<p><strong>Total Number of unit tests:</strong> 1</p>
-    <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" href="https://github.com/arr3385/cs329e-idb/issues">GitHub Issue Tracker</a>
-    <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" href="https://github.com/arr3385/cs329e-idb">GitHub Repo</a>
-    <br/>
-    <br/>
-    <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="https://github.com/arr3385/cs329e-idb">GitHub Wiki</a>
 
-	<h2 align="center">Data &amp; Tools</h2>
-    <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" href="http://www.cs.utexas.edu/~fares/cs329ef17/CS%20373_files/tutorials/books.json">Data source</a>
-    <br/>
-    <br/>
-    <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="http://flask.pocoo.org/">Flask</a>
-    <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="https://getmdl.io/">Material Design</a>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--4-col">
+        <h2 align="center">Group Stats</h2>
+      	<p><strong>Total Number of commits:</strong> 125</p>
+      	<p><strong>Total Number of issues:</strong> 35</p>
+      	<p><strong>Total Number of unit tests:</strong> 14</p>
+          <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" href="https://github.com/arr3385/cs329e-idb/issues">GitHub Issue Tracker</a>
+          <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" href="https://github.com/arr3385/cs329e-idb">GitHub Repo</a>
+          <br/>
+          <br/>
+          <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="https://github.com/arr3385/cs329e-idb/wiki/Technical-Report">GitHub Wiki</a>
+          <br/>
+          <br/>
+          <br/>
+      </div>
+      <div class="mdl-cell mdl-cell--4-col">
+        <h2 align="center">Data &amp; Tools</h2>
+          <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" href="http://www.cs.utexas.edu/~fares/cs329ef17/CS%20373_files/tutorials/books.json">Data source</a>
+          <br/>
+          <br/>
+          <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="http://flask.pocoo.org/">Flask</a>
+          <br>
+          <br>
+          <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="https://getmdl.io/">Material Design</a>
+      	<br>
+      	<br>
+      	<a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="https://www.sqlalchemy.org/">SQLAlchemy</a>
+      	<br>
+      	<br>
+      	<a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="https://www.postgresql.org/">PostgresSQL</a>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+    </div>
+      <div class="mdl-cell mdl-cell--4-col">
+
+      	<h2 align="center">Tests</h2>
+      	<a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="Unit_Test" href="/unit_tests">Click here to run our unit tests!</a>
+      	<div id="result">
+      </div>
+    </div>
     </div>
     </center>
-    <br/>
-    <br/>
+
 {% endblock %}

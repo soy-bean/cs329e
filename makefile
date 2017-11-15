@@ -1,11 +1,14 @@
 FILES :=                      \
     .gitignore                \
     .travis.yml               \
-    app.yaml                \
+    app.py                    \
+    app.yaml                  \
+    books.json                \
+    create_db.py              \
+    models.py                 \
     requirements.txt          \
     makefile                  \
     test.py                   \
-    app.py                  \
 
 check:
 	@not_found=0;                                 \
@@ -25,6 +28,12 @@ check:
         exit 1;                                   \
     fi;                                           \
     echo "success";
+
+models.html:
+	$(PYDOC) -w models
+
+IDB2.log:
+	git log > IDB2.log
 
 clean:
 	rm -f  .coverage

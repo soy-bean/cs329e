@@ -1,5 +1,5 @@
 {% extends "item.html" %}
-{% block title %}{{title}}{% endblock %}
+{% block title %}{% endblock %}
 {% block head %}
     {{ super() }}
     <style type="text/css">
@@ -14,47 +14,41 @@
     <br/>
     <br/>
     <br/>
-    <center>
-        <div class="mdl-grid">
-            <div class="mdl-cell mdl-cell--6-col">
-                <div class="home-card-wide mdl-card mdl-shadow--8dp">
-                    <div class="mdl-card__title"></div>
+    {% for i in author %}
+        <center>
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--6-col">
+                    <div class="home-card-wide mdl-card mdl-shadow--8dp">
+                        <div class="mdl-card__title"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="mdl-cell mdl-cell--6-col">
-                <div class="home-card-wide mdl-card mdl-shadow--8dp">
-                    <div class="mdl-card__supporting-text">
-                        <h3><b>{{name}}</b></h3>
-                    </div>
-                    <div class="mdl-card__actions mdl-card--border">
+                <div class="mdl-cell mdl-cell--6-col">
+                    <div class="home-card-wide mdl-card mdl-shadow--8dp">
                         <div class="mdl-card__supporting-text">
-                            <p><b>Description:</b> {{description}} </p>
+                            <h3><b>{{i.name}}</b></h3>
                         </div>
-                    </div>
-                    <div class="mdl-card__actions mdl-card--border">
                         <div class="mdl-card__supporting-text">
-                            <b>Date of Birth:</b>{{dob}}</p>
+                            <h4>{{i.birth}}</h4>
                         </div>
-                    </div>
-                    <div class="mdl-card__actions mdl-card--border">
                         <div class="mdl-card__supporting-text">
-                            <p><b>Nationality:</b> {{nationality}}</p>
+                            <h4>{{i.education}}</h4>
                         </div>
-                    </div>
-                    <div class="mdl-card__actions mdl-card--border">
                         <div class="mdl-card__supporting-text">
-                            <p><b>Alma mater:</b> {{alma_mater}}</p>
+                            <h4>{{i.nationality}}</h4>
                         </div>
-                    </div>
-                    <div class="mdl-card__actions mdl-card--border">
-                        <a href={{wiki}} class="mdl-button mdl-js-rimdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary">Click here to learn more!</a>
-                    </div>
-                    <div class="mdl-card__menu">
-                        <button href={{wiki}} class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                        </button>
+                        <div class="mdl-card__supporting-text">
+                            <h4>{{i.alma_mater}}</h4>
+                        </div>
+                        <div class="mdl-card__actions mdl-card--border">
+                            <a href={{i.wiki_link}} class="mdl-button mdl-js-rimdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary">Click here to learn more!</a>
+                        </div>
+                        <div class="mdl-card__menu">
+                            <button href={{i.image_url}} class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </center>
+        </center>
+    {% endfor %}
 {% endblock %}
