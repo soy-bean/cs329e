@@ -1,14 +1,7 @@
-{% extends "list.html" %}
+{% extends "base.html" %}
 {% block title %}Books{% endblock %}
-{% block head %}
-    {{ super() }}
-{% endblock %}
 {% block content %}
 
-    <h1 align="center">Book List</h1>
-    <br/>
-    <br/>
-    <br/>
     <center>
         <table class="mdl-data-table mdl-js-data-table mdl-shadow--8dp">
             <thead>
@@ -41,6 +34,4 @@
             </tbody>
         </table>
     </center>
-    <br>
-    <br>
 {% endblock %}

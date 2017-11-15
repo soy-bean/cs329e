@@ -1,123 +1,131 @@
 {% extends "base.html" %}
-{% block title %}CANJA{% endblock %}
+{% block title %}Home{% endblock %}
 {% block head %}
     {{ super() }}
-
-    <style type="text/css">
-        .home-card-wide.mdl-card {
-            width: 400px;
-            align-content: center;
-        }
-        .home-card-wide > .mdl-book-card__title {
-            color: #fff;
-            height: 220px;
-            background: url('https://i.pinimg.com/736x/7f/d3/55/7fd355dbd4e6a975d92491f161df2da7--pictogram-icon-design.jpg') center / cover;
-        }
-        .home-card-wide > .mdl-author-card__title {
-            color: #fff;
-            height: 220px;
-            background: url('../static/images/authors.jpg') center / cover;
-        }
-        .home-card-wide > .mdl-publisher-card__title {
-            color: #fff;
-            height: 220px;
-            background: url('../static/images/publish.jpg') center / cover;
-        }
-        .home-card-wide > .mdl-card__menu {
-            color: #fff;
-        }
-        .home-card-square.mdl-card {
-            width: 320px;
-            height: 270px;
-        }
-        .home-card-square > .mdl-card__title {
-            color: #fff;
-            background: url('http://www.dailytexanonline.com/sites/default/files/styles/article_main_image/public/images/2015/02/UTLogo_CourtesyofUTAustin.png?itok=FnhM7PYh') center / cover;
-        }
-
+    <style>
+    .navbar {
+        background-color: transparent;
+    }
     </style>
 {% endblock %}
 {% block content %}
+    <!--Carousel Wrapper-->
+    <div id="video-carousel-example2" class="carousel slide carousel-fade" data-ride="carousel">
+        <!--Indicators-->
+        <ol class="carousel-indicators">
+            <li data-target="#video-carousel-example2" data-slide-to="0" class="active"></li>
+            <li data-target="#video-carousel-example2" data-slide-to="1"></li>
+            <li data-target="#video-carousel-example2" data-slide-to="2"></li>
+        </ol>
+        <!--/.Indicators-->
 
-    <body>
+        <!--Slides-->
+        <div class="carousel-inner" role="listbox">
+            <!--First slide-->
+            <div class="carousel-item active">
+                <!--Mask color-->
+                <div class="view hm-black-light">
 
-    <br/>
-    <!-- <div class="logo-font android-sub-slogan" align="center">Home</div> -->
+                    <!--Video source-->
+                    <video class="video-full" autoplay loop>
+                        <source src="https://mdbootstrap.com/img/video/Tropical.mp4" type="video/mp4" />
+                    </video>
+                    <div class="full-bg-img"></div>
+                </div>
 
-    <div class="mdl-layout mdl-layout__content">
-      <!-- <div class="logo-font android-sub-slogan" align="center">Home</div> -->
-     <!--  <div class="android-content mdl-layout__content">
-      <div class="logo-font android-sub-slogan" align="center">Home</div> -->
-
-      <a name="top"></a>
-      <div class="android-be-together-section mdl-typography--text-center">
-        <!-- <h1 class="ml16">Made with love</h1> -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-        <!-- <p class="logo-font android-slogan">look at all these books!</p> -->
-        <!-- <div class=" ml16 logo-font android-sub-slogan">made with love by canja.fun</div> -->
-        <img src="/static/images/c.jpg" align="center">
-        <br/>
-        <br>
-        <br>
-
-    <div class="content-grid mdl-grid">
-        <div class="mdl-cell">
-            <center>
-                <div class="home-card-wide mdl-card mdl-shadow--8dp">
-                    <div class="mdl-author-card__title">
-                        <h2 class="mdl-author-card__title-text"></h2>
-                    </div>
-                    <!-- <div class="mdl-card__supporting-text">
-                        Authors
-                    </div> -->
-                    <div class="mdl-card__actions mdl-card--border">
-                        <a href="/authors" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                        Authors
-                        </a>
+                <!--Caption-->
+                <div class="carousel-caption">
+                    <div class="flex-center animated fadeIn">
+                        <ul>
+                            <li>
+                                <h1 class="h1-responsive">Welcome to Canja.fun</h1></li>
+                            <li>
+                                <p></p>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://mdbootstrap.com/getting-started/" class="btn btn-primary btn-lg" rel="nofollow">Sign up!</a>
+                                <a target="_blank" href="https://mdbootstrap.com/material-design-for-bootstrap/" class="btn btn-default btn-lg" rel="nofollow">Learn more</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            </center>
-        </div>
-        <div class="mdl-cell">
-            <center>
-                <div class="home-card-wide mdl-card mdl-shadow--8dp">
-                    <div class="mdl-book-card__title">
-                        <h2 class="mdl-book-card__title-text"></h2>
-                    </div>
-                    <!-- <div class="mdl-card__supporting-text">
-                        Books
-                    </div> -->
-                    <div class="mdl-card__actions mdl-card--border">
-                        <a href="/books" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                        Books
-                        </a>
+                <!--Caption-->
+            </div>
+            <!--/First slide-->
+
+            <!--Second slide-->
+            <div class="carousel-item">
+                <!--Mask color-->
+                <div class="view hm-blue-slight">
+                    <!--Video source-->
+                    <video class="video-full" autoplay loop>
+                        <source src="https://mdbootstrap.com/img/video/Lines.mp4" type="video/mp4" />
+                    </video>
+                    <div class="mask"></div>
+                </div>
+
+                <!--Caption-->
+                <div class="carousel-caption">
+                    <div class="flex-center animated fadeInDown">
+                        <ul>
+                            <li>
+                                <h1 class="h1-responsive">Lots of tutorials at your disposal</h1>
+                            </li>
+                            <li>
+                                <p>And all of them are FREE!</p>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://mdbootstrap.com/bootstrap-tutorial/" class="btn btn-primary btn-lg" rel="nofollow">Start learning</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            </center>
-        </div>
-        <div class="mdl-cell">
-            <center>
-                <div class="home-card-wide mdl-card mdl-shadow--8dp">
-                    <div class="mdl-publisher-card__title">
-                        <h2 class="mdl-publisher-card__title-text"></h2>
-                    </div>
-                    <!-- <div class="mdl-card__supporting-text">
-                        Publisher
-                    </div> -->
-                    <div class="mdl-card__actions mdl-card--border">
-                        <a href="/publishers" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                        Publishers
-                        </a>
+                <!--/.Caption-->
+            </div>
+            <!--/Second slide-->
+
+            <!--Third slide-->
+            <div class="carousel-item">
+                <!--Mask color-->
+                <div class="view hm-black-light">
+                    <!--Video source-->
+                    <video class="video-full" autoplay loop>
+                        <source src="https://mdbootstrap.com/img/video/forest.mp4" type="video/mp4" />
+                    </video>
+                    <div class="mask"></div>
+                </div>
+
+                <!--Caption-->
+                <div class="carousel-caption">
+                    <div class="flex-center animated fadeInDown">
+                        <ul>
+                            <li>
+                                <h1 class="h1-responsive">Visit our support forum</h1></li>
+                            <li>
+                                <p>Our community can help you with any question</p>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://mdbootstrap.com/forums/forum/support/" class="btn btn-default btn-lg" rel="nofollow">Support forum</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            </center>
+                <!--/.Caption-->
+            </div>
+            <!--/Third slide-->
         </div>
+        <!--/.Slides-->
+
+        <!--Controls-->
+        <a class="carousel-control-prev" href="#video-carousel-example2" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#video-carousel-example2" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+        <!--/.Controls-->
     </div>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    </br>
-  </body>
+
 {% endblock %}

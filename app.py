@@ -7,8 +7,6 @@ from sqlalchemy.orm import sessionmaker
 from models import *
 from create_db import create_books, session
 
-from flask import Flask, render_template
-
 app = Flask(__name__)
 
 @app.route('/')
