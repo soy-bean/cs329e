@@ -17,64 +17,109 @@ def load_json(filename):
     return jsn
 
 
-def create_books():
+'''
+Publisher cache functions
+'''
+def publisherCache(f):
+
+    pub_cache = {}
+
+    def pubDecFunc(founded=None,name=None,location=None,wikipedia_url=None,description=None,website=None,owner=None,image_url=None,**kwargs):
+        if name not in pub_cache:
+            pub_cache[name] = f(founded,name,location,wikipedia_url,description,website,owner,image_url)
+            return pub_cache[name]
+        else:
+            return pub_cache[name]
+
+    return pubDecFunc
+
+@publisherCache
+def popPublisher(founded=None,name=None,location=None,wikipedia_url=None,description=None,website=None,owner=None,image_url=None):
+    newPublisher = Publisher(
+                                    founded=founded,
+                                    wiki_link=wikipedia_url,
+                                    location=location,
+                                    name=name,
+                                    description=description,
+                                    website=website,
+                                    owner=owner,
+                                    image_url=image_url
+                            )
+    session.add(newPublisher)
+    return name
+
+
+'''
+Author Cache functions
+'''
+
+def authorCache(f):
+
+    auth_cache = {}
+
+    def authDecFunc(name=None,education=None,nationality=None,alma_mater=None,image_url=None,born=None,description=None,wikipedia_url=None,died=None):
+        if name not in auth_cache:
+            auth_cache[name] = f(name,education,nationality,alma_mater,image_url,born,description,wikipedia_url,died)
+            return auth_cache[name]
+        else:
+            return auth_cache[name]
+
+    return authDecFunc
+
+@authorCache
+def popAuthor(name=None,education=None,nationality=None,alma_mater=None,image_url=None,born=None,description=None,wikipedia_url=None,died=None):
+    newAuthor = Author(
+                        name=name,
+                        education=education,
+                        nationality=nationality,
+                        alma_mater=alma_mater,
+                        image_url=image_url,
+                        born=born,
+                        description=description,
+                        wikipedia_url=wikipedia_url,
+                        died=died
+                    )
+    session.add(newAuthor)
+    return name
+
+def getBook(google_id=None,title=None,isbn=None,publication_date=None,image_url=None,description=None,publishers=None,authors=None,subtitle=None):
+
+    row = Book(
+                   title=title,
+                   subtitle=subtitle,
+                   google_id=google_id,
+                   isbn=isbn,
+                   pub_date=publication_date,
+                   image_url=image_url,
+                   description=description
+               )
+
+    publisher_names = []
+    for publisher in publishers:
+        publisher_name = popPublisher(**publisher)
+        if publisher_name:
+            publisher_names.append(publisher_name)
+
+    author_names = []
+    for author in authors:
+        author_name = popAuthor(**author)
+        if author_name:
+            author_names.append(author_name)
+
+    for p_n in publisher_names:
+        for a_n in author_names:
+            session.add(Book_Authors_Association(book=title, author=a_n, publisher=p_n))
+
+    return row
+
+def populateDatabase():
     books = load_json('books.json')
 
     for oneBook in books:
-        google_id = oneBook['google_id']
-        title = oneBook['title']
-        isbn = oneBook.get('isbn')
-        publication_date = oneBook.get('publication_date')
-        image_url = oneBook['image_url']
-        description = oneBook.get('description')
-
-        newBook = Book(title=title,
-                       google_id=google_id,
-                       isbn=isbn,
-                       pub_date=publication_date,
-                       image_url=image_url,
-                       description=description)
-
+        newBook = getBook(**oneBook)
         session.add(newBook)
-
-        for publisher in oneBook['publishers']:
-            p_wiki_link = publisher.get('wikipedia_url')
-            p_name = publisher.get('name')
-            p_description = publisher.get('description')
-            p_owner = publisher.get('owner')
-            p_image_url = publisher.get('image_url')
-            p_website = publisher.get('website')
-
-            newPublisher = Publisher(wiki_link=p_wiki_link,
-                                     name=p_name,
-                                     description=p_description,
-                                     owner=p_owner,
-                                     image_url=p_image_url,
-                                     website=p_website)
-            session.add(newPublisher)
-
-        for author in oneBook['authors']:
-            a_birth = author.get('born')
-            a_name = author.get('name')
-            a_education = author.get('education')
-            a_nationality = author.get('nationality')
-            a_alma_mater = author.get('alma_mater')
-            a_wiki_link = author.get('wikipedia_url')
-            a_image_url = author.get('image_url')
-
-            newAuthor = Author(name=a_name,
-                               birth=a_birth,
-                               education=a_education,
-                               nationality=a_nationality,
-                               alma_mater=a_alma_mater,
-                               wiki_link=a_wiki_link,
-                               image_url=a_image_url, )
-            session.add(newAuthor)
-
-            book_author_pub = Book_Authors_Association(book=newBook, author=newAuthor, publisher=newPublisher)
-            session.add(book_author_pub)
 
         session.commit()
 
 
-create_books()
+populateDatabase()

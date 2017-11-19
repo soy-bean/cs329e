@@ -5,7 +5,7 @@ from flask import Flask, render_template, request, url_for
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from models import *
-from create_db import create_books, session
+from create_db import populateDatabase, session
 
 app = Flask(__name__)
 
@@ -16,8 +16,8 @@ def home():
 @app.route('/<page>/')
 def anypage(page):
     if page == 'books':
-        books = session.query(Book).all()
-        return render_template('book_list.html', books = books)
+        books_old = session.query(Book).all()
+        return render_template('book_list.html', books = books_old)
     elif page == 'publishers':
         publishers = session.query(Publisher).distinct(Publisher.name).all()
         return render_template('publisher_list.html', publishers = publishers)
