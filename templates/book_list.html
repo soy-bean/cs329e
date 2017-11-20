@@ -1,39 +1,32 @@
 {% extends "base.html" %}
 {% block title %}Books{% endblock %}
-{% block content %}
+{% block head %}
+    {{ super() }}
+    <!--Data Tables-->
+    <link href="http://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#myTable').DataTable({
+		        "ajax": "{{ url_for('static', filename='data/books.txt') }}"
+            });
+        });
+    </script>
+{% endblock %}
 
-    <h1 align="center">Book List</h1>
-    <br/>
-    <br/>
-    <br/>
-    <center>
-        <table class="mdl-data-table mdl-js-data-table mdl-shadow--8dp">
+{% block content %}
+    <br><br><br>
+        <table id="myTable" class="display" cellspacing="0" width="70%">
             <thead>
                 <tr>
-                    <th class="mdl-data-table__cell--non-numeric"><b>Book</b></th>
-                    <th><a href="/authors"><b>Author</b></a></th>
-                    <th><a href="/publishers"><b>Publisher</b></a></th>
+                    <th>Title</th>
+                    <th>Subtitle</th>
+                    <th>Goolge ID</th>
+                    <th>ISBN</th>
+                    <th>Publication Date</th>
+                    <th>Image Url</th>
+                    <th>Description</th>
                 </tr>
             </thead>
-            <tbody>
-                {% if books == [] %}
-                    <p>No books exist</p>         
-                {% else %}
-                    {% for i in books %}
-                            <tr>
-                                <td class="mdl-data-table__cell--non-numeric"><a href={{ url_for('book',id_b=i.id) }} class="mdl-button">{{i.title}}</a></td>
-                                <td><a href={{ url_for('author',id_a=1) }}>Author<!-- {{i.authors.name}} --></a></td>
-                                <td><a href={{ url_for('publisher',id_p=1) }}>Publisher<!-- {{i.publisher.name}} --></a></td>
-                                <!-- <td><a href={{ url_for('author',id_a=1) }}>{{i.google_id}}</a></td>
-                                {% if i.image_url == None %}
-                                    <td><a>Nothing</a></td>
-                                {% else %}
-                                    <td><a href="{{i.image_url}}">Image Link</a></td>
-                                {% endif %} -->
-                            </tr>
-                    {% endfor %}
-                {% endif %}
-            </tbody>
         </table>
-    </center>
 {% endblock %}

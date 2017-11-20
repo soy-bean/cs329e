@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="http://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('#books').DataTable();
+            });
+        </script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+                <div class="container">
+                    <a class="navbar-brand" href="/">Canja</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/about">About</a>
+                            </li>
+                            <li class="nav-item btn-group">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Models
+                                </a>
+                                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="/books">Books</a>
+                                    <a class="dropdown-item" href="/authors">Authors</a>
+                                    <a class="dropdown-item" href="/publishers">Publishers</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <form class="form-inline">
+                            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                        </form>
+                    </div>
+                </div>
+        </nav>
+        <!--/.Navbar-->
+        <div id="content">
+            <table id="books" class="display" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Subtitle</th>
+                        <th>Goolge ID</th>
+                        <th>ISBN</th>
+                        <th>Publication Date</th>
+                        <th>Image Url</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for book in books %}
+                        <tr>
+                            <td>{{book.title}}</td>
+                            <td>{{book.subtitle}}</td>
+                            <td>{{book.google_id}}</td>
+                            <td>{{book.isbn}}</td>
+                            <td>{{book.pub_date}}</td>
+                            <!--<td>{{book.image_url}}</td>-->
+                            <!--<td>{{book.description}}</td>-->
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

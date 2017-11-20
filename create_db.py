@@ -122,4 +122,6 @@ def populateDatabase():
         session.commit()
 
 
+
+
 populateDatabase()

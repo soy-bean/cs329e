@@ -1,34 +1,33 @@
-{% extends "list.html" %}
-{% block title %}Publishers{% endblock %}
+{% extends "base.html" %}
+{% block title %}Books{% endblock %}
 {% block head %}
     {{ super() }}
+    <!--Data Tables-->
+    <link href="http://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#myTable').DataTable({
+		        "ajax": "{{ url_for('static', filename='data/publishers.txt') }}"
+            });
+        });
+    </script>
 {% endblock %}
-{% block content %}
 
-    <h1 align="center">Publisher List</h1>
-    <br/>
-    <br/>
-    <br/>
-    <center>
-        <table class="mdl-data-table mdl-js-data-table mdl-shadow--8dp">
+{% block content %}
+    <br><br><br>
+        <table id="myTable" class="display" cellspacing="0" width="70%">
             <thead>
                 <tr>
-                    <th class="mdl-data-table__cell--non-numeric">Publisher</th>
+                    <th>Name</th>
+                    <th>Founded</th>
+                    <th>Location</th>
+                    <th>Wiki</th>
+                    <th>Description</th>
+                    <th>Owner</th>
+                    <th>Image URL</th>
+                    <th>Website</th>
                 </tr>
             </thead>
-            <tbody>
-            {% if publishers == [] %}
-                <p>No publishers exist</p>         
-            {% else %}
-                {% for i in publishers %}
-                    <tr>
-                        <td class="mdl-data-table__cell--non-numeric"><a href={{ url_for('publisher',id_p=i.id) }} class="mdl-button">{{i.name}}</a></td>
-                    </tr>
-                {% endfor %}
-            {% endif %}
-            </tbody>
         </table>
-    </center>
-    <br>
-    <br>
 {% endblock %}

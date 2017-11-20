@@ -8,3 +8,5 @@ Project3.schema.json
 Project4.json
 Project4.schema.json
 cloud_sql_proxy
+guides/
+dontpush.py

@@ -1,6 +1,8 @@
 import logging
 import subprocess
 import json
+import os
+from flask import send_from_directory
 from flask import Flask, render_template, request, url_for
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -9,33 +11,24 @@ from create_db import populateDatabase, session
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def home():
     return render_template('splash.html')
 
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),'favicon.ico')
+
 @app.route('/<page>/')
 def anypage(page):
     if page == 'books':
-        books_old = session.query(Book).all()
-        return render_template('book_list.html', books = books_old)
+        return render_template('book_list.html')
     elif page == 'publishers':
-        publishers = session.query(Publisher).distinct(Publisher.name).all()
-        return render_template('publisher_list.html', publishers = publishers)
+        return render_template('publisher_list.html')
     elif page == 'authors':
-        authors = session.query(Author).distinct(Author.name).all()
-        return render_template('author_list.html', authors = authors)
+        return render_template('author_list.html')
     return render_template(page+'.html')
-
-# @app.route('/authors/<name>/')
-# def authorpage(name):
-#     author = session.query(Authors).filter(Authors.name = name)
-#     return render_template('author.html', author = author)
-
-@app.route('/booklist')
-def bookList():
-    books = session.query(Book).all()
-    return render_template('book_list.html', books = books)
-
 
 @app.route('/unit_tests')
 def unit_tests():

@@ -6,10 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
     
-        <title>{% block title %}{% endblock %} Canja</title>
-    
+        <title>{% block title %}{% endblock %} - Canja</title>
+
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     
         <!-- Bootstrap core CSS -->
         <link href="../static/css/bootstrap.min.css" rel="stylesheet">
@@ -93,20 +97,16 @@
         </style>
         {% endblock %}
     </head>
-
     <body>
         <!--Navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
                 <div class="container">
-                    <a class="navbar-brand" href="#">Canja</a>
+                    <a class="navbar-brand" href="/">Canja</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="/">Home</a>
-                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/about">About</a>
                             </li>
@@ -150,9 +150,6 @@
     </footer>
 
     
-    <!-- JQuery -->
-    <script type="text/javascript" src="../static/js/jquery-3.2.1.min.js"></script>
-
     <!-- Bootstrap dropdown -->
     <script type="text/javascript" src="../static/js/popper.min.js"></script>
 
