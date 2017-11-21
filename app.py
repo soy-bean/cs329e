@@ -11,6 +11,32 @@ from create_db import populateDatabase, session
 
 app = Flask(__name__)
 
+def getData(model):
+    data = {}
+
+    if model in 'book':
+        keys = Book.__table__.columns.keys()
+        request = session.query(Book).all()
+    elif model in 'author':
+        keys = Author.__table__.columns.keys()
+        request = session.query(Author).all()
+    else:
+        keys = Publisher.__table__.columns.keys()
+        request = session.query(Publisher).all()
+
+    tableData = []
+    for item in request:
+        rowData = []
+        for key in keys:
+            rowData.append(getattr(item, key))
+        tableData.append(rowData)
+
+    data['data'] = tableData
+    result = json.dumps(data)
+
+    return result
+
+
 
 @app.route('/')
 def home():
@@ -22,13 +48,28 @@ def favicon():
 
 @app.route('/<page>/')
 def anypage(page):
-    if page == 'books':
-        return render_template('book_list.html')
-    elif page == 'publishers':
-        return render_template('publisher_list.html')
-    elif page == 'authors':
-        return render_template('author_list.html')
+    if page in 'books':
+        columns = Book.__table__.columns.keys()
+        return render_template('book_list.html', columns=columns)
+    elif page in 'publishers':
+        columns = Publisher.__table__.columns.keys()
+        return render_template('publisher_list.html', columns=columns)
+    elif page in 'authors':
+        columns = Author.__table__.columns.keys()
+        return render_template('author_list.html', columns=columns)
     return render_template(page+'.html')
+
+@app.route('/_server_data_book')
+def get_server_data_book():
+    return getData('book')
+
+@app.route('/_server_data_author')
+def get_server_data_author():
+    return getData('author')
+
+@app.route('/_server_data_publisher')
+def get_server_data_publisher():
+    return getData('publisher')
 
 @app.route('/unit_tests')
 def unit_tests():

@@ -9,7 +9,6 @@ Base = declarative_base()
 
 class Author(Base):
     __tablename__ = 'authors'
-    __searchable__ = ['name','education','nationality']
     id = Column(Integer, primary_key=True)
     name = Column(String(), nullable=False)
     born = Column(String())
@@ -23,7 +22,6 @@ class Author(Base):
 
 class Publisher(Base):
     __tablename__ = 'publishers'
-    __searchable__ = ['name']
     id = Column(Integer, primary_key=True)
     name = Column(String(), nullable=False)
     founded=Column(String())
@@ -36,7 +34,6 @@ class Publisher(Base):
 
 class Book(Base):
     __tablename__ = 'book'
-    __searchable__ = ['title','isbn']
     id = Column(Integer, primary_key=True)
     title = Column(String(), nullable=False)
     subtitle = Column(String())

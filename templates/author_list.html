@@ -8,7 +8,7 @@
     <script>
         $(document).ready(function(){
             $('#myTable').DataTable({
-		        "ajax": "{{ url_for('static', filename='data/authors.txt') }}"
+		        "sAjaxSource": "{{ url_for('get_server_data_author') }}"
             });
         });
     </script>
@@ -19,14 +19,9 @@
         <table id="myTable" class="display" cellspacing="0" width="70%">
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Born</th>
-                    <th>Education</th>
-                    <th>Nationality</th>
-                    <th>Alma Mater</th>
-                    <th>Description</th>
-                    <th>Died</th>
-                    <th>Image URL</th>
+                    {% for column in columns %}
+                        <th>{{column}}</th>
+                    {% endfor %}
                 </tr>
             </thead>
         </table>
