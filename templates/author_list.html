@@ -11,14 +11,26 @@
 		        "sAjaxSource": "{{ url_for('get_server_data_author') }}",
 		        "columnDefs": [
                                     {
-                                        "targets": [ 0 ],
+                                        "name": "ID",
+                                        "targets": 0,
+                                        "render": function ( data, type, row, meta ) {
+                                                            return '<a href="/author/'+data+'">Details</a>';
+                                        }
+                                    },
+                                    { "name": "Name",  "targets": 1 },
+                                    { "name": "Born",  "targets": 2 },
+                                    { "name": "Education",  "targets": 3 },
+                                    { "name": "Nationality",  "targets": 4 },
+                                    { "name": "Alma_Mater",  "targets": 5 },                                    {
+                                        "name": "Description",
+                                        "targets": 6,
                                         "visible": false
                                     },
-                                    {
-                                        "targets": [ 6 ],
-                                        "visible": false
-                                    }
+                                    { "name": "Died",  "targets": 7 },
+                                    { "name": "Image",  "targets": 8 },
+
                                 ]
+
             });
         });
     </script>

@@ -11,11 +11,21 @@
 		        "sAjaxSource": "{{ url_for('get_server_data_book') }}",
 		        "columnDefs": [
                                     {
-                                        "targets": [ 0 ],
-                                        "visible": false
+                                        "name": "ID",
+                                        "targets": 0,
+                                        "render": function ( data, type, row, meta ) {
+                                                            return '<a href="/book/'+data+'">Details</a>';
+                                        }
                                     },
+                                    { "name": "Title",  "targets": 1 },
+                                    { "name": "Subtitle",  "targets": 2 },
+                                    { "name": "Google_ID",  "targets": 3 },
+                                    { "name": "ISBN",  "targets": 4 },
+                                    { "name": "Publication_Date",  "targets": 5 },
+                                    { "name": "Image",  "targets": 6 },
                                     {
-                                        "targets": [ 7 ],
+                                        "name": "Description",
+                                        "targets": 7,
                                         "visible": false
                                     }
                                 ]
