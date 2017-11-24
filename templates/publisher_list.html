@@ -14,13 +14,19 @@
                                         "name": "ID",
                                         "targets": 0,
                                         "render": function ( data, type, row, meta ) {
-                                                            return '<a href="/publisher/'+data+'">Details</a>';
+                                            return '<a href="/publisher/'+data+'">Details</a>';
                                         }
                                     },
                                     { "name": "Name",  "targets": 1 },
                                     { "name": "Founded",  "targets": 2 },
                                     { "name": "Location",  "targets": 3 },
-                                    { "name": "Wikipedia",  "targets": 4 },
+                                    {
+                                        "name": "Wikipedia",
+                                        "targets": 4,
+                                        "render": function ( data, type, row, meta ) {
+                                            return '<a href='+data+'>Wikipedia Article</a>';
+                                        }
+                                    },
                                     {
                                         "name": "Description",
                                         "targets": 5,
@@ -30,9 +36,17 @@
                                     {
                                         "name": "Image",
                                         "targets": 7,
-                                        "visible": false
+                                        "render": function ( data, type, row, meta ) {
+                                            return '<a href='+data+'>Publisher Image</a>';
+                                        }
                                     },
-                                    { "name": "Website",  "targets": 8 },
+                                    {
+                                        "name": "Website",
+                                        "targets": 8,
+                                        "render": function ( data, type, row, meta ) {
+                                            return '<a href='+data+'>Publisher Website</a>';
+                                        }
+                                    },
                                 ]
 
             });

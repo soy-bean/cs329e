@@ -14,7 +14,7 @@
                                         "name": "ID",
                                         "targets": 0,
                                         "render": function ( data, type, row, meta ) {
-                                                            return '<a href="/book/'+data+'">Details</a>';
+                                            return '<a href="/book/'+data+'">Details</a>';
                                         }
                                     },
                                     { "name": "Title",  "targets": 1 },
@@ -22,7 +22,13 @@
                                     { "name": "Google_ID",  "targets": 3 },
                                     { "name": "ISBN",  "targets": 4 },
                                     { "name": "Publication_Date",  "targets": 5 },
-                                    { "name": "Image",  "targets": 6 },
+                                    {
+                                        "name": "Image",
+                                        "targets": 6,
+                                        "render": function ( data, type, row, meta ) {
+                                            return '<a href='+data+'>Cover Image</a>';
+                                        }
+                                    },
                                     {
                                         "name": "Description",
                                         "targets": 7,
