@@ -2,14 +2,14 @@ import logging
 import subprocess
 import json
 import os
-from flask import send_from_directory
-from flask import Flask, render_template, request, url_for
+from flask import Flask, Response, render_template, request, url_for, send_from_directory, jsonify
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from models import *
 from create_db import populateDatabase, session
 
 app = Flask(__name__)
+
 
 def getData(model):
     data = {}
@@ -36,9 +36,7 @@ def getData(model):
 
     return result
 
-
-
-@app.route('/')
+@app.route('/', methods=['GET','POST'])
 def home():
     return render_template('splash.html')
 

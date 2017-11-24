@@ -32,6 +32,9 @@ check:
 models.html:
 	$(PYDOC) -w models
 
+IDB3.log:
+	git log > IDB3.log
+
 IDB2.log:
 	git log > IDB2.log
 

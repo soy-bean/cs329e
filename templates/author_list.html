@@ -8,7 +8,17 @@
     <script>
         $(document).ready(function(){
             $('#myTable').DataTable({
-		        "sAjaxSource": "{{ url_for('get_server_data_author') }}"
+		        "sAjaxSource": "{{ url_for('get_server_data_author') }}",
+		        "columnDefs": [
+                                    {
+                                        "targets": [ 0 ],
+                                        "visible": false
+                                    },
+                                    {
+                                        "targets": [ 6 ],
+                                        "visible": false
+                                    }
+                                ]
             });
         });
     </script>
