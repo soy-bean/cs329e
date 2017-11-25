@@ -38,13 +38,13 @@
                 height: 100%; 
             } 
     
-            @media (max-width: 740px) {
+            @media (max-width: 900px) {
                 .full-height,
                 .full-height body,
                 .full-height header,
                 .full-height header .view,
                 .full-height body .view {
-                    height: 700px; 
+                    height: 900px;
                 } 
             }
             
@@ -99,6 +99,9 @@
                 color: #fff !important;
             }
         </style>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
         {% endblock %}
     </head>
     <body>
@@ -129,6 +132,7 @@
             </nav>
         <!--/.Navbar-->
         <div id="content">
+
             {% block content %}{% endblock %}
         </div>
 

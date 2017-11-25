@@ -2,7 +2,7 @@ import logging
 import subprocess
 import json
 import os
-from flask import Flask, Response, render_template, request, url_for, send_from_directory, jsonify
+from flask import Flask, Response, render_template, request, url_for, send_from_directory, jsonify, redirect, make_response
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from models import *
@@ -20,9 +20,33 @@ def getData(model):
     elif model in 'author':
         keys = Author.__table__.columns.keys()
         request = session.query(Author).all()
-    else:
+    elif model in 'publisher':
         keys = Publisher.__table__.columns.keys()
         request = session.query(Publisher).all()
+    else:
+        auto_results = []
+        books = session.query(Book).all()
+        authors = session.query(Author).all()
+        publishers = session.query(Publisher).all()
+        for book in books:
+            temp = {}
+            b_name = getattr(book, 'title')
+            temp['value'] = b_name
+            temp['label'] = b_name
+            auto_results.append(temp)
+        for author in authors:
+            temp = {}
+            a_name = getattr(author, 'name')
+            temp['value'] = a_name
+            temp['label'] = a_name
+            auto_results.append(temp)
+        for publisher in publishers:
+            temp = {}
+            p_name = getattr(publisher, 'name')
+            temp['value'] = p_name
+            temp['label'] = p_name
+            auto_results.append(temp)
+        return auto_results
 
     tableData = []
     for item in request:
@@ -79,6 +103,7 @@ def book(id_b):
     book = session.query(Book).filter(Book.id == id_b).all()
     return render_template('book.html',book=book)
 
+
 @app.route('/author/<int:id_a>')
 def author(id_a):
     author = session.query(Author).filter(Author.id == id_a).all()
@@ -88,6 +113,12 @@ def author(id_a):
 def publisher(id_p):
     publisher = session.query(Publisher).filter(Publisher.id == id_p).all()
     return render_template('publisher.html',publisher=publisher)
+
+@app.route('/autocomplete', methods=['GET'])
+def autocomplete():
+	search = request.args.get('q')
+	results = getData('auto')
+	return jsonify(matching_results=results)
 
 @app.errorhandler(500)
 def server_error(e):
