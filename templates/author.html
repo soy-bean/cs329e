@@ -10,7 +10,9 @@
         }
     </style>
 {% endblock %}
+
 {% block content %}
+    <br/>
     <br/>
     <br/>
     <br/>
@@ -22,7 +24,7 @@
                 <!--Card-->
                 <div class="card">
                     <!--Card image-->
-                    <img class="img-fluid" src={{i.image_url}}>
+                    <img src={{i.image_url}}>
                 </div>
                 <!--/.Card-->
             </div>            
@@ -42,9 +44,9 @@
                                                 
                         <p><strong>Alma Mater:</strong><br/>{{i.alma_mater}}</p>
 
-                        <p><strong>Wikipedia:</strong><br/><a class="btn btn-secondary" href={{i.wikipedia_url}}>Click here to learn more!</a></p>         
-
                         <p><strong>Died:</strong><br/>{{i.died}}</p>
+                        
+                        <p><strong>Wikipedia:</strong><br/><a class="btn btn-secondary" href={{i.wikipedia_url}}>Click here to learn more!</a></p>         
 
                     </div>
                     <!--/.Card content-->
@@ -102,4 +104,6 @@
             </div>
         </div>                
     {% endfor %}
+<br/>
+<br/>
 {% endblock %}

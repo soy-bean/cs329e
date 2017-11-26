@@ -17,16 +17,10 @@
     </style>
 {% endblock %}
 {% block content %}
-
     <br/>
     <br/>
     <br/>
     <br/>
-      <head>
-          <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-          <link rel="stylesheet" href="/static/css/styles.css">
-      </head>
     {% for i in book %}
         <div class="container-fluid">
             <div class="row">
@@ -58,7 +52,7 @@
                     </div>
                     <!--/.Card content-->
                     <div class="card-body text-center">
-                        
+
                         <h4 class="card-title"><strong>Description</strong></h4>
                 
                         <p class="card-text">{{i.description}}</p>
