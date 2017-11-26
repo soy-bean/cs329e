@@ -127,6 +127,9 @@
                                 </div>
                             </li>
                         </ul>
+                        <form class="form-inline">
+                            <input name="autocomplete" type="text" id="autocomplete" class="form-control mr-sm-2" placeholder="Search" aria-label="Search">
+                        </form>
                     </div>
                 </div>
             </nav>
@@ -163,5 +166,34 @@
 
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="../static/js/mdb.min.js"></script>
+
+    <!--Autocomplete Script-->
+    <script type="text/javascript">
+        $(function() {
+            function highlightText(text, $node) {
+                        var searchText = $.trim(text).toLowerCase(), currentNode = $node.get(0).firstChild, matchIndex, newTextNode, newSpanNode;
+                        while ((matchIndex = currentNode.data.toLowerCase().indexOf(searchText)) >= 0) {
+                            newTextNode = currentNode.splitText(matchIndex);
+                            currentNode = newTextNode.splitText(searchText.length);
+                            newSpanNode = document.createElement("span");
+                            newSpanNode.className = "highlight";
+                            currentNode.parentNode.insertBefore(newSpanNode, currentNode);
+                            newSpanNode.appendChild(newTextNode);
+                        }
+                    }
+            $.ajax({
+                url: '{{ url_for("autocomplete") }}'
+                }).done(function (data) {
+                    $('#autocomplete').autocomplete({
+                        source: data.matching_results,
+                        minLength: 2
+                    }).data("ui-autocomplete")._renderItem = function(ul, item) {
+                        var $a = $("<a></a>").text(item.label);
+                        highlightText(this.term, $a);
+                        return $("<li></li>").append($a).appendTo(ul);
+                    };
+            });
+        });
+    </script>
     
 </html>

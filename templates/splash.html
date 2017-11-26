@@ -61,12 +61,9 @@
                 <!--Caption-->
                 <div class="carousel-caption">
                     <div class="flex-center animated fadeIn">
-                        <ul>
+                        <!-- <ul>
                             <br><br><br><br><br><br><br><br><br><br>
-                            <div class="container">
-                                Search for your favorite book or author! <br><input name="autocomplete" type="text" id="autocomplete" placeholder="Select a name of a Book, Author, or Publisher!"></input>
-                            </div>
-                        </ul>
+                        </ul> -->
                     </div>
                 </div>
                 <!--Caption-->
@@ -75,35 +72,6 @@
         </div>
         <!--/.Slides-->
     </div>
-
-    <!--Autocomplete Script-->
-    <script type="text/javascript">
-        $(function() {
-            function highlightText(text, $node) {
-                        var searchText = $.trim(text).toLowerCase(), currentNode = $node.get(0).firstChild, matchIndex, newTextNode, newSpanNode;
-                        while ((matchIndex = currentNode.data.toLowerCase().indexOf(searchText)) >= 0) {
-                            newTextNode = currentNode.splitText(matchIndex);
-                            currentNode = newTextNode.splitText(searchText.length);
-                            newSpanNode = document.createElement("span");
-                            newSpanNode.className = "highlight";
-                            currentNode.parentNode.insertBefore(newSpanNode, currentNode);
-                            newSpanNode.appendChild(newTextNode);
-                        }
-                    }
-            $.ajax({
-                url: '{{ url_for("autocomplete") }}'
-                }).done(function (data) {
-                    $('#autocomplete').autocomplete({
-                        source: data.matching_results,
-                        minLength: 2
-                    }).data("ui-autocomplete")._renderItem = function(ul, item) {
-                        var $a = $("<a></a>").text(item.label);
-                        highlightText(this.term, $a);
-                        return $("<li></li>").append($a).appendTo(ul);
-                    };
-            });
-        });
-    </script>
 
 {% endblock %}
 

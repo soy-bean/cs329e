@@ -9,7 +9,10 @@
             background: url({{cover}}) no-repeat center / cover;
         }
         html {
-            background-color: rgb(249, 249, 249);
+            background-color: rgb(255, 255, 255);
+        }
+        .d-flex {
+            display:flex;
         }
     </style>
 {% endblock %}
@@ -18,48 +21,96 @@
     <br/>
     <br/>
     <br/>
-    <center>
+    <br/>
       <head>
           <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
           <link rel="stylesheet" href="/static/css/styles.css">
       </head>
     {% for i in book %}
-        <center>
-            <div class="mdl-grid">
-                <div class="mdl-cell mdl-cell--6-col">
-                    <div class="home-card-wide mdl-card mdl-shadow--8dp">
-                        <div class="mdl-card__title"></div>
-                    </div>
+        <div class="container-fluid">
+            <div class="row">
+            <div class="col-md-3 ml-auto"></div>
+            <div class="col-md-3 ml-auto">
+                <!--Card-->
+                <div class="card">
+                    <!--Card image-->
+                    <img class="img-fluid" src={{i.image_url}}>
                 </div>
-                <div class="mdl-cell mdl-cell--6-col">
-                    <div class="home-card-wide mdl-card mdl-shadow--8dp">
-                        <div class="mdl-card__supporting-text">
-                            <h3><b><u>Book Title:</u> <b>{{i.title}}</b></h3>
-                        </div>
-                        <div class="mdl-card__supporting-text">
-                            <h4><b><u>ISBN: </u></b>{{i.isbn}}</h4>
-                        </div>
-                        <div class="mdl-card__supporting-text">
-                            <h4><b><u>Google ID:</u></b> {{i.google_id}}</h4>
-                        </div>
-                        <div class="mdl-card__supporting-text">
-                            <h4><b><u>Description:</u></b> {{i.description}}</h4>
-                        </div>
-                        <div class="mdl-card__supporting-text">
-                            <h4><b><u>Date published:</u></b> {{i.pub_date}}</h4>
-                        </div>
-                        <div class="mdl-card__actions mdl-card--border">
-                            <p><b><u>Wiki link:</u></b> <a href={{i.wiki_link}} class="mdl-button mdl-js-rimdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary">Click here to learn more!</a></p>
-                        </div>
-                        <!-- <div class="mdl-card__menu">
-                            <button href={{i.image_url}} class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">this is a button
-                            </button>
-                        </div> -->
+                <!--/.Card-->
+            </div>            
+            <div class="col-md-3 ml-auto">
+                <!--Card-->
+                <div class="card card-cascade">
+                    <!--Card content-->
+                    <div class="card-body text-center">
+
+                        <p><strong>Title:</strong><br/>{{i.title}}</p>
+                
+                        <p><strong>Subtitle:</strong><br/>{{i.subtitle}}</p>
+                
+                        <p><strong>Google ID:</strong><br/>{{i.google_id}}</p>
+                
+                        <p><strong>ISBN:</strong><br/>{{i.isbn}}</p>
+
+                        <p><strong>Publication Date:</strong><br/>{{i.pub_date}}</p>
+                
                     </div>
+                    <!--/.Card content-->
+                    <div class="card-body text-center">
+                        
+                        <h4 class="card-title"><strong>Description</strong></h4>
+                
+                        <p class="card-text">{{i.description}}</p>
+                
+                    </div>
+                    <!--/.Card content-->
                 </div>
+                <!--/.Card-->
             </div>
-        </center>
+            <div class="col-md-3 ml-auto"></div>
+            </div>                 
+        </div>
+        <br/>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2 ml-auto"></div>
+                <div class="col-md-2 ml-auto"></div>                
+                <div class="col-md-2 ml-auto">
+                    <!--Card-->
+                    <div class="card">
+
+                        <!--Card content-->
+                        <div class="card-body">
+                            <!--Title-->
+                            <h4 class="card-title">Author(s)</h4>
+                            <!--Text-->
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <div class="col-md-2 ml-auto">
+                    <!--Card-->
+                    <div class="card">
+
+                        <!--Card content-->
+                        <div class="card-body">
+                            <!--Title-->
+                            <h4 class="card-title">Publisher</h4>
+                            <!--Text-->
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <div class="col-md-2 ml-auto"></div>
+                <div class="col-md-2 ml-auto"></div>                
+            </div>
+        </div>                
     {% endfor %}
-    </center>
+    <br/>
+    <br/>
 {% endblock %}

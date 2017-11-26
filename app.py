@@ -103,7 +103,6 @@ def book(id_b):
     book = session.query(Book).filter(Book.id == id_b).all()
     return render_template('book.html',book=book)
 
-
 @app.route('/author/<int:id_a>')
 def author(id_a):
     author = session.query(Author).filter(Author.id == id_a).all()

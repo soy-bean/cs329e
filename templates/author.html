@@ -15,40 +15,91 @@
     <br/>
     <br/>
     {% for i in author %}
-        <center>
-            <div class="mdl-grid">
-                <div class="mdl-cell mdl-cell--6-col">
-                    <div class="home-card-wide mdl-card mdl-shadow--8dp">
-                        <div class="mdl-card__title"></div>
-                    </div>
+        <div class="container-fluid">
+            <div class="row">
+            <div class="col-md-3 ml-auto"></div>
+            <div class="col-md-3 ml-auto">
+                <!--Card-->
+                <div class="card">
+                    <!--Card image-->
+                    <img class="img-fluid" src={{i.image_url}}>
                 </div>
-                <div class="mdl-cell mdl-cell--6-col">
-                    <div class="home-card-wide mdl-card mdl-shadow--8dp">
-                        <div class="mdl-card__supporting-text">
-                            <h3><b><u>Name:</u></b> <b>{{i.name}}</b></h3>
-                        </div>
-                        <div class="mdl-card__supporting-text">
-                            <h4><b><u>Date of Birth:</u></b> {{i.birth}}</h4>
-                        </div>
-                        <div class="mdl-card__supporting-text">
-                            <h4><b><u>Education:</u></b> {{i.education}}</h4>
-                        </div>
-                        <div class="mdl-card__supporting-text">
-                            <h4><b><u>Nationality:</u></b> {{i.nationality}}</h4>
-                        </div>
-                        <div class="mdl-card__supporting-text">
-                            <h4><b><u>Alma Mater:</u></b> {{i.alma_mater}}</h4>
-                        </div>
-                        <div class="mdl-card__actions mdl-card--border">
-                            <p><b><u>Wiki link:</u></b> <a href={{i.wiki_link}} class="mdl-button mdl-js-rimdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary">Click here to learn more!</a></p>
-                        </div>
-                        <!-- <div class="mdl-card__menu">
-                            <button href={{i.image_url}} class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">This is a button
-                            </button>
-                        </div> -->
+                <!--/.Card-->
+            </div>            
+            <div class="col-md-3 ml-auto">
+                <!--Card-->
+                <div class="card card-cascade">
+                    <!--Card content-->
+                    <div class="card-body text-center">
+
+                        <p><strong>Name:</strong><br/>{{i.name}}</p>
+                
+                        <p><strong>Born:</strong><br/>{{i.born}}</p>
+                
+                        <p><strong>Education:</strong><br/>{{i.education}}</p>
+                
+                        <p><strong>Nationality:</strong><br/>{{i.nationality}}</p>
+                                                
+                        <p><strong>Alma Mater:</strong><br/>{{i.alma_mater}}</p>
+
+                        <p><strong>Wikipedia:</strong><br/><a class="btn btn-secondary" href={{i.wikipedia_url}}>Click here to learn more!</a></p>         
+
+                        <p><strong>Died:</strong><br/>{{i.died}}</p>
+
                     </div>
+                    <!--/.Card content-->
+                    <div class="card-body text-center">
+                        
+                        <h4 class="card-title"><strong>Description</strong></h4>
+                
+                        <p class="card-text">{{i.description}}</p>
+                
+                    </div>
+                    <!--/.Card content-->
                 </div>
+                <!--/.Card-->
             </div>
-        </center>
+            <div class="col-md-3 ml-auto"></div>
+            </div>                 
+        </div>
+        <br/>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2 ml-auto"></div>
+                <div class="col-md-2 ml-auto"></div>                
+                <div class="col-md-2 ml-auto">
+                    <!--Card-->
+                    <div class="card">
+
+                        <!--Card content-->
+                        <div class="card-body">
+                            <!--Title-->
+                            <h4 class="card-title">Books Published</h4>
+                            <!--Text-->
+                            <p class="card-text">Book #1</p>
+                        </div>
+
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <div class="col-md-2 ml-auto">
+                    <!--Card-->
+                    <div class="card">
+
+                        <!--Card content-->
+                        <div class="card-body">
+                            <!--Title-->
+                            <h4 class="card-title">Affiliated Publishers</h4>
+                            <!--Text-->
+                            <p class="card-text">Publisher</p>
+                        </div>
+
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <div class="col-md-2 ml-auto"></div>
+                <div class="col-md-2 ml-auto"></div>                
+            </div>
+        </div>                
     {% endfor %}
 {% endblock %}
