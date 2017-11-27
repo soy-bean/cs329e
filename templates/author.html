@@ -8,6 +8,15 @@
             height: 750px;
             background: url({{cover}}) center / cover;
         }
+        .d-flex {
+            display:flex;
+        }
+        .vcenter {
+            position: absolute;
+            top: 50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+        }
     </style>
 {% endblock %}
 
@@ -17,15 +26,21 @@
     <br/>
     <br/>
     {% for i in author %}
+        <br/>
+        <h2 align="center"><strong>{{i.name}}</strong></h2>
+        <br/>
+        <br/>
         <div class="container-fluid">
             <div class="row">
             <div class="col-md-3 ml-auto"></div>
             <div class="col-md-3 ml-auto">
                 <!--Card-->
-                <div class="card">
+                <!-- <div class="card"> -->
                     <!--Card image-->
+                <div class="vcenter">
                     <img src={{i.image_url}}>
                 </div>
+                <!-- </div> -->
                 <!--/.Card-->
             </div>            
             <div class="col-md-3 ml-auto">
@@ -78,7 +93,10 @@
                             <!--Title-->
                             <h4 class="card-title">Books Published</h4>
                             <!--Text-->
-                            <p class="card-text">Book #1</p>
+                            {% for b in book %}
+                            {% set url = '/book/' + b.id|string %}
+                            <a href={{url}}>{{b.title}}</a><br/><br/>
+                            {% endfor %}
                         </div>
 
                     </div>
@@ -93,7 +111,10 @@
                             <!--Title-->
                             <h4 class="card-title">Affiliated Publishers</h4>
                             <!--Text-->
-                            <p class="card-text">Publisher</p>
+                            {% for p in publisher %}
+                            {% set url = '/publisher/' + p.id|string %}
+                            <a href={{url}}>{{p.name}}</a><br/><br/>
+                            {% endfor %}
                         </div>
 
                     </div>

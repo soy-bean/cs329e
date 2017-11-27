@@ -8,6 +8,12 @@
             height: 750px;
             background: url({{logo}}) no-repeat center / contain;
         }
+        .vcenter {
+            position: absolute;
+            top: 50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+        }
     </style>
 {% endblock %}
 {% block content %}
@@ -19,9 +25,9 @@
     <div class="container-fluid">
             <div class="row">
             <div class="col-md-3 ml-auto"></div>
-            <div class="col-md-3 ml-auto">
+            <div class="col-md-3 ml-auto d-flex">
                 <!--Card-->
-                <div class="card">
+                <div class="vcenter">
                     <!--Card image-->
                     <img class="img-fluid" src={{i.image_url}}>
                 </div>
@@ -58,7 +64,7 @@
                 </div>
                 <!--/.Card-->
             </div>
-            <div class="col-md-3 ml-auto"></div>
+            <div class="col-md-3 ml-auto d-flex"></div>
             </div>                 
         </div>
         <br/>
@@ -75,7 +81,10 @@
                             <!--Title-->
                             <h4 class="card-title">Books Published</h4>
                             <!--Text-->
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            {% for b in book %}
+                            {% set url = '/book/' + b.id|string %}
+                            <a href={{url}}>{{b.title}}</a><br/><br/>
+                            {% endfor %}                       
                         </div>
 
                     </div>
@@ -90,7 +99,10 @@
                             <!--Title-->
                             <h4 class="card-title">Affiliated Authors</h4>
                             <!--Text-->
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            {% for a in author %}
+                            {% set url = '/author/' + a.id|string %}
+                            <a href={{url}}>{{a.name}}</a><br/><br/>
+                            {% endfor %}                        
                         </div>
 
                     </div>

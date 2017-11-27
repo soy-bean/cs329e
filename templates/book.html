@@ -14,6 +14,12 @@
         .d-flex {
             display:flex;
         }
+        .vcenter {
+            position: absolute;
+            top: 50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+        }
     </style>
 {% endblock %}
 {% block content %}
@@ -22,12 +28,16 @@
     <br/>
     <br/>
     {% for i in book %}
+        <br/>
+        <h2 align="center"><strong>{{i.title}}</strong></h2>
+        <br/>
+        <br/>
         <div class="container-fluid">
             <div class="row">
             <div class="col-md-3 ml-auto"></div>
             <div class="col-md-3 ml-auto">
                 <!--Card-->
-                <div class="card">
+                <div class="vcenter">
                     <!--Card image-->
                     <img class="img-fluid" src={{i.image_url}}>
                 </div>
@@ -78,8 +88,11 @@
                         <div class="card-body">
                             <!--Title-->
                             <h4 class="card-title">Author(s)</h4>
+                            {% for a in authors %}
                             <!--Text-->
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            {% set url = '/author/' + a.id|string %}
+                            <a href={{url}}>{{a.name}}</a><br/>
+                            {% endfor %}
                         </div>
 
                     </div>
@@ -93,8 +106,11 @@
                         <div class="card-body">
                             <!--Title-->
                             <h4 class="card-title">Publisher</h4>
+                            {% for p in publisher %}
                             <!--Text-->
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            {% set url = '/publisher/' + p.id|string %}
+                            <a href={{url}}>{{p.name}}</a><br/>
+                            {% endfor %}
                         </div>
 
                     </div>

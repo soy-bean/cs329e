@@ -101,17 +101,59 @@ def unit_tests():
 @app.route('/book/<int:id_b>')
 def book(id_b):
     book = session.query(Book).filter(Book.id == id_b).all()
-    return render_template('book.html',book=book)
+
+    relations = session.query(Book_Authors_Association).filter(Book_Authors_Association.book == book[0].title).all()
+    publisher = session.query(Publisher).filter(Publisher.name == relations[0].publisher).all()
+    authors = []
+
+    for relation in relations:
+        authors.append(relation.author)
+    
+    authorsQuery = session.query(Author).filter(Author.name.in_(authors)).all()
+
+    for thing in authorsQuery:
+        print(thing.name)
+        
+    return render_template('book.html', book=book, publisher=publisher, authors=authorsQuery)
 
 @app.route('/author/<int:id_a>')
 def author(id_a):
     author = session.query(Author).filter(Author.id == id_a).all()
-    return render_template('author.html',author=author)
+
+    relations = session.query(Book_Authors_Association).filter(Book_Authors_Association.author == author[0].name).all()
+    publishers = []
+    books = []
+
+    for relation in relations:
+        if relation.publisher not in publishers:
+            publishers.append(relation.publisher)
+        if relation.book not in books:
+            books.append(relation.book)
+    
+    publishersQuery = session.query(Publisher).filter(Publisher.name.in_(publishers)).all()
+    booksQuery = session.query(Book).filter(Book.title.in_(books)).all()
+
+
+    return render_template('author.html',author=author, publisher=publishersQuery, book=booksQuery)
 
 @app.route('/publisher/<int:id_p>')
 def publisher(id_p):
     publisher = session.query(Publisher).filter(Publisher.id == id_p).all()
-    return render_template('publisher.html',publisher=publisher)
+
+    relations = session.query(Book_Authors_Association).filter(Book_Authors_Association.publisher == publisher[0].name).all()
+    authors = []
+    books = []
+
+    for relation in relations:
+        if relation.author not in authors:
+            authors.append(relation.author)
+        if relation.book not in books:
+            books.append(relation.book)
+    
+    authorsQuery = session.query(Author).filter(Author.name.in_(authors)).all()
+    booksQuery = session.query(Book).filter(Book.title.in_(books)).all()
+
+    return render_template('publisher.html',publisher=publisher, author=authorsQuery, book=booksQuery)
 
 @app.route('/autocomplete', methods=['GET'])
 def autocomplete():
