@@ -100,60 +100,64 @@ def unit_tests():
 
 @app.route('/book/<int:id_b>')
 def book(id_b):
-    book = session.query(Book).filter(Book.id == id_b).all()
+    # book = session.query(Book).filter(Book.id == id_b).all()
 
-    relations = session.query(Book_Authors_Association).filter(Book_Authors_Association.book == book[0].title).all()
-    publisher = session.query(Publisher).filter(Publisher.name == relations[0].publisher).all()
-    authors = []
+    # relations = session.query(Book_Authors_Association).filter(Book_Authors_Association.book == book[0].title).all()
+    # publisher = session.query(Publisher).filter(Publisher.name == relations[0].publisher).all()
+    # authors = []
 
-    for relation in relations:
-        authors.append(relation.author)
+    # for relation in relations:
+    #     authors.append(relation.author)
     
-    authorsQuery = session.query(Author).filter(Author.name.in_(authors)).all()
+    # authorsQuery = session.query(Author).filter(Author.name.in_(authors)).all()
 
-    for thing in authorsQuery:
-        print(thing.name)
+    # for thing in authorsQuery:
+    #     print(thing.name)
+
+    results = runQueryFor(id_b, "book")
         
-    return render_template('book.html', book=book, publisher=publisher, authors=authorsQuery)
+    return render_template('book.html', book=results[0], publisher=[1], authors=[2])
 
 @app.route('/author/<int:id_a>')
 def author(id_a):
-    author = session.query(Author).filter(Author.id == id_a).all()
+    # author = session.query(Author).filter(Author.id == id_a).all()
 
-    relations = session.query(Book_Authors_Association).filter(Book_Authors_Association.author == author[0].name).all()
-    publishers = []
-    books = []
+    # relations = session.query(Book_Authors_Association).filter(Book_Authors_Association.author == author[0].name).all()
+    # publishers = []
+    # books = []
 
-    for relation in relations:
-        if relation.publisher not in publishers:
-            publishers.append(relation.publisher)
-        if relation.book not in books:
-            books.append(relation.book)
+    # for relation in relations:
+    #     if relation.publisher not in publishers:
+    #         publishers.append(relation.publisher)
+    #     if relation.book not in books:
+    #         books.append(relation.book)
     
-    publishersQuery = session.query(Publisher).filter(Publisher.name.in_(publishers)).all()
-    booksQuery = session.query(Book).filter(Book.title.in_(books)).all()
+    # publishersQuery = session.query(Publisher).filter(Publisher.name.in_(publishers)).all()
+    # booksQuery = session.query(Book).filter(Book.title.in_(books)).all()
+    results = runQueryFor(id_a, "author")
 
-
-    return render_template('author.html',author=author, publisher=publishersQuery, book=booksQuery)
+    return render_template('author.html',author=results[0], publisher=results[1], book=results[2])
 
 @app.route('/publisher/<int:id_p>')
 def publisher(id_p):
-    publisher = session.query(Publisher).filter(Publisher.id == id_p).all()
+    # publisher = session.query(Publisher).filter(Publisher.id == id_p).all()
 
-    relations = session.query(Book_Authors_Association).filter(Book_Authors_Association.publisher == publisher[0].name).all()
-    authors = []
-    books = []
+    # relations = session.query(Book_Authors_Association).filter(Book_Authors_Association.publisher == publisher[0].name).all()
+    # authors = []
+    # books = []
 
-    for relation in relations:
-        if relation.author not in authors:
-            authors.append(relation.author)
-        if relation.book not in books:
-            books.append(relation.book)
+    # for relation in relations:
+    #     if relation.author not in authors:
+    #         authors.append(relation.author)
+    #     if relation.book not in books:
+    #         books.append(relation.book)
     
-    authorsQuery = session.query(Author).filter(Author.name.in_(authors)).all()
-    booksQuery = session.query(Book).filter(Book.title.in_(books)).all()
+    # authorsQuery = session.query(Author).filter(Author.name.in_(authors)).all()
+    # booksQuery = session.query(Book).filter(Book.title.in_(books)).all()
 
-    return render_template('publisher.html',publisher=publisher, author=authorsQuery, book=booksQuery)
+    results = runQueryFor(id_p, "publisher")
+
+    return render_template('publisher.html',publisher=results[0], author=results[1], book=results[2])
 
 @app.route('/autocomplete', methods=['GET'])
 def autocomplete():
@@ -168,6 +172,76 @@ def server_error(e):
     An internal error occurred: <pre>{}</pre>
     See logs for full stacktrace.
     """.format(e), 500
+
+
+def runQueryFor(instanceOf, entity):
+
+    output = []
+
+    if (entity == "author"):
+
+        author = session.query(Author).filter(Author.id == instanceOf).all()
+        output.append(author)
+
+        relations = session.query(Book_Authors_Association).filter(Book_Authors_Association.author == author[0].name).all()
+        publishers = []
+        books = []
+
+        for relation in relations:
+            if relation.publisher not in publishers:
+                publishers.append(relation.publisher)
+            if relation.book not in books:
+                books.append(relation.book)
+        
+        publishersQuery = session.query(Publisher).filter(Publisher.name.in_(publishers)).all()
+        booksQuery = session.query(Book).filter(Book.title.in_(books)).all()
+
+        output.append(publishersQuery)
+        output.append(booksQuery)
+
+        return output
+    
+    elif (entity == "publisher"):
+
+        publisher = session.query(Publisher).filter(Publisher.id == instanceOf).all()
+        output.append(publisher)
+
+        relations = session.query(Book_Authors_Association).filter(Book_Authors_Association.publisher == publisher[0].name).all()
+        authors = []
+        books = []
+
+        for relation in relations:
+            if relation.author not in authors:
+                authors.append(relation.author)
+            if relation.book not in books:
+                books.append(relation.book)
+        
+        authorsQuery = session.query(Author).filter(Author.name.in_(authors)).all()
+        booksQuery = session.query(Book).filter(Book.title.in_(books)).all()
+
+        output.append(authorsQuery)
+        output.append(booksQuery)
+
+        return output
+    
+    elif (entity == "book"):
+
+        book = session.query(Book).filter(Book.id == instanceOf).all()
+
+        relations = session.query(Book_Authors_Association).filter(Book_Authors_Association.book == book[0].title).all()
+        publisher = session.query(Publisher).filter(Publisher.name == relations[0].publisher).all()
+        authors = []
+
+        for relation in relations:
+            authors.append(relation.author)
+        
+        authorsQuery = session.query(Author).filter(Author.name.in_(authors)).all()
+
+        output.append(book)
+        output.append(publisher)
+        output.append(authorsQuery)
+
+        return output
 
 if __name__== "__main__":
     app.run()
