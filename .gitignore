@@ -12,5 +12,5 @@ guides/
 dontpush.py
 Project5.json
 Project5.schema.json
-_pycache_/
+__pycache__/
 .vscode/

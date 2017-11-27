@@ -116,7 +116,7 @@ def book(id_b):
 
     results = runQueryFor(id_b, "book")
         
-    return render_template('book.html', book=results[0], publisher=[1], authors=[2])
+    return render_template('book.html', book=results[0], publisher=results[1], authors=results[2])
 
 @app.route('/author/<int:id_a>')
 def author(id_a):
