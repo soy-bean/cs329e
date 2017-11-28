@@ -12,39 +12,48 @@
     .d-flex {
         display:flex;
     }
-    </style>
-    <style>
-        .ui-helper-hidden-accessible { border: 0;
-            clip: rect(0 0 0 0);
-            height: 1px;
-            margin: -1px;
-            overflow: hidden;
-            padding: 0;
-            position: absolute;
-            width: 1px;
-        }
-        .ui-autocomplete .highlight {
-            text-decoration: underline;
-            color: yellow;
-        }
-        .fixed-height {
-            padding: 1px;
-            max-height: 200px;
-            overflow: auto;
-        }
-        .ui-autocomplete-category {
-            font-weight: bold;
-            padding: .2em .4em;
-            margin: .8em 0 .2em;
-            line-height: 1.5;
-        }
-        .ui-autocomplete .highlight {
-            text-decoration: underline;
-            color: orange;
-        }
-        href{
-          color: red;
-        }
+
+    .ui-helper-hidden-accessible { border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+    .ui-autocomplete .highlight {
+        text-decoration: underline;
+        color: yellow;
+    }
+    .fixed-height {
+        padding: 1px;
+        max-height: 200px;
+        overflow: auto;
+    }
+    .ui-autocomplete-category {
+        font-weight: bold;
+        padding: .2em .4em;
+        margin: .8em 0 .2em;
+        line-height: 1.5;
+    }
+    .ui-autocomplete .highlight {
+        text-decoration: underline;
+        color: orange;
+    }
+    .parallax {
+        /* The image used */
+        background-image: url("../static/images/background.jpg");
+
+        /* Set a specific height */
+        height: 1000px;
+
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
     </style>
 {% endblock %}
 {% block searchbar %}
@@ -52,28 +61,71 @@
 {% endblock %}
 {% block content %}
     <!--Carousel Wrapper-->
-    <div id="video-carousel-example2" class="carousel slide carousel-fade" data-ride="carousel">
-        <!--Slides-->
-        <div class="carousel-inner" role="listbox">
-            <!--First slide-->
-            <div class="carousel-item active">
-                    <div align="center">
-                        <img src="{{ url_for('static', filename='images/background.jpg') }}">
-                    </div>
-                    <div class="full-bg-img"></div>
-                <!--Caption-->
-                <div class="carousel-caption">
-                    <div class="flex-center animated fadeIn">
-                        <!-- <ul>
-                            <br><br><br><br><br><br><br><br><br><br>
-                        </ul> -->
-                    </div>
-                </div>
-                <!--Caption-->
-            </div>
-            <!--/First slide-->
-        </div>
-        <!--/.Slides-->
+    <div class="parallax">
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
     </div>
 
 {% endblock %}
