@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Books{% endblock %}
+{% block title %}Authors{% endblock %}
 {% block head %}
     {{ super() }}
     <!--Data Tables-->
@@ -56,17 +56,26 @@
     <br/>
     <br/>
     <br/>
-    <h4 align="center"><strong>Publisher List</strong></h4>
+    <h4 align="center"><strong>Author List</strong></h4>
     <br/>
-        <table id="myTable" class="display" cellspacing="0" width="70%">
-            <thead>
-                <tr>
-                    {% for column in columns %}
-                        <th>{{column}}</th>
-                    {% endfor %}
-                </tr>
-            </thead>
-        </table>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-1 ml-auto"></div>
+            <div class="col-md-10 ml-auto">
+                <table id="myTable" class="display" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            {% for column in columns %}
+                                <th>{{column}}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="col-md-1 ml-auto"></div>
+        </div>
+    </div>
+    <br/>
     <br/>
     <br/>
     <br/>
