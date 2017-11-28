@@ -10,9 +10,9 @@ env_variables:
     # Replace user, password, database, and instance connection name with the values obtained
     # when configuring your Cloud SQL instance.
     SQLALCHEMY_DATABASE_URI: >-
-      postgresql+psycopg2://postgres:password@/idbcs329e?host=/cloudsql/cs329-184115:us-central1:idbcs329e
+      postgresql+psycopg2://postgres:password@/postgres?host=/cloudsql/cs329e-187400:us-central1:cs329e-db
 beta_settings:
-  cloud_sql_instances: 'cs329-184115:us-central1:idbcs329e'
+  cloud_sql_instances: 'cs329e-187400:us-central1:cs329e-db'
 
 handlers:
 - url: /.*
