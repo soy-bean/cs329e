@@ -1,15 +1,16 @@
 import logging, subprocess, json, os
 from flask import Flask, Response, render_template, request, url_for, send_from_directory, jsonify, redirect, \
-    make_response
+    make_response, Markup
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from models import *
 from create_db import session
 
+
 app = Flask(__name__)
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
 def home():
     return render_template('splash.html')
 
@@ -84,7 +85,6 @@ def server_error(e):
     An internal error occurred: <pre>{}</pre>
     See logs for full stacktrace.
     """.format(e), 500
-
 
 def runQueryFor(instanceOf, entity):
     output = []
