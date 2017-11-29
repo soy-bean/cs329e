@@ -1,3 +1,33 @@
+commit 54b9706f8b142f857262993129a93b44fae9baf5
+Author: nancyt1 <nancy.t@utexas.edu>
+Date:   Tue Nov 28 20:18:11 2017 -0600
+
+    deleted stuff
+
+commit b3c80c36c0320909d1c8779ffe9ee5b1ccabc143
+Author: nancyt1 <nancy.t@utexas.edu>
+Date:   Tue Nov 28 20:17:40 2017 -0600
+
+    added publisher
+
+commit ab6cc346fd9099c35a35c446b7a48d7d2df117d4
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Tue Nov 28 20:08:59 2017 -0600
+
+    update stats
+
+commit 8fddb3ba398655a973a72bd6da7e7db639068c35
+Author: nancyt1 <nancy.t@utexas.edu>
+Date:   Tue Nov 28 19:52:03 2017 -0600
+
+    front end stuff
+
+commit e14438cf778c71fb5bca09acbc8fbe5c9f0dc33a
+Author: carlos-loya <exsorest@gmail.com>
+Date:   Tue Nov 28 18:57:16 2017 -0600
+
+    Closing commit. Added log files, and models.html
+
 commit 575a14d7dac3fb2ac3afc0ae232fbc973c815f86
 Author: Andrew Chen <aychen@utexas.edu>
 Date:   Tue Nov 28 17:39:08 2017 -0600
