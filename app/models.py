@@ -11,18 +11,21 @@ class Author(Base):
     __tablename__ = 'authors'
     id = Column(Integer, primary_key=True)
     name = Column(String(), nullable=False)
-    birth = Column(String())
+    born = Column(String())
     education = Column(String())
     nationality = Column(String())
     alma_mater = Column(String())
-    wiki_link = Column(String())
+    description = Column(String())
+    wikipedia_url = Column(String())
+    died = Column(String())
     image_url = Column(String())
-    books = relationship('Book', secondary='book_author_association')
 
 class Publisher(Base):
     __tablename__ = 'publishers'
     id = Column(Integer, primary_key=True)
     name = Column(String(), nullable=False)
+    founded=Column(String())
+    location=Column(String())
     wiki_link = Column(String())
     description = Column(String())
     owner = Column(String())
@@ -33,22 +36,19 @@ class Book(Base):
     __tablename__ = 'book'
     id = Column(Integer, primary_key=True)
     title = Column(String(), nullable=False)
+    subtitle = Column(String())
     google_id = Column(String())
     isbn = Column(String())
     pub_date = Column(String())
     image_url = Column(String())
     description = Column(String())
-    authors = relationship('Author', secondary='book_author_association')
-    publisher = relationship('Publisher', secondary='book_author_association')
 
 class Book_Authors_Association(Base):
     __tablename__ = 'book_author_association'
-    id_book = Column(Integer, ForeignKey('book.id'), primary_key=True)
-    id_author = Column(Integer, ForeignKey('authors.id'), primary_key=True)
-    id_publisher = Column(Integer, ForeignKey('publishers.id'), primary_key=True)
-    book = relationship(Book, backref=backref("author_assoc"))
-    author = relationship(Author, backref=backref("book_assoc"))
-    publisher = relationship(Publisher, backref=backref("publisher_assoc"))
+    id_b_p_a = Column(Integer, primary_key=True)
+    book = Column(String())
+    publisher = Column(String())
+    author = Column(String())
 
 # Change postgresql://postgres:asd123@localhost/---->postgres<---- to the name of the database you give to your local system
 # postgresql://DB_USER:PASSWORD@HOST/DATABASE

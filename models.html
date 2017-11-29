@@ -8,7 +8,7 @@
 <td valign=bottom>&nbsp;<br>
 <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>models</strong></big></big></font></td
 ><td align=right valign=bottom
-><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/loya/code/school/software_engineering/SoftwareEngineering/imdb/models.py">/Users/loya/code/school/software_engineering/SoftwareEngineering/imdb/models.py</a></font></td></tr></table>
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/loya/code/python/cs329e-imdb/models.py">/Users/loya/code/python/cs329e-imdb/models.py</a></font></td></tr></table>
     <p></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
@@ -66,9 +66,11 @@ for&nbsp;example,&nbsp;any&nbsp;mapped&nbsp;columns&nbsp;or&nbsp;relationships.<
 Data descriptors defined here:<br>
 <dl><dt><strong>alma_mater</strong></dt>
 </dl>
-<dl><dt><strong>birth</strong></dt>
+<dl><dt><strong>born</strong></dt>
 </dl>
-<dl><dt><strong>books</strong></dt>
+<dl><dt><strong>description</strong></dt>
+</dl>
+<dl><dt><strong>died</strong></dt>
 </dl>
 <dl><dt><strong>education</strong></dt>
 </dl>
@@ -80,11 +82,11 @@ Data descriptors defined here:<br>
 </dl>
 <dl><dt><strong>nationality</strong></dt>
 </dl>
-<dl><dt><strong>wiki_link</strong></dt>
+<dl><dt><strong>wikipedia_url</strong></dt>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x103512160; Author&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x10322d198; Author&gt;</dl>
 
 <dl><dt><strong>__table__</strong> = Table('authors', MetaData(bind=None), Column('id...ge_url', String(), table=&lt;authors&gt;), schema=None)</dl>
 
@@ -129,8 +131,6 @@ for&nbsp;example,&nbsp;any&nbsp;mapped&nbsp;columns&nbsp;or&nbsp;relationships.<
 
 <hr>
 Data descriptors defined here:<br>
-<dl><dt><strong>authors</strong></dt>
-</dl>
 <dl><dt><strong>description</strong></dt>
 </dl>
 <dl><dt><strong>google_id</strong></dt>
@@ -143,13 +143,13 @@ Data descriptors defined here:<br>
 </dl>
 <dl><dt><strong>pub_date</strong></dt>
 </dl>
-<dl><dt><strong>publisher</strong></dt>
+<dl><dt><strong>subtitle</strong></dt>
 </dl>
 <dl><dt><strong>title</strong></dt>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x103512c18; Book&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x10322dba8; Book&gt;</dl>
 
 <dl><dt><strong>__table__</strong> = Table('book', MetaData(bind=None), Column('id', ...scription', String(), table=&lt;book&gt;), schema=None)</dl>
 
@@ -198,19 +198,15 @@ Data descriptors defined here:<br>
 </dl>
 <dl><dt><strong>book</strong></dt>
 </dl>
-<dl><dt><strong>id_author</strong></dt>
-</dl>
-<dl><dt><strong>id_book</strong></dt>
-</dl>
-<dl><dt><strong>id_publisher</strong></dt>
+<dl><dt><strong>id_b_p_a</strong></dt>
 </dl>
 <dl><dt><strong>publisher</strong></dt>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x1035471d0; Book_Authors_Association&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x10322df98; Book_Authors_Association&gt;</dl>
 
-<dl><dt><strong>__table__</strong> = Table('book_author_association', MetaData(bind=N..., primary_key=True, nullable=False), schema=None)</dl>
+<dl><dt><strong>__table__</strong> = Table('book_author_association', MetaData(bind=N...), table=&lt;book_author_association&gt;), schema=None)</dl>
 
 <dl><dt><strong>__tablename__</strong> = 'book_author_association'</dl>
 
@@ -255,9 +251,13 @@ for&nbsp;example,&nbsp;any&nbsp;mapped&nbsp;columns&nbsp;or&nbsp;relationships.<
 Data descriptors defined here:<br>
 <dl><dt><strong>description</strong></dt>
 </dl>
+<dl><dt><strong>founded</strong></dt>
+</dl>
 <dl><dt><strong>id</strong></dt>
 </dl>
 <dl><dt><strong>image_url</strong></dt>
+</dl>
+<dl><dt><strong>location</strong></dt>
 </dl>
 <dl><dt><strong>name</strong></dt>
 </dl>
@@ -269,7 +269,7 @@ Data descriptors defined here:<br>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x1035125f8; Publisher&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x10322d6d8; Publisher&gt;</dl>
 
 <dl><dt><strong>__table__</strong> = Table('publishers', MetaData(bind=None), Column(...ite', String(), table=&lt;publishers&gt;), schema=None)</dl>
 

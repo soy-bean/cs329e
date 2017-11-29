@@ -1,0 +1,1028 @@
+commit 575a14d7dac3fb2ac3afc0ae232fbc973c815f86
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Tue Nov 28 17:39:08 2017 -0600
+
+    had some fun with parallax
+
+commit 0db01cb7e94eabb214a6b132e856ecb295bedc6c
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Tue Nov 28 17:17:59 2017 -0600
+
+    beautify splash; added parallax effect for background img
+
+commit 563ca45655dd579589e3230c8ced380025dc1513
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Tue Nov 28 16:08:16 2017 -0600
+
+    fix images on about.html
+
+commit c1544a01304fd541d8dc4b47e707bb4fa5610c4d
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Tue Nov 28 12:19:39 2017 -0600
+
+    update app.yaml for new GCP project
+
+commit 1a264b7b2189b0e1d71db148b96122a69d2cbc3d
+Merge: 00ccc04 19071f6
+Author: carlos-loya <exsorest@gmail.com>
+Date:   Tue Nov 28 10:14:08 2017 -0600
+
+    Merge branch 'dev' of https://github.com/arr3385/cs329e-idb into dev
+
+commit 00ccc04a82aa1919e3e93e0d5be0530225de3725
+Author: carlos-loya <exsorest@gmail.com>
+Date:   Tue Nov 28 10:14:00 2017 -0600
+
+    Updated requirements.txt
+
+commit 19071f6cb8b2a914537da5937fa0d7bfa5456c05
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Tue Nov 28 09:47:38 2017 -0600
+
+    Update app.yaml
+
+commit 85f83023b9e7c33db2eacf0df6996515d7cb5920
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Tue Nov 28 01:20:51 2017 -0600
+
+    complete about.html
+
+commit da9d72d192f2eef4e85f2c54534c0cd280e8af67
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Mon Nov 27 22:13:06 2017 -0600
+
+    update about.html
+
+commit d0d7b8c18752b6609d13b0c67aa458ef9f0c9a72
+Author: carlos-loya <exsorest@gmail.com>
+Date:   Mon Nov 27 18:52:57 2017 -0600
+
+    Cosmetic changes to model html pages, some modifications to app.py.
+
+commit fea99b532ddf884e53beb589375b49f67d2323ee
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Mon Nov 27 16:32:51 2017 -0600
+
+    quick fix for generating book.html
+
+commit dcb3190753ec0a56fe9cb09247daeb7abaff0942
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Mon Nov 27 12:13:06 2017 -0600
+
+    delete .vscode and _pycache_
+
+commit 7ccbf1034a741e54b2d7c1b94eea93026392bb29
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Mon Nov 27 12:09:15 2017 -0600
+
+    moved queries into separate method. hope this works
+
+commit 76a3b7007df3f923bfdf022f9ac6cfe6077a9c55
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Sun Nov 26 21:57:35 2017 -0600
+
+    more cosmetic changes
+
+commit ad86d36109580c58fe2ab372c273d4863ad88bd9
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Sun Nov 26 19:08:06 2017 -0600
+
+    removed autocomplete searchbar from every page except splash
+
+commit 35390f92136c77039a3122bc26c51a1c6b17fe7f
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Sun Nov 26 19:04:19 2017 -0600
+
+    added queries for relations for individual entities
+
+commit a1bba8548359c246820d2a8e13f47b9b18e9f8ca
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Sat Nov 25 22:49:23 2017 -0600
+
+    minor cosmetic changes
+
+commit e237b4e95d1404bc9ada5cd277270d605b491750
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Sat Nov 25 22:39:34 2017 -0600
+
+    final updates for displaying each indiviual entity
+
+commit 0a8e57d3c8e31075db03cd41b82c8a234bd3223c
+Author: carlos-loya <exsorest@gmail.com>
+Date:   Sat Nov 25 14:12:55 2017 -0600
+
+    Added bare-bones live search functionality that uses servers-side processing. Also updated splash page.
+
+commit a02f14bfd38f0590d0cf39b894e6b4d9c64082bc
+Author: carlos-loya <exsorest@gmail.com>
+Date:   Fri Nov 24 17:19:58 2017 -0600
+
+    Added links to Book, Author, and Publisher tables.
+
+commit 8a6d36bf2ac85621be4a3ccfb04c52167d210491
+Author: carlos-loya <exsorest@gmail.com>
+Date:   Fri Nov 24 16:31:26 2017 -0600
+
+    Added links to Data Tables to individual pages.
+
+commit 2f9086fcc194fb853037d5454285eb30d49c3a9a
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Fri Nov 24 16:13:06 2017 -0600
+
+    adjust image resolutions for equal ratios and complete splash
+
+commit b2c2f29f8023e6d276811fc437188790dae583f7
+Author: carlos-loya <exsorest@gmail.com>
+Date:   Fri Nov 24 14:07:19 2017 -0600
+
+    Added changes to the columns that gets displayed at the Book, Puublisher, and Author tables.
+
+commit 20bbefbba3ba5f4bdae462ac4ccfd4fde4930bd1
+Author: carlos-loya <exsorest@gmail.com>
+Date:   Tue Nov 21 13:44:53 2017 -0600
+
+    Removed hard-coded examples, using server-side table generation.
+
+commit d1a7262b63b766940bb614ae94b1dc677fd34a78
+Author: carlos-loya <exsorest@gmail.com>
+Date:   Mon Nov 20 15:10:04 2017 -0600
+
+    Added Datatables support and files.
+
+commit ed67f8b2534c867544dbb885359d6bdf3a2a540e
+Merge: 722b5fb 52eeba7
+Author: carlos-loya <exsorest@gmail.com>
+Date:   Sun Nov 19 00:28:25 2017 -0600
+
+    Merge branch 'dev' of https://github.com/arr3385/cs329e-idb into dev
+
+commit 722b5fb3f513ff8a4652768ed8c33ed517b16e49
+Author: carlos-loya <exsorest@gmail.com>
+Date:   Sun Nov 19 00:28:12 2017 -0600
+
+    Fixed database files to get the right data. Eliminated duplicates in tables.
+
+commit 52eeba7a424e9c60cb6437f75fad2557eee05403
+Author: jkonchady <jkonchady97@gmail.com>
+Date:   Fri Nov 17 14:39:04 2017 -0600
+
+    Fixed up list pages format
+
+commit 02ceea214fdc158ec55895a4d3cfcd6ca2296549
+Author: jkonchady <jkonchady97@gmail.com>
+Date:   Fri Nov 17 13:58:38 2017 -0600
+
+    Properly fixed navbar on splash page
+
+commit c92b2fdf2e7c627cd01ecb7b4c563ee208f0ca42
+Author: jkonchady <jkonchady97@gmail.com>
+Date:   Fri Nov 17 13:39:37 2017 -0600
+
+    Changed navbar on home page from transparent to solid
+
+commit 3fbe74c165bc8371c73bf8b8ba8817e110a7bad5
+Author: jkonchady <jkonchady97@gmail.com>
+Date:   Fri Nov 17 13:31:35 2017 -0600
+
+    Listed attributes on pages for books authors and publishers
+
+commit 98ea37e6c6be3f1ae8727b1b7e0727e805a83c0b
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Wed Nov 15 21:16:32 2017 -0600
+
+    update splash and file layout
+
+commit 7d3321e02dfc8759ca1790e27595af9febe4021c
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Wed Nov 15 16:51:28 2017 -0600
+
+    fix merge error
+
+commit 73e7213659b43267aa5d59ac5013580e83569e49
+Merge: 631a8f6 f3d8a9f
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Wed Nov 15 16:50:04 2017 -0600
+
+    test commit
+
+commit f3d8a9f96c5631abf4f268533a2f742a17ab13a6
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Wed Nov 15 10:37:30 2017 -0600
+
+    implement universal footer in base.html
+
+commit 1d3c9e3f078e8eb73aa731d7b65e71f518b450e1
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Wed Nov 15 10:26:45 2017 -0600
+
+    add support for 21:9 aspect ratios, sorry i looks ugly on my workstation
+
+commit 69ce26ae601a56752e5fbbaeda57ed7a6852c392
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Wed Nov 15 01:04:34 2017 -0600
+
+    migrate to mdbootstrap
+
+commit 4b231843a77510caa065e4a9138ea0a74986fb4a
+Author: carlos-loya <exsorest@gmail.com>
+Date:   Thu Nov 9 21:49:26 2017 -0600
+
+    Added log file
+
+commit d41839e3f7c92e33480bdd8db64b0f54960b0573
+Merge: 870c6f9 fbdfb17
+Author: carlos-loya <exsorest@gmail.com>
+Date:   Thu Nov 9 21:48:17 2017 -0600
+
+    gerge branch 'project3start' of https://github.com/arr3385/cs329e-idb into project3start
+
+commit 870c6f94f311817849c462f3add2f39c4c2b247e
+Author: carlos-loya <exsorest@gmail.com>
+Date:   Thu Nov 9 21:48:07 2017 -0600
+
+    Folder structure
+
+commit fbdfb1724a2922fbb486c528af99265f54b08e57
+Author: jkonchady <jkonchady97@gmail.com>
+Date:   Thu Nov 9 21:47:02 2017 -0600
+
+    Updated final info on about page
+
+commit bedbef661d0192ae4895307561179517935283ad
+Author: carlos-loya <exsorest@gmail.com>
+Date:   Thu Nov 9 21:46:20 2017 -0600
+
+    Finishing touches
+
+commit c0b9f5e1ab429a369b319583ce3938e16941ef1a
+Merge: 97f6791 584e53b
+Author: carlos-loya <exsorest@gmail.com>
+Date:   Thu Nov 9 21:01:39 2017 -0600
+
+    Merge branch 'project3start' of https://github.com/arr3385/cs329e-idb into project3start
+
+commit 97f67915edb725b16a3f33cba50dcfd4ec9bc25f
+Author: carlos-loya <exsorest@gmail.com>
+Date:   Thu Nov 9 20:57:21 2017 -0600
+
+    Added PyDoc output file, added unit tests, and added to makefile.
+
+commit 584e53bf43ca434f3d17c6ade1c4470a960eca2a
+Merge: 8505617 de57e23
+Author: nancyt1 <nancy.t@utexas.edu>
+Date:   Thu Nov 9 20:32:10 2017 -0600
+
+    Merge branch 'project3start' of https://github.com/arr3385/cs329e-idb into project3start
+    merged
+
+commit 8505617d4e8195ba5b447d5622adc859b4c0d009
+Author: nancyt1 <nancy.t@utexas.edu>
+Date:   Thu Nov 9 20:31:35 2017 -0600
+
+    probs last edit to front end
+
+commit de57e2351778ef1491f06fff2e892063c6a84915
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Thu Nov 9 20:26:07 2017 -0600
+
+    add documentation photos
+
+commit c66158d0f455695353e212380459bd07b638af9b
+Author: Nancy Tran <nancy.t@utexas.edu>
+Date:   Thu Nov 9 19:08:34 2017 -0600
+
+    Delete type.gif
+
+commit 7bee840a3f7a466b89b0ae4cb0978925a691b132
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Thu Nov 9 18:52:35 2017 -0600
+
+    im stupid
+
+commit cbb444e7acb7729c5a790c20b2c9067685217b22
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Thu Nov 9 18:51:49 2017 -0600
+
+    edit link references for proper routing
+
+commit 8c25a420c69f8f9b5e9b7879dd7797463300fb1e
+Author: nancyt1 <nancy.t@utexas.edu>
+Date:   Thu Nov 9 18:50:08 2017 -0600
+
+    updated about page
+
+commit 59c3a1c6839518ae563438630e222f6d5739e089
+Author: nancyt1 <nancy.t@utexas.edu>
+Date:   Thu Nov 9 18:37:57 2017 -0600
+
+    edited splash page
+
+commit b466256d11ab25f8857bc0a298609ad6e40c8562
+Author: carlos-loya <exsorest@gmail.com>
+Date:   Thu Nov 9 18:22:51 2017 -0600
+
+    Fixed test error
+
+commit 486ef5ea62e7a8d6f8c230d2c5901c1abfa7b5c0
+Merge: 79855e3 723530c
+Author: jkonchady <jkonchady97@gmail.com>
+Date:   Thu Nov 9 18:18:58 2017 -0600
+
+    Merge branch 'project3start' of https://github.com/arr3385/cs329e-idb into project3start
+
+commit 723530cbac65c62fcf3ed8bfce1a984342991051
+Author: carlos-loya <exsorest@gmail.com>
+Date:   Thu Nov 9 18:18:34 2017 -0600
+
+    Changed models.py
+
+commit 79855e36ebe0facdf59ae01b5f09726221e8a863
+Author: jkonchady <jkonchady97@gmail.com>
+Date:   Thu Nov 9 18:18:30 2017 -0600
+
+    Added breaks to book and publisher list pages
+
+commit 8895ec827fd913f2f5f6a73595cca30396a2122c
+Merge: df0cbc6 30afa84
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Thu Nov 9 18:10:49 2017 -0600
+
+    Merge branch 'project3start' of https://github.com/arr3385/cs329e-idb into project3start
+
+commit df0cbc6e4d7429354710646a897c907798415dc1
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Thu Nov 9 18:06:56 2017 -0600
+
+    accommodate for all data entries in jinja templates
+
+commit 30afa8414bc1a5907ca9ff9553e32f1e12f2d34e
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Thu Nov 9 18:06:18 2017 -0600
+
+    Update app.yaml
+
+commit c3cfa975ca11cd08749e38ec58d801ff3b941560
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Thu Nov 9 17:56:43 2017 -0600
+
+    Update app.yaml
+
+commit 778585664d769baab1eee7601429b1907bf7097b
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Thu Nov 9 17:45:51 2017 -0600
+
+    Update app.yaml
+
+commit 51febc7c3a17c8d9046c7774c0faf7ad8f39656e
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Thu Nov 9 16:51:07 2017 -0600
+
+    fix html splash, global css, and tested passing data from postgres to templates
+
+commit 767866249e2622cd81515bd0222067792a76d0da
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Thu Nov 9 15:50:20 2017 -0600
+
+    Update app.yaml
+
+commit 75c4a71dd9db01a4015d255feda5f926b4db07e5
+Merge: b886469 f82b79c
+Author: nancyt1 <nancy.t@utexas.edu>
+Date:   Thu Nov 9 13:23:59 2017 -0600
+
+    fixed link
+
+commit b886469ac896e83a6d0072b439100d25fea39302
+Author: nancyt1 <nancy.t@utexas.edu>
+Date:   Thu Nov 9 13:07:51 2017 -0600
+
+    links work?
+
+commit f82b79c14826f2600bb363eaed25f19c611a347c
+Author: jkonchady <jkonchady97@gmail.com>
+Date:   Thu Nov 9 10:57:38 2017 -0600
+
+    removed redundant home buttons on splash page
+
+commit 9455926b74003327f51b0951647801ecf5bc0932
+Merge: d47fd84 b09d423
+Author: nancyt1 <nancy.t@utexas.edu>
+Date:   Thu Nov 9 01:02:06 2017 -0600
+
+    Merge branch 'project3start' of https://github.com/arr3385/cs329e-idb into project3start
+    "vim merge?"
+
+commit d47fd84ded38afce3df1477ed73340ba7e10f221
+Author: nancyt1 <nancy.t@utexas.edu>
+Date:   Thu Nov 9 00:56:47 2017 -0600
+
+    more updates on front end
+
+commit b09d423c768f69e7b8bb60947a28d04816a1cfd7
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Wed Nov 8 19:42:39 2017 -0600
+
+    Update models.py
+
+commit cba0b4dd8d41fb9643e98d603c4b5a2ac46fe831
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Wed Nov 8 19:28:42 2017 -0600
+
+    update URI
+
+commit 7a92e5be2642924a0ea3bae09cc61156931ac835
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Wed Nov 8 19:21:50 2017 -0600
+
+    added db connection
+
+commit ffef30564fd2c451fe80387cea9ed6274c7598ef
+Author: jkonchady <jkonchady97@gmail.com>
+Date:   Wed Nov 8 18:58:14 2017 -0600
+
+    Added unit tests to webpage
+
+commit febfd91158e63f822c9d149af3eac0d32c68491a
+Author: carlos-loya <exsorest@gmail.com>
+Date:   Wed Nov 8 18:30:29 2017 -0600
+
+    Pushing different travis file.[C
+
+commit eae6e9a3c26c7736f531bacf7d34d6a8a560aaed
+Merge: f6547cc a22b378
+Author: carlos-loya <exsorest@gmail.com>
+Date:   Wed Nov 8 18:25:14 2017 -0600
+
+    Merge branch 'project3start' of https://github.com/arr3385/cs329e-idb into project3start
+
+commit f6547cc8e1e6b5845cc8b9faa5b24e7d0e708c2f
+Author: carlos-loya <exsorest@gmail.com>
+Date:   Wed Nov 8 18:24:53 2017 -0600
+
+    Added working models.py, create_db.py, and travis file.
+
+commit a22b3788540155c4368baa745f7862b083913571
+Author: jkonchady <jkonchady97@gmail.com>
+Date:   Wed Nov 8 17:50:30 2017 -0600
+
+    Added tools used to about page
+
+commit cb1e76f1aaaec510b47dbcab4060fddc31b9d3bb
+Author: nancyt1 <nancy.t@utexas.edu>
+Date:   Wed Nov 8 17:28:11 2017 -0600
+
+    changed front end stuff
+
+commit cfcd84eb8ced35b653509f3fd85d96b4a71d0ded
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Tue Nov 7 10:34:18 2017 -0600
+
+    define the relationships in models.py
+
+commit 5b94d5849f3f9a036faf9a4a7c34852332b3546b
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Mon Nov 6 13:51:24 2017 -0600
+
+    update DDL for models.py
+
+commit 631a8f69a836c5dc5e4732706e8bc7bdb50883bc
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Mon Nov 6 11:33:58 2017 -0600
+
+    test commit to dev branch
+
+commit 16fc5e2aa96bc4b1beddba5417b025bb6c448e6b
+Author: carlos-loya <exsorest@gmail.com>
+Date:   Thu Nov 2 14:20:08 2017 -0500
+
+    Added slack notifications to .travis.yml
+
+commit d6856ad6b69a6566bf2d5aafd9af90a6ab347119
+Author: carlos-loya <exsorest@gmail.com>
+Date:   Thu Nov 2 14:17:05 2017 -0500
+
+    Got database template working and pushing all changes.
+
+commit ad9ef52e2e948179d9b555621833e596b3b49e9a
+Author: carlos-loya <exsorest@gmail.com>
+Date:   Thu Oct 26 21:29:57 2017 -0500
+
+    Added latest log file.
+
+commit eb8d1fec28d6a2d66bcb8cfd7df122ffce690d05
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Thu Oct 26 20:20:21 2017 -0500
+
+    add more documentation photos for wiki
+
+commit dad215ca79395afde03c3b28711fcf8897928918
+Author: carlos-loya <exsorest@gmail.com>
+Date:   Thu Oct 26 20:18:38 2017 -0500
+
+    Added log file.
+
+commit 5066a66097a8036be17da81c251ea1a42820d692
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Thu Oct 26 20:12:59 2017 -0500
+
+    add documenation photos so we can link to wiki
+
+commit f599b0b237c56e7e1ad6fcebf899daa85a371ac0
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Thu Oct 26 18:50:31 2017 -0500
+
+    fix link to github wiki
+
+commit 4a5740498c117e12d16f97f5e8bb042b9a83a99d
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Thu Oct 26 17:08:55 2017 -0500
+
+    add gunicorn
+
+commit d14396ba10e91286e54305cea3ea87c423d0503c
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Thu Oct 26 16:38:12 2017 -0500
+
+    Update app.yaml
+
+commit 590db5a7fbd12ef2d20370ead781e69be6055821
+Merge: 144f1c9 c6ac329
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Thu Oct 26 16:32:54 2017 -0500
+
+    Merge pull request #19 from arr3385/dev
+    
+    Dev
+
+commit c6ac329e69a7576ab2655cda36cd8705fd30b298
+Merge: f48ce13 144f1c9
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Thu Oct 26 16:27:43 2017 -0500
+
+    Merge branch 'master' into dev
+
+commit f48ce13cc28017ffdd51294ddfa98bfb7731b530
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Thu Oct 26 16:10:50 2017 -0500
+
+    Update makefile
+
+commit d0792705d154e8797828b1daf238a916cb25f0b6
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Thu Oct 26 16:08:50 2017 -0500
+
+    Update app.yaml
+
+commit 6310e6ba5e6d8561490f3a93f3fcd1b9af5f7afd
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Thu Oct 26 16:07:32 2017 -0500
+
+    Update makefile
+
+commit 39427f1770ad4b343fc3a55c27452a38a0bbdd08
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Thu Oct 26 16:07:02 2017 -0500
+
+    Update test.py
+
+commit 026b28904ec2d70bc46eb4f88442e67d8b305f79
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Thu Oct 26 16:06:32 2017 -0500
+
+    Update and rename canja.yaml to app.yaml
+
+commit 897e2fba5ab2b054de91d7fa931ff6d47d95c2b8
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Thu Oct 26 16:06:06 2017 -0500
+
+    Rename canja.py to app.py
+
+commit 982eeb14262cedf62551e8ac886134394368e971
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Thu Oct 26 16:05:45 2017 -0500
+
+    Update coverage.txt
+
+commit 55111712ad089d36febaaa914a285b24728b64bd
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Thu Oct 26 13:07:04 2017 -0500
+
+    missed a few things.. sorry
+
+commit b70006943c365bc1f915c08f89960c4ea47fae07
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Thu Oct 26 13:04:27 2017 -0500
+
+    final commit
+
+commit 406cf3be843fa27d90b62bfb706b186e45649285
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Thu Oct 26 10:34:08 2017 -0500
+
+    Implemeneted desktop column layout for the grid system. Also replaced stats card with button
+
+commit 144f1c995a8157774f729fcc8c57117124fb369f
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Thu Oct 26 10:21:26 2017 -0500
+
+    Update coverage.txt
+
+commit 712c5f3217e30b5c4c3bfbc7bd02776b4bbefc10
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Thu Oct 26 10:21:03 2017 -0500
+
+    Update test.py
+
+commit d4e6bfc915efc3957348e5103ab23978a4fafb43
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Thu Oct 26 10:20:13 2017 -0500
+
+    Update makefile
+
+commit 7a372115821772daab2f4745d1eec55db28ebe3e
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Thu Oct 26 10:08:56 2017 -0500
+
+    Delete appengine_config.py
+
+commit 1fafadc6dff18cd8fe85e215142fbc327a4be225
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Thu Oct 26 09:56:54 2017 -0500
+
+    Create appengine_config.py
+
+commit ef10aeff03699c564ddced034cc7d6dac781f482
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Thu Oct 26 09:30:29 2017 -0500
+
+    Update and rename canja.yaml to app.yaml
+
+commit 8120fc43f5da1d5132a2eb162f5eabf50a9965b6
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Thu Oct 26 09:29:34 2017 -0500
+
+    Rename canja.py to app.py
+
+commit 4660c1ba287e26a7e25546a261e4b8a729af9806
+Merge: 7e48c68 459a2ba
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Thu Oct 26 09:28:37 2017 -0500
+
+    Merge pull request #17 from arr3385/dev
+    
+    Dev
+
+commit 459a2ba1452d2cbc5da24ef9e24c6462c4385b98
+Merge: 79c40aa b21e117
+Author: carlos-loya <exsorest@gmail.com>
+Date:   Thu Oct 26 01:57:49 2017 -0500
+
+    Merge branch 'dev' of https://github.com/arr3385/cs329e-idb into dev
+
+commit 79c40aacbea6a0e63aa714862541cea01c591c3a
+Author: carlos-loya <exsorest@gmail.com>
+Date:   Thu Oct 26 01:56:52 2017 -0500
+
+    Revamped html files with jinja template inheritance and fixed corresponding href tags. Updated canja.py and test.py to reflect changes. Updated folder structure to match teacher template. closes #3, closes #8
+
+commit 7e48c68396eabdd40c4bac5c9bf275c8539446b7
+Merge: 7b649ce b21e117
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Wed Oct 25 20:37:32 2017 -0500
+
+    Merge pull request #16 from arr3385/dev
+    
+    Dev
+
+commit b21e117f0a93c6ab1ebc222328ad98536f1d4f93
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Wed Oct 25 20:11:19 2017 -0500
+
+    Update canja.yaml
+
+commit c22dfb30c954f64f5fd2ebfc2ec361e7b2061a00
+Merge: 34ddfda f956ca9
+Author: carlos-loya <exsorest@gmail.com>
+Date:   Wed Oct 25 20:06:36 2017 -0500
+
+    Merge branch 'dev' of https://github.com/arr3385/cs329e-idb into dev
+
+commit 34ddfda0cf00aaf60f8d164673d2f76c88d70b72
+Author: carlos-loya <exsorest@gmail.com>
+Date:   Wed Oct 25 20:06:28 2017 -0500
+
+    Added my picture and bio to the stats page.
+
+commit f956ca9f07a4c049c7bf19e36a250878198de6d2
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Wed Oct 25 20:04:07 2017 -0500
+
+    Delete app.yaml
+
+commit f0d5af67c0c4679e7080344f56242809c1d8298e
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Wed Oct 25 20:01:23 2017 -0500
+
+    Create app.yaml
+
+commit f95294fb708329ee80b3dc12df8e6028d2448154
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Wed Oct 25 16:41:39 2017 -0500
+
+    unified <h1> css typography style throughout the site templates
+
+commit 2dbc460f35ca676ccee08b5e61d18ff916ca2e58
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Wed Oct 25 16:30:35 2017 -0500
+
+    cleaned up publisher and author lists
+
+commit 208d5aacbb9cc86d3937d42aaba24f0633322903
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Wed Oct 25 16:28:25 2017 -0500
+
+    adjust mdl-card layout in publishers
+
+commit b2efe6b4e3b3f47bb898560a2121bbcbb594f95f
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Wed Oct 25 16:11:52 2017 -0500
+
+    adjust mdl-card grid/col layout to accommodate for 1920x1080 and 16:9 aspect ratio
+
+commit 6f96729a116c167dbd5b32522c9b26c8b68a44b3
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Wed Oct 25 15:43:19 2017 -0500
+
+    adjusted stats page to put every member in a single row
+
+commit 16948721f6aabbe9271491becb2cc418aa6e780e
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Wed Oct 25 15:05:21 2017 -0500
+
+    updated layout for books
+
+commit 8877f4db273dc9f06ac4a8b6d9ad86c5f3ec0bab
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Wed Oct 25 14:38:05 2017 -0500
+
+    Moved images to appropriate folder. Adjusted stats for appropriate image routing
+
+commit 3ffd6a655da3c8b51581f53be737ed8500172803
+Author: Nancy Tran <nancy.t@utexas.edu>
+Date:   Wed Oct 25 13:22:00 2017 -0500
+
+    updated description
+
+commit 6490e0a25ff1bd0565c9893b61ac791418831509
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Wed Oct 25 12:51:03 2017 -0500
+
+    adjust stats page to incorporate material design cards for each member
+
+commit 51fce7c003827db52266a18d25518488abbbb459
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Wed Oct 25 12:50:00 2017 -0500
+
+    adjusted card depth from 2dp -> 8dp for more pop
+
+commit 43ce6898d3e0d151481389242ecebf4ad376b6b1
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Wed Oct 25 12:22:57 2017 -0500
+
+    add more depth in mdl cards: from 2dp -> 8dp
+
+commit 6645ac7964f2e396413c7d4fb3f4eb5b4d872be2
+Author: Nancy Tran <nancy.t@utexas.edu>
+Date:   Wed Oct 25 12:02:54 2017 -0500
+
+    uploaded pic
+
+commit 2f71c3e657c07ca0301d7413ceb2bb7d46f96300
+Author: jkonchady <jkonchady97@gmail.com>
+Date:   Tue Oct 24 21:17:44 2017 -0500
+
+    Added pictures to stats
+
+commit d1a72c69b9dd6915a8a50331e12c4d6214913408
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Tue Oct 24 21:10:23 2017 -0500
+
+    Update book3.html
+
+commit 10c713ec4fa4e5cf8be7024c1825b79013939ca7
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Tue Oct 24 21:09:55 2017 -0500
+
+    Update book2.html
+
+commit aa9f23abea3bb40e0def7c580a23a002c45eaf88
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Tue Oct 24 21:09:27 2017 -0500
+
+    Update book1.html
+
+commit 1643aefc383a5b2e626003e28b4363fdfd58db28
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Tue Oct 24 21:04:25 2017 -0500
+
+    Update publisher3.html
+
+commit 227a9442125a7b55a020673563eb0dccd5353543
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Tue Oct 24 21:00:56 2017 -0500
+
+    Update book3.html
+
+commit 1a65936c89ad939fac9770b7f2733b1eb5dbb0f0
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Tue Oct 24 20:58:10 2017 -0500
+
+    Update book1.html
+
+commit a1493e8a984b7963934aca40e6bc5533227564fe
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Tue Oct 24 20:46:01 2017 -0500
+
+    Update book2.html
+
+commit 174874d0f17af6e947b85585f8f384f2e3a3cfb3
+Merge: a8e9b84 cc3a92c
+Author: jkonchady <jkonchady97@gmail.com>
+Date:   Tue Oct 24 20:45:12 2017 -0500
+
+    Merge branch 'dev' of https://github.com/arr3385/cs329e-idb into dev
+
+commit cc3a92c3474e9ea55418f330b343b2fc363348e6
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Tue Oct 24 20:45:02 2017 -0500
+
+    Update book1.html
+
+commit a8e9b841d8aac6a58e6fccd9f26ef438e40e65e3
+Author: jkonchady <jkonchady97@gmail.com>
+Date:   Tue Oct 24 20:44:59 2017 -0500
+
+    Author pages made to match
+
+commit aebe462cbb95d2609a4825cb3b9e91b2a012ac0a
+Author: Nancy Tran <nancy.t@utexas.edu>
+Date:   Tue Oct 24 20:39:29 2017 -0500
+
+    Updated to match publisher1.html
+
+commit 8fae329b2fa75a3e5b4c5d9505dda8d6c3742d28
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Tue Oct 24 20:38:21 2017 -0500
+
+    Update book1.html
+
+commit 5b2e87fbcb50ff1c77ff00a43a5b0e25070d9746
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Tue Oct 24 20:37:14 2017 -0500
+
+    Update book2.html
+
+commit 58eb261ca9c6bf6caeb1f7213cbd78f709869979
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Tue Oct 24 20:31:00 2017 -0500
+
+    Update book2.html
+
+commit 6100099cb2db63e3112b015b575f0ebcc2bd1809
+Author: Nancy Tran <nancy.t@utexas.edu>
+Date:   Tue Oct 24 20:30:03 2017 -0500
+
+    Update to match publisher1.html
+
+commit b90b45b96c6eafa82ccefc1656cd52f865d0dd8a
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Tue Oct 24 20:11:11 2017 -0500
+
+    Update stats.html
+
+commit 86086fdaef38f220250a9ccdad2bc6fb67f816a0
+Author: carlos-loya <exsorest@gmail.com>
+Date:   Tue Oct 24 19:13:52 2017 -0500
+
+    Fixed canja.py, updated coverage.txt and test.py to reflect this changes.
+
+commit 2067068ca9f8e9e83fe42902090122e7b08c13ee
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Tue Oct 24 10:42:26 2017 -0500
+
+    url fixes
+
+commit 6d2c40914a15318a022030669fcb052fb9a7eb61
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Tue Oct 24 10:38:35 2017 -0500
+
+    update html files for proper display. Everything is in mdl now
+
+commit 1930b5bf2b80786e501e180092305c01eee907d7
+Author: jkonchady <jkonchady97@gmail.com>
+Date:   Sun Oct 22 09:59:11 2017 -0500
+
+    pages for books, authors and publishers updated
+
+commit a5daea11a6a1d4bb4f5c24d9b178e8ee7b2c8b82
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Sun Oct 22 00:07:47 2017 -0500
+
+    testing new look for <h1>
+
+commit 7b649ceb72edb6191aa1d3c3708acdb14d57f383
+Author: carlos-loya <carlosloya@utexas.edu>
+Date:   Sat Oct 21 21:57:13 2017 -0500
+
+    Added unit tests to test.py and updated the README. Check out coverage.txt to see what unit tests need to be written.
+
+commit 5c18e1339f6bacc01d07952d7bd4672759e6a28b
+Author: carlos-loya <carlosloya@utexas.edu>
+Date:   Sat Oct 21 21:09:04 2017 -0500
+
+    Fixed canja.py file to reflect the file names template folder. Tests pass. closes #2, closes #12, closes #13, closes #15
+
+commit 8a3f787e97b02e03b16dc3f62b7d8b846e857850
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Sat Oct 21 20:25:17 2017 -0500
+
+    adjust booklist.html for proper url routing for authors/publishers
+
+commit b9d7108c6e3c436088246a707ba63ffc3b2af81f
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Sat Oct 21 20:05:20 2017 -0500
+
+    fixed url redirecting in html files
+
+commit 40525db004685789a2715157ac8f7b5790b09df3
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Sat Oct 21 19:55:13 2017 -0500
+
+    adjust html file names and fix canja.py for proper url routing
+
+commit 1916ae8e2be776ca15635434d316d1171567a0e3
+Merge: 792a379 b69924f
+Author: jkonchady <jkonchady97@gmail.com>
+Date:   Sat Oct 21 17:01:43 2017 -0500
+
+    Merge branch 'dev' of https://github.com/arr3385/cs329e-idb into dev
+
+commit 792a379a627ec0e96c56848fed74e326ec7ea332
+Author: jkonchady <jkonchady97@gmail.com>
+Date:   Sat Oct 21 16:59:22 2017 -0500
+
+    Updated the list pages
+
+commit b69924f8b0920d5f50930ff4a5d7f995bce6b3aa
+Author: carlos-loya <carlosloya@utexas.edu>
+Date:   Sat Oct 21 16:56:36 2017 -0500
+
+    Fixed problems with makefile.
+
+commit 005772a0a7b71e238a32686853ad239cc99192e3
+Author: carlos-loya <carlosloya@utexas.edu>
+Date:   Sat Oct 21 16:53:49 2017 -0500
+
+    Added installation instructions to README file.
+
+commit f044ae86ae4df9bfdbc1865fef7fc74b71662319
+Author: Andrew Chen <aychen@utexas.edu>
+Date:   Sat Oct 21 16:31:28 2017 -0500
+
+    test delete file
+
+commit b9d1b282f7b87af7404080f4925c98316ff8ef7a
+Author: jkonchady <jkonchady97@gmail.com>
+Date:   Sat Oct 21 16:29:16 2017 -0500
+
+    updated wrong file
+
+commit 6d424e8f242e83423e858dc476abb7fbcf8e303c
+Author: jkonchady <jkonchady97@gmail.com>
+Date:   Sat Oct 21 16:27:36 2017 -0500
+
+    Updated about page
+
+commit f87e8196a78179a95d7c2850ec1992cc77d8d784
+Author: carlos-loya <carlosloya@utexas.edu>
+Date:   Sat Oct 21 16:15:12 2017 -0500
+
+    Added folder skeleton and basic files.
+
+commit 13837a42245fd6f5a8b1580e0b158dee1b681e51
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Sat Oct 21 15:49:36 2017 -0500
+
+    Update travis.yml
+
+commit 00e09884eb58be9c580dd4b8c4cd57c26ffbad46
+Author: carlos-loya <exsorest@gmail.com>
+Date:   Fri Oct 20 14:20:20 2017 -0500
+
+    Added a gitignore file and a travis file for CI and build testing
+
+commit 9a8d89d42230ad78c07dede5a83a8985228d575f
+Author: arr3385 <arogalla@utexas.edu>
+Date:   Fri Oct 20 13:20:03 2017 -0500
+
+    Initial commit
