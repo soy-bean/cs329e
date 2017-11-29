@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-    
+
         <title>{% block title %}{% endblock %} - Canja</title>
 
         <!--jQuery UI-->
@@ -18,26 +18,26 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
         <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-    
+
         <!-- Bootstrap core CSS -->
         <link href="../static/css/bootstrap.min.css" rel="stylesheet">
-    
+
         <!-- Material Design Bootstrap -->
         <link href="../static/css/mdb.min.css" rel="stylesheet">
-    
+
         <!-- Template styles -->
         <style rel="stylesheet">
             /* TEMPLATE STYLES */
             /* Necessary for full page carousel*/
-    
+
             .full-height,
             .full-height body,
             .full-height header,
-            .full-height header .view, 
+            .full-height header .view,
             .full-height body .view {
-                height: 100%; 
-            } 
-    
+                height: 100%;
+            }
+
             @media (max-width: 900px) {
                 .full-height,
                 .full-height body,
@@ -45,49 +45,49 @@
                 .full-height header .view,
                 .full-height body .view {
                     height: 900px;
-                } 
+                }
             }
-            
+
             @media (min-width: 1000px) and (max-width: 1025px) {
                 .full-height,
                 .full-height body,
                 .full-height header,
                 .full-height header .view,
                 .full-height body .view {
-                    height: 770px; 
-                } 
+                    height: 770px;
+                }
             }
-            
+
             .navbar {
-                background-color: rgb(80, 80, 80);
+                background-color: #1c2331;
             }
-            
+
             .scrolling-navbar {
                 -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
                 -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
                 transition: background .5s ease-in-out, padding .5s ease-in-out;
             }
-            
+
             .top-nav-collapse {
                 background-color: #1C2331;
             }
-            
+
             footer.page-footer {
                 background-color: #1C2331;
                 margin-top: 0;
             }
-            
+
             @media only screen and (max-width: 768px) {
                 .navbar {
                     background-color: #1C2331;
                 }
             }
             /* Carousel*/
-            
+
             .flex-center {
                 color: #fff;
             }
-            
+
             .carousel-caption {
                 height: 100%;
                 padding-top: 7rem;
@@ -118,7 +118,7 @@
                                 <a class="nav-link" href="/about">About</a>
                             </li>
                             <li class="nav-item btn-group">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Models 
+                                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Models
                                 </a>
                                 <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                                     <a class="dropdown-item" href="/books">Books</a>
@@ -157,7 +157,7 @@
         {% endblock %}
     </footer>
 
-    
+
     <!-- Bootstrap dropdown -->
     <script type="text/javascript" src="../static/js/popper.min.js"></script>
 
@@ -195,5 +195,5 @@
             });
         });
     </script>
-    
+
 </html>

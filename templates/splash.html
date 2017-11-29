@@ -3,10 +3,13 @@
 {% block head %}
     {{ super() }}
     <style>
-    /*.navbar {
-        background-color: rgb(80, 80, 80);
+    .navbar {
+        background-color: transparent;
     }
-    #background {
+    .top-nav-collapse {
+        background-color: #1C2331;
+    }
+    /*#background {
         background-size: cover;
     }*/
     .d-flex {
@@ -62,31 +65,57 @@
 {% block content %}
     <!--Carousel Wrapper-->
     <div class="parallax"></div>
+    <!-- <body>
+      <div align="center">
+          <br><br><br><br>
+          <h2 class="display-4" align="center">Check out our books!</h2>
+          <br>
+          <h3 align="center"><i>We created a <b>vast</b> database of books to look through and<br>
+            to find more information about such as authors and publishers. Get started!</i></h3>
+            <a href="/authors"><img src="{{ url_for('static', filename='images/authors1.jpg') }}" class="float-left, img-fluid, rounded" width="30%"></a>
+            <<figcaption class="figure-caption text-center">Authors</figcaption> -->
+            <!-- <a href="/books"><img src="{{ url_for('static', filename='images/publish.jpg') }}" class="float-right,img-fluid, rounded" width="30%"></a> -->
+            <!-- <figcaption class="figure-caption text-center">Publishers</figcaption> -->
+          <!-- <br><br><br><br><br><br> -->
 
+    <!-- </body> -->
 {% endblock %}
 
 {% block footerContent %}
             <!--Footer links-->
             <div align="center">
-                <h5 class="title mb-3" align="center"><strong>Meet the team</strong></h5>                    
+                <br>
+                <h2 class="display-4" align="center">Check out our books!</h2>
+                <br>
+                <h3 align="center"><i>We created a <b>vast</b> database of books to look through and<br>
+                  to find more information about such as authors and publishers. Get started!</i></h3><br>
+                  <a href="/authors"><img src="{{ url_for('static', filename='images/authors.png') }}" class="float-left, img-fluid, rounded" width="30%"></a>
+                  <!-- <figcaption class="figure-caption text-center">Authors</figcaption> -->
+                  <a href="/books"><img src="{{ url_for('static', filename='images/publish.png') }}" class="float-right,img-fluid, rounded" width="30%"></a>
+                  <!-- <figcaption class="figure-caption text-center">Publishers</figcaption> -->
+                <br><br><br><br><br><br><br>
+              </div>
+            <div align="center">
+                <h1 class="title mb-3" align="center"><strong>Meet the team</strong></h1>
             </div>
+            <br>
             <div align="center">
                 <div>
                     <a href="/about" class="btn btn-primary btn-lg" rel="nofollow">About Us</a>
                 </div>
             </div>
-            <br/>
+            <br/><br>
             <div class="container-fluid">
                 <div class="row d-flex">
-                    <div class="col-md-1 ml-auto"></div>                          
+                    <div class="col-md-1 ml-auto"></div>
                     <!--First column-->
                     <div class="col-md-2 ml-auto d-flex">
                         <!--Card-->
                         <div class="card">
-                        
+
                             <!--Card image-->
                             <img class="img-fluid" src="../static/images/carlos.JPG" alt="Card image cap">
-                        
+
                             <!--Card content-->
                             <div class="card-body">
                                 <!--Title-->
@@ -95,7 +124,7 @@
                                 <p align="center" class="card-text">(C)arlos Loya</p>
                                 <center><a type="button" class="btn btn-elegant btn-git" href="https://github.com/carlos-loya"><i class="fa fa-github left"></i></a></center>
                             </div>
-                        
+
                         </div>
                         <!--/.Card-->
                     </div>
@@ -107,7 +136,7 @@
                         <div class="card">
                             <!--Card image-->
                             <img class="img-fluid" src="../static/images/AndrewC.jpg" alt="Card image cap">
-                        
+
                             <!--Card content-->
                             <div class="card-body">
                                 <!--Title-->
@@ -116,7 +145,7 @@
                                 <p align="center" class="card-text">(A)ndrew Chen</p>
                                 <center><a type="button" class="btn btn-elegant btn-git" href="https://github.com/soy-bean"><i class="fa fa-github left"></i></a></center>
                             </div>
-                        
+
                         </div>
                         <!--/.Card-->
                     </div>
@@ -128,7 +157,7 @@
                         <div class="card">
                             <!--Card image-->
                             <img class="img-fluid" src="../static/images/nancy.jpg" alt="Card image cap">
-                        
+
                             <!--Card content-->
                             <div class="card-body">
                                 <!--Title-->
@@ -148,7 +177,7 @@
                         <div class="card">
                         <!--Card image-->
                             <img class="img-fluid" src="../static/images/Jkon.jpg" alt="Card image cap">
-                        
+
                             <!--Card content-->
                             <div class="card-body">
                                 <!--Title-->
@@ -160,14 +189,14 @@
                         </div>
                         <!--/.Card-->
                     </div>
-                    <hr class="w-100 clearfix d-sm-none">                    
+                    <hr class="w-100 clearfix d-sm-none">
                     <!--/.Fourth column-->
                     <div class="col-md-2 ml-auto d-flex">
                         <!--Card-->
                         <div class="card">
                         <!--Card image-->
                             <img class="img-fluid" src="../static/images/AndrewR.jpg" alt="Card image cap">
-                        
+
                             <!--Card content-->
                             <div class="card-body">
                                 <!--Title-->
@@ -181,11 +210,11 @@
                     </div>
                     <!--/.Fifth column-->
 
-                    <div class="col-md-1 ml-auto"></div>                          
+                    <div class="col-md-1 ml-auto"></div>
                 </div>
             </div>
             <!--/.Footer links-->
-    
+
             <hr>
-    
+
 {% endblock %}
